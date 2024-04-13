@@ -18,7 +18,8 @@ class RegularText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    return  Text(text,
+    return  Text(
+      text,
       textAlign: TextAlign.center,
       maxLines: maxLine,
       style: TextStyle(

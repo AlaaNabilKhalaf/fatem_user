@@ -45,6 +45,7 @@ dependencies:
   flutter_localization: ^0.2.0
   flutter_localizations:
     sdk: flutter
+  flutter_launcher_icons: ^0.13.1
 
 
 dev_dependencies:
@@ -73,6 +74,7 @@ flutter:
     - assets/images/
     - assets/images/splash_view/
     - assets/images/login_view/
+    - assets/images/about_view/
     - assets/fonts/
 
   # An image asset can refer to one or more resolution-specific "variants", see

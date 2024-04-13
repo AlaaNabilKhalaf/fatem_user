@@ -22,6 +22,8 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "about": MessageLookupByLibrary.simpleMessage(
+            "يحكي الموسم الأول قصة البطل .حيث انه مجرد عالم اثار استخرج ترسا من قلعة مهجورة في بافاريا وهذا الدرع به حجر في وسطه عليه صورة ديك ثم تاتي عصابة اليد السوداء لتاخذ منه الحجر لكنه يرفض ويقاتلهم ثم يكتشف جاكي وعمه وابنة اخته ان هذا الحجر هو رمز الديك وبه قوة خارقة تسمح للشخص بالطيران . كما انه حجر واحد من 12 حجر منتشرة في العالم لكل حجر قوة خاصة هي : الديك والثور والافعى والارنب والتنين والخروف والحصان والكلب والخنزير والقرد والنمر والجرذ"),
         "facebookLogin":
             MessageLookupByLibrary.simpleMessage("تسجيل الدخول بفيسبوك"),
         "googleLogin":

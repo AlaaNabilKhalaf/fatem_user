@@ -1,10 +1,7 @@
-
+import 'package:fatem_users/Core/widgets/Texts.dart';
 import 'package:flutter/material.dart';
-
 import '../../../../Core/utils/assets_data.dart';
 import '../../../Auth/presentation/Views/login_view.dart';
-
-
 
 class SplashView extends StatefulWidget {
   const SplashView({super.key});
@@ -13,9 +10,8 @@ class SplashView extends StatefulWidget {
   State<SplashView> createState() => _SplashViewState();
 }
 
-class _SplashViewState extends State<SplashView> with SingleTickerProviderStateMixin{
-  late AnimationController animationController ;
-  late Animation<Offset> slidingAnimation ;
+class _SplashViewState extends State<SplashView> {
+
 
   goHome(){
     Future.delayed(const Duration(seconds: 2),(){
@@ -31,30 +27,19 @@ class _SplashViewState extends State<SplashView> with SingleTickerProviderStateM
   void initState() {
     // TODO: implement initState
     super.initState();
-    intiSlidingAnimation();
+    //intiSlidingAnimation();
     goHome();
   }
 
-  @override
-  void dispose() {
-    // TODO: implement dispose
-    super.dispose();
-    animationController.dispose();
-  }
 
-  void intiSlidingAnimation(){
-    animationController = AnimationController(vsync: this , duration: const Duration(seconds: 1));
-    slidingAnimation = Tween<Offset>(begin: const Offset(0 , 1) , end: Offset.zero ).animate(animationController);
-    animationController.forward();
-  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: GestureDetector(
         onTap: (){
-          // Navigator.pushReplacement(context, MaterialPageRoute(builder: (context ){
-          //   return const LoginView();
-          // }));
+          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context ){
+            return const LoginView();
+          }));
         },
         child: Container(
           decoration: const BoxDecoration(
@@ -63,15 +48,13 @@ class _SplashViewState extends State<SplashView> with SingleTickerProviderStateM
                   image: AssetImage(AssetsData.splashBackground, )
               )
           ),
-          child: AnimatedBuilder(
-            animation: slidingAnimation,
-            builder: (context , _ ){
-              return SlideTransition(
-                position:  slidingAnimation,
-                child: Center(child: Image.asset(AssetsData.logo)),
-              );
-            },
-          ),
+          child: Center(child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Image.asset(AssetsData.name),
+              const RegularText(fontSize: 38, text: "FATEM", textColor: Colors.black, fontFamily: "Ade")
+            ],
+          )),
         ),
       ),
     );

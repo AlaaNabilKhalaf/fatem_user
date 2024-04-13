@@ -10,5 +10,8 @@ class AssetsData{
   static const String facebookIcon = "assets/images/login_view/facebook_icon.png" ;
   static const String googleIcon = "assets/images/login_view/google_icon.png" ;
 
+  // ABOUT VIEW
+  static const String name = "assets/images/about_view/name.png" ;
+  static const String aboutBackground = "assets/images/about_view/about_background.png" ;
 
 }
