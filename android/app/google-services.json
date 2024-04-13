@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "1078067383113",
+    "project_id": "fatem-app-4a429",
+    "storage_bucket": "fatem-app-4a429.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1078067383113:android:fe5a2323490686df376898",
+        "android_client_info": {
+          "package_name": "com.fatem_users.fatem_users"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1078067383113-3nbrq4gtfdrvo137ci2fne478sgkd8fe.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.fatem_users.fatem_users",
+            "certificate_hash": "68591c323397029714a521fa2893d2df3d62ebe0"
+          }
+        },
+        {
+          "client_id": "1078067383113-kmo6sepi81qdecqkg885sdgcap8tai0e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC5yhwtK34QhD5NceT2eQ4iHnheRDtBli8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1078067383113-kmo6sepi81qdecqkg885sdgcap8tai0e.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1078067383113-ta7gtkcjli2ms0puesrrrii028p78nhh.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.fatemusers.fatemUsers"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
