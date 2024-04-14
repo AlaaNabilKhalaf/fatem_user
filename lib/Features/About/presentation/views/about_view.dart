@@ -1,8 +1,7 @@
 import 'package:fatem_users/Core/utils/assets_data.dart';
-import 'package:fatem_users/Core/widgets/Texts.dart';
+import 'package:fatem_users/Core/widgets/texts.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../../../generated/l10n.dart';
 import '../widgets/back_button.dart';
 
@@ -46,7 +45,7 @@ class AboutView extends StatelessWidget {
                    text: S.of(context).about,
                      fontSize: 19,
                      textColor: Colors.black,
-                     fontFamily: "LexendGiga",
+                     fontFamily: "LexendGigaExtraLight",
                  maxLine: 6,)
 
                ],

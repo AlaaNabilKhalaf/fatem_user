@@ -1,11 +1,9 @@
-
 import 'package:fatem_users/Features/About/presentation/views/about_view.dart';
-import 'package:fatem_users/test.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../Core/constance.dart';
 import '../../../../Core/utils/assets_data.dart';
-import '../../../../Core/widgets/Texts.dart';
+import '../../../../Core/widgets/texts.dart';
 import '../../../../Core/widgets/custom_button.dart';
 import '../../../../generated/l10n.dart';
 import '../Controller/Auth/google_auth.dart';
@@ -33,7 +31,7 @@ class LoginView extends StatelessWidget {
             ),
             const RegularText(fontSize: 38, text: "FATEM", textColor: Colors.black, fontFamily: "Ade")
             ,
-            RegularText(fontSize: 13, text: s.loginSlogan,textColor: Colors.black,fontFamily: "LexendGiga",),
+            RegularText(fontSize: 14, text: s.loginSlogan,textColor: Colors.black,fontFamily: "LexendGigaExtraLight",maxLine: 2,),
 
             SizedBox(height: 25.h,),
 
@@ -42,9 +40,16 @@ class LoginView extends StatelessWidget {
               width: 290.w,
               borderRadius: 16.w,
               buttonColor: buttonColor,
-              onTap: () async{
-               await signInWithGoogle();
-               Navigator.push(context, MaterialPageRoute(builder: (context)=> const AboutView()));
+              onTap: () {
+                signInWithGoogle().then((value) => {
+                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> const AboutView()))
+                }) ;
+    // ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Container(
+    // color: Colors.redAccent,
+    // alignment: Alignment.center,
+    // height: 25.h,
+    // child: const Text("Something went wrong try again later"),
+    // ))) ;
               },
               text: const GoogleButton(),
             ),
@@ -61,9 +66,6 @@ class LoginView extends StatelessWidget {
             ),
           ],
         ),
-
-
-
 
       ),
     );

@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../Core/utils/assets_data.dart';
-import '../../../../Core/widgets/Texts.dart';
+import '../../../../Core/widgets/texts.dart';
 import '../../../../generated/l10n.dart';
 
 class FacebookButton extends StatelessWidget {
@@ -17,7 +17,7 @@ class FacebookButton extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         Image.asset(AssetsData.facebookIcon),
-        RegularText(text: s.facebookLogin,fontSize: 15,textColor: Colors.white,fontFamily: "LexendGiga",),
+        RegularText(text: s.facebookLogin,fontSize: 15,textColor: Colors.white,fontFamily: "LexendGigaExtraLight",),
         // SizedBox(width: 10.h,),
       ],
     );
@@ -35,7 +35,7 @@ class GoogleButton extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         Image.asset(AssetsData.googleIcon),
-        RegularText(text: s.googleLogin,fontSize: 15,textColor: Colors.white,fontFamily: "LexendGiga",),
+        RegularText(text: s.googleLogin,fontSize: 15,textColor: Colors.white,fontFamily: "LexendGigaExtraLight",),
         // SizedBox(width: 5.h,),
       ],
     );

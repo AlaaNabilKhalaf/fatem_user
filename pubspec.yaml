@@ -93,16 +93,27 @@ flutter:
       fonts:
       - asset: fonts/Ade-Display.otf
 
-    - family: LexendGiga
+    - family: LexendGigaRegular
       fonts:
-        - asset: fonts/LexendGiga-Bold.ttf
-        - asset: fonts/LexendGiga-ExtraBold.ttf
-        - asset: fonts/LexendGiga-ExtraLight.ttf
-        - asset: fonts/LexendGiga-Light.ttf
-        - asset: fonts/LexendGiga-Medium.ttf
         - asset: fonts/LexendGiga-Regular.ttf
-        - asset: fonts/LexendGiga-SemiBold.ttf
-        - asset: fonts/LexendGiga-Thin.ttf
+
+    - family: LexendGigaExtraLight
+      fonts:
+        - asset: fonts/LexendGiga-ExtraLight.ttf
+
+    - family: LexendGigaLight
+      fonts:
+        - asset: fonts/LexendGiga-Light.ttf
+
+#    - family: LexendGigaLight
+#      fonts:
+#        - asset: fonts/LexendGiga-Medium.ttf
+#        - asset: fonts/LexendGiga-SemiBold.ttf
+#        - asset: fonts/LexendGiga-Thin.ttf
+#        - asset: fonts/LexendGiga-ExtraBold.ttf
+#        - asset: fonts/LexendGiga-Bold.ttf
+
+
 
 
 
