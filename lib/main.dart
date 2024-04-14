@@ -5,10 +5,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'Core/bloc_observer/bloc_observer.dart';
+import 'Core/utils/data_constance.dart';
 import 'Features/Auth/presentation/Controller/Auth/auth_cubit.dart';
+import 'Features/Auth/presentation/Controller/AuthLocal/auth_cache_network.dart';
 import 'firebase_options.dart';
 import 'package:intl/intl.dart';
-
 import 'Features/Splash/presentation/views/splash_view.dart';
 import 'generated/l10n.dart';
 
@@ -16,10 +17,17 @@ Future<void> main() async {
 
   WidgetsFlutterBinding.ensureInitialized();
   Bloc.observer = MyBlocObserver();
-  //await CacheNetwork.cacheInitialization();
+  await CacheNetwork.cacheInitialization();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
+
   );
+  token = CacheNetwork.getCacheData(key:"token");
+  name = CacheNetwork.getCacheData(key:"name");
+  email = CacheNetwork.getCacheData(key:"email");
+  phone = CacheNetwork.getCacheData(key:"phoneNumber");
+  avatar = CacheNetwork.getCacheData(key:"avatarPath");
+
   runApp( MultiBlocProvider(
       providers: [
         BlocProvider<AuthCubit>(create: (context) => AuthCubit()),

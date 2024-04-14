@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 
-import 'Core/widgets/Texts.dart';
+import 'Core/widgets/texts.dart';
 
 class Test extends StatelessWidget {
   const Test({super.key});

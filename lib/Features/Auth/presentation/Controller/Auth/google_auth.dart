@@ -1,6 +1,9 @@
 
+import 'package:fatem_users/Features/Auth/Data/Models/user_model.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+
+import '../AuthLocal/auth_cache_network.dart';
 
 Future<Object> signInWithGoogle() async {
  // emit(GoogleAuthLoading());
@@ -27,6 +30,17 @@ Future<Object> signInWithGoogle() async {
   return {
     await FirebaseAuth.instance.signInWithCredential(credential).then((
         value)  {
+      CacheNetwork.insertStrings(
+          key: "token", value: value.user!.uid);
+      UserModel.cacheData(
+        nameF: value.user!.displayName,
+        emailF: value.user!.email,
+        phoneNumberF: value.user!.phoneNumber,
+        avatarPathF: value.user!.photoURL
+      );
+      print(value.user);
+
+
       //emit(GoogleAuthSuccess());
     }),
   };

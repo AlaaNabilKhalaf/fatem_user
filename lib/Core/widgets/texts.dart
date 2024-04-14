@@ -4,13 +4,16 @@ import 'package:flutter/cupertino.dart';
 class RegularText extends StatelessWidget {
   const RegularText({
     super.key,
-    required this.fontSize,
     required this.text,
-    this.maxLine,
+    required this.fontSize,
     required this.textColor,
-    required this.fontFamily
+    required this.fontFamily,
+    this.maxLine,
+    this.letterSpacing,
+
   });
   final double fontSize ;
+  final double? letterSpacing;
   final String text ;
   final String fontFamily ;
   final int? maxLine;
@@ -23,6 +26,7 @@ class RegularText extends StatelessWidget {
       textAlign: TextAlign.center,
       maxLines: maxLine,
       style: TextStyle(
+        letterSpacing: letterSpacing,
         fontSize: fontSize,
         fontFamily: fontFamily,
             color: textColor,
