@@ -29,9 +29,9 @@ class LoginView extends StatelessWidget {
           children: [
             Image.asset(AssetsData.name,
             ),
-            const RegularText(fontSize: 38, text: "FATEM", textColor: Colors.black, fontFamily: "Ade")
+            const RegularText(fontSize: 38, text: "FATEM", textColor: Colors.black, fontFamilyAr: ade, fontFamilyEn: ade,)
             ,
-            RegularText(fontSize: 14, text: s.loginSlogan,textColor: Colors.black,fontFamily: "LexendGigaExtraLight",maxLine: 2,),
+            RegularText(fontSize: 14, text: s.loginSlogan,textColor: Colors.black,fontFamilyAr: arLight,maxLine: 2,fontFamilyEn: enExtraLight,),
 
             SizedBox(height: 25.h,),
 

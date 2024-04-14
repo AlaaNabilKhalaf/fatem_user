@@ -1,0 +1,20 @@
+import 'package:flutter/material.dart';
+
+class BottomNavigationView extends StatelessWidget {
+  const BottomNavigationView({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      bottomNavigationBar: BottomNavigationBar(
+        items: [
+          BottomNavigationBarItem(icon: Image.asset("")),
+          BottomNavigationBarItem(icon: Image.asset("")),
+          BottomNavigationBarItem(icon: Image.asset("")),
+          BottomNavigationBarItem(icon: Image.asset("")),
+
+        ],
+      ),
+    );
+  }
+}

@@ -1,4 +1,5 @@
 
+import 'package:fatem_users/Core/constance.dart';
 import 'package:flutter/material.dart';
 
 import 'Core/widgets/texts.dart';
@@ -10,7 +11,7 @@ class Test extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       body: Center(
-        child: RegularText(fontSize: 20, text: 'TEST',textColor: Colors.black,fontFamily: "Ade",),
+        child: RegularText(fontSize: 20, text: 'TEST',textColor: Colors.black,fontFamilyAr: ade,fontFamilyEn: ade,),
       ),
     );
   }

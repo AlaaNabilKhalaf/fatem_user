@@ -76,6 +76,7 @@ flutter:
     - assets/images/login_view/
     - assets/images/about_view/
     - assets/fonts/
+    - assets/images/bottom_nav_icons/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
@@ -104,14 +105,23 @@ flutter:
     - family: LexendGigaLight
       fonts:
         - asset: fonts/LexendGiga-Light.ttf
+    #        - asset: fonts/LexendGiga-Medium.ttf
+    #        - asset: fonts/LexendGiga-SemiBold.ttf
+    #        - asset: fonts/LexendGiga-Thin.ttf
+    #        - asset: fonts/LexendGiga-ExtraBold.ttf
+    #        - asset: fonts/LexendGiga-Bold.ttf
+    - family: StcRegular
+      fonts:
+        - asset: fonts/STC-Regular.ttf
 
-#    - family: LexendGigaLight
-#      fonts:
-#        - asset: fonts/LexendGiga-Medium.ttf
-#        - asset: fonts/LexendGiga-SemiBold.ttf
-#        - asset: fonts/LexendGiga-Thin.ttf
-#        - asset: fonts/LexendGiga-ExtraBold.ttf
-#        - asset: fonts/LexendGiga-Bold.ttf
+    - family: StcLight
+      fonts:
+        - asset: fonts/STC-Light.otf
+
+    - family: StcBold
+      fonts:
+        - asset : fonts/STC-Bold.ttf
+
 
 
 

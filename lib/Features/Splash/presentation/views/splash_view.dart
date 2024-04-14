@@ -1,8 +1,8 @@
 import 'package:fatem_users/Core/widgets/texts.dart';
 import 'package:fatem_users/test.dart';
 import 'package:flutter/material.dart';
+import '../../../../Core/constance.dart';
 import '../../../../Core/utils/assets_data.dart';
-import '../../../../Core/utils/data_constance.dart';
 import '../../../Auth/presentation/Views/login_view.dart';
 
 class SplashView extends StatefulWidget {
@@ -18,7 +18,7 @@ class _SplashViewState extends State<SplashView> {
   goHome(){
     Future.delayed(const Duration(seconds: 2),(){
 
-      Navigator.push(context, MaterialPageRoute(builder: (context ){
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context ){
         return token != null && token != "" ? const Test() : const LoginView();
       }));
 
@@ -39,7 +39,7 @@ class _SplashViewState extends State<SplashView> {
     return Scaffold(
       body: GestureDetector(
         onTap: (){
-          Navigator.push(context, MaterialPageRoute(builder: (context ){
+          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context ){
             return token != null && token != "" ? const Test() : const LoginView();
           }));
         },
@@ -54,7 +54,7 @@ class _SplashViewState extends State<SplashView> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Image.asset(AssetsData.name),
-              const RegularText(fontSize: 38, text: "FATEM", textColor: Colors.black, fontFamily: "Ade")
+              const RegularText(fontSize: 38, text: "FATEM", textColor: Colors.black, fontFamilyAr: ade, fontFamilyEn: ade,)
             ],
           )),
         ),

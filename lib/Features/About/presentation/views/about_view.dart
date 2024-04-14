@@ -1,3 +1,4 @@
+import 'package:fatem_users/Core/constance.dart';
 import 'package:fatem_users/Core/utils/assets_data.dart';
 import 'package:fatem_users/Core/widgets/texts.dart';
 import 'package:flutter/material.dart';
@@ -45,8 +46,8 @@ class AboutView extends StatelessWidget {
                    text: S.of(context).about,
                      fontSize: 19,
                      textColor: Colors.black,
-                     fontFamily: "LexendGigaExtraLight",
-                 maxLine: 6,)
+                     fontFamilyAr: arLight,
+                 maxLine: 6, fontFamilyEn: enExtraLight,)
 
                ],
              ),
@@ -55,10 +56,11 @@ class AboutView extends StatelessWidget {
            const Padding(
              padding: EdgeInsets.all(8.0),
              child: RegularText(
+               fontFamilyEn: enLight,
                  fontSize: 11,
                  text: "Copyright©2024-Fatem- All rights Reserved",
                  textColor: Colors.black,
-                 fontFamily: "LexendGiga"),
+                 fontFamilyAr: enLight),
            ),
            SizedBox(height: 20.h,)
          ],

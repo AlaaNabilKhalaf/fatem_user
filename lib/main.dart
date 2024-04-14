@@ -5,7 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'Core/bloc_observer/bloc_observer.dart';
-import 'Core/utils/data_constance.dart';
+import 'Core/constance.dart';
 import 'Features/Auth/presentation/Controller/Auth/auth_cubit.dart';
 import 'Features/Auth/presentation/Controller/AuthLocal/auth_cache_network.dart';
 import 'firebase_options.dart';
