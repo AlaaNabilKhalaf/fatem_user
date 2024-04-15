@@ -1,9 +1,11 @@
+import 'package:fatem_users/Core/widgets/image_svg.dart';
 import 'package:fatem_users/Core/widgets/texts.dart';
 import 'package:fatem_users/test.dart';
 import 'package:flutter/material.dart';
 import '../../../../Core/constance.dart';
 import '../../../../Core/utils/assets_data.dart';
 import '../../../Auth/presentation/Views/login_view.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class SplashView extends StatefulWidget {
   const SplashView({super.key});
@@ -29,7 +31,6 @@ class _SplashViewState extends State<SplashView> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    //intiSlidingAnimation();
     goHome();
   }
 
@@ -50,11 +51,11 @@ class _SplashViewState extends State<SplashView> {
                   image: AssetImage(AssetsData.splashBackground, )
               )
           ),
-          child: Center(child: Column(
+          child: const Center(child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Image.asset(AssetsData.name),
-              const RegularText(fontSize: 38, text: "FATEM", textColor: Colors.black, fontFamilyAr: ade, fontFamilyEn: ade,)
+              SvgImage(imagePath: AssetsData.logo),
+              RegularText(fontSize: 38, text: "FATEM", textColor: Colors.black, fontFamilyAr: ade, fontFamilyEn: ade,)
             ],
           )),
         ),

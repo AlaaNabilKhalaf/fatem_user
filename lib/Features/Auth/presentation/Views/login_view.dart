@@ -1,3 +1,4 @@
+import 'package:fatem_users/Core/widgets/image_svg.dart';
 import 'package:fatem_users/Features/About/presentation/views/about_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -27,11 +28,10 @@ class LoginView extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           // crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Image.asset(AssetsData.name,
-            ),
-            const RegularText(fontSize: 38, text: "FATEM", textColor: Colors.black, fontFamilyAr: ade, fontFamilyEn: ade,)
+            const SvgImage(imagePath: AssetsData.logo),
+            RegularText(fontSize: 38.sp, text: "FATEM", textColor: Colors.black, fontFamilyAr: ade, fontFamilyEn: ade,)
             ,
-            RegularText(fontSize: 14, text: s.loginSlogan,textColor: Colors.black,fontFamilyAr: arLight,maxLine: 2,fontFamilyEn: enExtraLight,),
+            RegularText(fontSize: 14.sp, text: s.loginSlogan,textColor: Colors.black,fontFamilyAr: arLight,maxLine: 2,fontFamilyEn: enExtraLight,),
 
             SizedBox(height: 25.h,),
 

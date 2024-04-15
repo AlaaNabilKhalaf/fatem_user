@@ -13,6 +13,8 @@ import 'package:intl/intl.dart';
 import 'Features/Splash/presentation/views/splash_view.dart';
 import 'generated/l10n.dart';
 
+
+
 Future<void> main() async {
 
   WidgetsFlutterBinding.ensureInitialized();
@@ -22,11 +24,11 @@ Future<void> main() async {
     options: DefaultFirebaseOptions.currentPlatform,
 
   );
-  token = CacheNetwork.getCacheData(key:"token");
-  name = CacheNetwork.getCacheData(key:"name");
-  email = CacheNetwork.getCacheData(key:"email");
-  phone = CacheNetwork.getCacheData(key:"phoneNumber");
-  avatar = CacheNetwork.getCacheData(key:"avatarPath");
+ { token = CacheNetwork.getCacheData(key:"token");
+ name = CacheNetwork.getCacheData(key:"name");
+ email = CacheNetwork.getCacheData(key:"email");
+ phone = CacheNetwork.getCacheData(key:"phoneNumber");
+ avatar = CacheNetwork.getCacheData(key:"avatarPath");}
 
   runApp( MultiBlocProvider(
       providers: [
