@@ -1,21 +1,26 @@
 import 'package:flutter/cupertino.dart';
 
+import '../utils/app_logger.dart';
+
 
 class RegularText extends StatelessWidget {
-  const RegularText({
+ const RegularText({
     super.key,
     required this.text,
     required this.fontSize,
     required this.textColor,
-    required this.fontFamily,
+    required this.fontFamilyAr,
+    required this.fontFamilyEn,
     this.maxLine,
     this.letterSpacing,
+
 
   });
   final double fontSize ;
   final double? letterSpacing;
   final String text ;
-  final String fontFamily ;
+ final String fontFamilyAr ;
+ final String fontFamilyEn ;
   final int? maxLine;
   final Color textColor;
   @override
@@ -28,10 +33,16 @@ class RegularText extends StatelessWidget {
       style: TextStyle(
         letterSpacing: letterSpacing,
         fontSize: fontSize,
-        fontFamily: fontFamily,
+        fontFamily: fontFamilyFun(fontFamilyAr , fontFamilyEn),
             color: textColor,
       ),
     );
   }
 }
 
+String fontFamilyFun(String ar ,String en ){
+
+  return isArabic()? ar : en;
+
+
+}

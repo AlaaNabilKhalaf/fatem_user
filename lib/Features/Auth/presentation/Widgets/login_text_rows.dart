@@ -1,6 +1,8 @@
 
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fatem_users/Core/constance.dart';
+import 'package:fatem_users/Core/widgets/image_svg.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../Core/utils/assets_data.dart';
 import '../../../../Core/widgets/texts.dart';
@@ -14,10 +16,10 @@ class FacebookButton extends StatelessWidget {
   Widget build(BuildContext context) {
     final s = S.of(context);
     return  Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Image.asset(AssetsData.facebookIcon),
-        RegularText(text: s.facebookLogin,fontSize: 15,textColor: Colors.white,fontFamily: "LexendGigaExtraLight",),
+        const SvgImage(imagePath: AssetsData.facebookIcon ,height: 10,width: 10, ),
+        RegularText(text: s.facebookLogin,fontSize: 15.sp,textColor: Colors.white,fontFamilyAr: arLight,fontFamilyEn: enExtraLight,),
         // SizedBox(width: 10.h,),
       ],
     );
@@ -32,10 +34,10 @@ class GoogleButton extends StatelessWidget {
   Widget build(BuildContext context) {
     final s = S.of(context);
     return  Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Image.asset(AssetsData.googleIcon),
-        RegularText(text: s.googleLogin,fontSize: 15,textColor: Colors.white,fontFamily: "LexendGigaExtraLight",),
+        const SvgImage(imagePath: AssetsData.googleIcon , height: 10,width: 12,),
+        RegularText(text: s.googleLogin,fontSize: 15.sp,textColor: Colors.white,fontFamilyAr: arLight,fontFamilyEn: enExtraLight,),
         // SizedBox(width: 5.h,),
       ],
     );
