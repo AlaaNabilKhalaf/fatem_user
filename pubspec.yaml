@@ -46,7 +46,7 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   flutter_launcher_icons: ^0.13.1
-
+  flutter_svg: ^2.0.10+1
 
 dev_dependencies:
   flutter_test:
@@ -72,6 +72,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/
+    - assets/images/profile_view/
     - assets/images/splash_view/
     - assets/images/login_view/
     - assets/images/about_view/

@@ -29,6 +29,16 @@ class MessageLookup extends MessageLookupByLibrary {
         "googleLogin":
             MessageLookupByLibrary.simpleMessage("تسجيل الدخول بجوجل"),
         "loginSlogan":
-            MessageLookupByLibrary.simpleMessage("حيث يلتقي الجمال والكون")
+            MessageLookupByLibrary.simpleMessage("حيث يلتقي الجمال والكون"),
+        "profile" :
+            MessageLookupByLibrary.simpleMessage("الحساب"),
+        "previousOrders" :
+        MessageLookupByLibrary.simpleMessage("الطلبات السابقه"),
+        "language" :
+        MessageLookupByLibrary.simpleMessage("اللغة"),
+        "currentLanguage" :
+        MessageLookupByLibrary.simpleMessage("العربية"),
+        "logOut" :
+        MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
       };
 }

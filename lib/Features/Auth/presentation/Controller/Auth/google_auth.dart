@@ -32,15 +32,14 @@ Future<Object> signInWithGoogle() async {
         value)  {
       CacheNetwork.insertStrings(
           key: "token", value: value.user!.uid);
-      UserModel.cacheData(
+        UserModel.cacheData(
         nameF: value.user!.displayName,
         emailF: value.user!.email,
         phoneNumberF: value.user!.phoneNumber,
         avatarPathF: value.user!.photoURL
       );
-      print(value.user);
 
-
+        print(value.user!.displayName);
       //emit(GoogleAuthSuccess());
     }),
   };

@@ -1,4 +1,5 @@
 import 'package:fatem_users/Core/widgets/texts.dart';
+import 'package:fatem_users/Features/Profile/Views/profile_view.dart';
 import 'package:fatem_users/test.dart';
 import 'package:flutter/material.dart';
 import '../../../../Core/constance.dart';

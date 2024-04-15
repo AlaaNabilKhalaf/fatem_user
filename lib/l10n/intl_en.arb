@@ -2,10 +2,10 @@
   "googleLogin" : "LOGIN WITH GOOGLE",
   "facebookLogin" : "LOGIN WITH FACEBOOK",
   "loginSlogan" : "WHERE BEAUTY MEETS THE UNIVERSE",
-  "about" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-
-
-
-
-
+  "about" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+  "profile" : "PROFILE",
+  "previousOrders" : "PREVIOUS ORDERS",
+  "language" : "LANGUAGE",
+  "currentLanguage" : "English",
+  "logOut" : "Logout"
 }

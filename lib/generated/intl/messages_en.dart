@@ -29,6 +29,16 @@ class MessageLookup extends MessageLookupByLibrary {
         "googleLogin":
             MessageLookupByLibrary.simpleMessage("LOGIN WITH GOOGLE"),
         "loginSlogan": MessageLookupByLibrary.simpleMessage(
-            "WHERE BEAUTY MEETS THE UNIVERSE")
+            "WHERE BEAUTY MEETS THE UNIVERSE"),
+        "profile" :
+        MessageLookupByLibrary.simpleMessage("PROFILE"),
+        "previousOrders" :
+        MessageLookupByLibrary.simpleMessage("PREVIOUS ORDERS"),
+        "language" :
+        MessageLookupByLibrary.simpleMessage("LANGUAGE"),
+        "currentLanguage" :
+        MessageLookupByLibrary.simpleMessage("English"),
+        "logOut" :
+        MessageLookupByLibrary.simpleMessage("Logout"),
       };
 }

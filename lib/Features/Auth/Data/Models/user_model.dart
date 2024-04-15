@@ -15,10 +15,11 @@ class UserModel {
 
     UserModel.cacheData({
       nameF,
-    emailF,
-    phoneNumberF,
-       avatarPathF,
-}){
+      emailF,
+      phoneNumberF,
+      avatarPathF,
+    })
+    {
       avatarPath = avatarPathF ;
       email = emailF;
       name =nameF;
