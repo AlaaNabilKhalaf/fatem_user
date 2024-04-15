@@ -55,7 +55,7 @@ class FatemUser extends StatelessWidget {
 
 // MultiBlocProvider is controlling all app Blocs.
   return ScreenUtilInit(
-    designSize: const Size(428, 926),
+    designSize: const Size(360, 800),
     minTextAdapt: true,
     splitScreenMode: true,
     builder: (context , child){

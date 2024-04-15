@@ -16,11 +16,12 @@ class FacebookButton extends StatelessWidget {
   Widget build(BuildContext context) {
     final s = S.of(context);
     return  Row(
-      mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        const SvgImage(imagePath: AssetsData.facebookIcon ,height: 10,width: 10, ),
+        SizedBox(width: 10.w,),
+        SvgImage(imagePath: AssetsData.facebookIcon ,height: 50.h,width: 50.w, ),
+        SizedBox(width: 5.w,),
         RegularText(text: s.facebookLogin,fontSize: 15.sp,textColor: Colors.white,fontFamilyAr: arLight,fontFamilyEn: enExtraLight,),
-        // SizedBox(width: 10.h,),
       ],
     );
   }
@@ -34,9 +35,11 @@ class GoogleButton extends StatelessWidget {
   Widget build(BuildContext context) {
     final s = S.of(context);
     return  Row(
-      mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        const SvgImage(imagePath: AssetsData.googleIcon , height: 10,width: 12,),
+        SizedBox(width: 18.w,),
+        SvgImage(imagePath: AssetsData.googleIcon , height: 30.h,width: 30.w,),
+        SizedBox(width: 10.w,),
         RegularText(text: s.googleLogin,fontSize: 15.sp,textColor: Colors.white,fontFamilyAr: arLight,fontFamilyEn: enExtraLight,),
         // SizedBox(width: 5.h,),
       ],

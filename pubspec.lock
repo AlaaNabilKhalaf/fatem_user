@@ -517,6 +517,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "6.1.2"
+  shadow_clip:
+    dependency: "direct main"
+    description:
+      name: shadow_clip
+      sha256: e948600185447387de1dc31176645dba5947917b3ccdba31db1321ea1672d57b
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.1"
   shared_preferences:
     dependency: "direct main"
     description:

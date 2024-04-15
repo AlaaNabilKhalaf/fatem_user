@@ -14,7 +14,7 @@ String? avatar ;
 // Colors
 const buttonColor = Color(0xffC69670);
 const List<Color> gradColor= [Color(0xffD5C5A9), Color(0xffF4ECDD)];
-const List<BoxShadow> shadow = [BoxShadow(color: Colors.black54,  blurRadius: 10, offset: Offset(0, 8))];
+List<BoxShadow> shadow = [BoxShadow(color: Colors.black.withOpacity(0.25),  blurRadius: 4, offset: const Offset(0, 4))];
 
 
 // Family Fonts

@@ -1,5 +1,4 @@
 import 'package:fatem_users/Core/constance.dart';
-import 'package:fatem_users/Features/Auth/presentation/Controller/AuthLocal/auth_cache_network.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -38,7 +37,7 @@ class Account extends StatelessWidget{
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        SvgPicture.network(avatar!),
+        ///SvgPicture.network(avatar!),
         Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [

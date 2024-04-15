@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:fatem_users/Core/widgets/back_button.dart';
+import 'package:fatem_users/Core/widgets/image_svg.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -35,14 +36,14 @@ class ProfileGradButton extends StatelessWidget {
         clipBehavior: Clip.antiAliasWithSaveLayer,
         type: MaterialType.button,
         borderRadius: BorderRadius.circular(30.w),
-        shadowColor: Colors.black,
+        shadowColor: Colors.black54.withOpacity(0.5),
 
         child: GradButton(
           width: 290.w,
           height: 80.h,
           buttonColors: [
-            gradColor[0].withOpacity(1),
-            gradColor[1].withOpacity(1)
+            gradColor[0].withOpacity(0.6),
+            gradColor[1].withOpacity(0.4)
           ],
           borderRadius: 30.w,
           onTap: onTap,
@@ -82,7 +83,10 @@ class ProfileView extends StatelessWidget
               Positioned(
                   top: 15.h,
                   right: 2.w,
-                  child: Image.asset(AssetsData.logo, width: 85.w,height: 85.h)
+                  child: SvgImage(
+                    imagePath: AssetsData.logoEnglish,
+                      width: 100.w,
+                      height: 100.h)
               ),
 
 
@@ -98,12 +102,22 @@ class ProfileView extends StatelessWidget
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
 
-                   ProfileGradButton(
-                      passedWidget: const ProfileButton(),
-                      onTap: () {
-                        return null;
-                      },
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(30.w),
+                    clipBehavior: Clip.antiAlias,
+                    child: BackdropFilter(
+                      filter: ImageFilter.blur(
+                        sigmaX: 2.w,
+                        sigmaY: 2.h,
+                      ),
+                      child: ProfileGradButton(
+                        passedWidget: const ProfileButton(),
+                        onTap: () {
+                          return null;
+                        },
+                      ),
                     ),
+                  ),
 
                   SizedBox(
                     height: 125.h,

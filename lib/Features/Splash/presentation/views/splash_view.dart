@@ -22,7 +22,7 @@ class _SplashViewState extends State<SplashView> {
     Future.delayed(const Duration(seconds: 2),(){
 
       Navigator.pushReplacement(context, MaterialPageRoute(builder: (context ){
-        return token != null && token != "" ? const Test() : const LoginView();
+        return token != null && token != "" ? const Test() : const ProfileView();
       }));
 
     });
@@ -42,7 +42,7 @@ class _SplashViewState extends State<SplashView> {
       body: GestureDetector(
         onTap: (){
           Navigator.pushReplacement(context, MaterialPageRoute(builder: (context ){
-            return token != null && token != "" ? const Test() : const LoginView();
+            return token != null && token != "" ? const Test() : const ProfileView();
           }));
         },
         child: Container(

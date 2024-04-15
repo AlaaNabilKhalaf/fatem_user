@@ -47,6 +47,7 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   flutter_launcher_icons: ^0.13.1
+  shadow_clip: ^0.0.1
 
 
 
@@ -78,6 +79,7 @@ flutter:
     - assets/images/splash_view/
     - assets/images/about_view/
     - assets/fonts/
+    - assets/images/profile_view/
     - assets/images/bottom_nav_icons/
 
   # An image asset can refer to one or more resolution-specific "variants", see
