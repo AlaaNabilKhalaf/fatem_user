@@ -1,5 +1,5 @@
+import 'package:fatem_users/Core/widgets/image_svg.dart';
 import 'package:fatem_users/Features/About/presentation/views/about_view.dart';
-import 'package:fatem_users/Features/Profile/Views/profile_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../Core/constance.dart';
@@ -28,8 +28,7 @@ class LoginView extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           // crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Image.asset(AssetsData.name,
-            ),
+            const SvgImage(imagePath: AssetsData.logo),
             RegularText(fontSize: 38.sp, text: "FATEM", textColor: Colors.black, fontFamilyAr: ade, fontFamilyEn: ade,)
             ,
             RegularText(fontSize: 14.sp, text: s.loginSlogan,textColor: Colors.black,fontFamilyAr: arLight,maxLine: 2,fontFamilyEn: enExtraLight,),
@@ -43,7 +42,7 @@ class LoginView extends StatelessWidget {
               buttonColor: buttonColor,
               onTap: () {
                 signInWithGoogle().then((value) => {
-                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> const ProfileView()))
+                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> const AboutView()))
                 }) ;
     // ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Container(
     // color: Colors.redAccent,
