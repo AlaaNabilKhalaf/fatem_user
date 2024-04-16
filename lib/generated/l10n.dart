@@ -73,7 +73,7 @@ class S {
   /// `WHERE BEAUTY MEETS THE UNIVERSE`
   String get loginSlogan {
     return Intl.message(
-      'WHERE BEAUTY MEETS',
+      'WHERE BEAUTY MEETS THE UNIVERSE',
       name: 'loginSlogan',
       desc: '',
       args: [],
@@ -90,40 +90,38 @@ class S {
     );
   }
 
-
-  /// Profile
+  /// `PROFILE`
   String get profileText {
     return Intl.message(
       'PROFILE',
-      name: 'profile',
+      name: 'profileText',
       desc: '',
       args: [],
     );
   }
 
-
-  /// PREVIOUS ORDERS
+  /// `PREVIOUS ORDERS`
   String get previousOrdersText {
     return Intl.message(
       'PREVIOUS ORDERS',
-      name: 'previousOrders',
+      name: 'previousOrdersText',
       desc: '',
       args: [],
     );
   }
 
-
-  /// LANGUAGES
+  /// `LANGUAGE`
   String get languagesText {
     return Intl.message(
       'LANGUAGE',
-      name: 'language',
+      name: 'languagesText',
       desc: '',
       args: [],
     );
   }
 
-   String get currentLanguage{
+  /// `English`
+  String get currentLanguage {
     return Intl.message(
       'English',
       name: 'currentLanguage',
@@ -132,7 +130,8 @@ class S {
     );
   }
 
-  String get logOut{
+  /// `Logout`
+  String get logOut {
     return Intl.message(
       'Logout',
       name: 'logOut',
@@ -140,7 +139,6 @@ class S {
       args: [],
     );
   }
-
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

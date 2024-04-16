@@ -11,7 +11,7 @@ class Test extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       body: Center(
-        child: RegularText(fontSize: 20, text: 'TEST',textColor: Colors.black,fontFamilyAr: ade,fontFamilyEn: ade,),
+        child: RegularText(fontSizeAr: 22 ,fontSizeEn: 20, text: 'TEST',textColor: Colors.black,fontFamilyAr: ade,fontFamilyEn: ade,),
       ),
     );
   }

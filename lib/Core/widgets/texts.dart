@@ -8,16 +8,18 @@ class RegularText extends StatelessWidget {
  const RegularText({
     super.key,
     required this.text,
-    required this.fontSize,
+    required this.fontSizeEn,
     required this.textColor,
     required this.fontFamilyAr,
-    required this.fontFamilyEn,
+   required this.fontFamilyEn,
+   required this.fontSizeAr,
     this.maxLine,
     this.letterSpacing,
 
 
   });
-  final double fontSize ;
+ final double fontSizeEn ;
+ final double fontSizeAr ;
   final double? letterSpacing;
   final String text ;
  final String fontFamilyAr ;
@@ -33,7 +35,7 @@ class RegularText extends StatelessWidget {
       maxLines: maxLine,
       style: TextStyle(
         letterSpacing: letterSpacing,
-        fontSize: fontSize,
+        fontSize: fontSizeFun(fontSizeAr , fontSizeEn),
         fontFamily: fontFamilyFun(fontFamilyAr , fontFamilyEn),
             color: textColor,
       ),
@@ -46,4 +48,10 @@ String fontFamilyFun(String ar ,String en ){
   return isArabic()? ar : en;
 
 
+}
+
+
+double fontSizeFun(double ar ,double en ){
+
+  return isArabic()? ar : en;
 }

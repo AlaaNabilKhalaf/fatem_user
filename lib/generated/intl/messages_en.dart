@@ -24,21 +24,17 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "about": MessageLookupByLibrary.simpleMessage(
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry."),
+        "currentLanguage": MessageLookupByLibrary.simpleMessage("English"),
         "facebookLogin":
             MessageLookupByLibrary.simpleMessage("LOGIN WITH FACEBOOK"),
         "googleLogin":
             MessageLookupByLibrary.simpleMessage("LOGIN WITH GOOGLE"),
+        "languagesText": MessageLookupByLibrary.simpleMessage("LANGUAGE"),
+        "logOut": MessageLookupByLibrary.simpleMessage("Logout"),
         "loginSlogan": MessageLookupByLibrary.simpleMessage(
             "WHERE BEAUTY MEETS THE UNIVERSE"),
-        "profile" :
-        MessageLookupByLibrary.simpleMessage("PROFILE"),
-        "previousOrders" :
-        MessageLookupByLibrary.simpleMessage("PREVIOUS ORDERS"),
-        "language" :
-        MessageLookupByLibrary.simpleMessage("LANGUAGE"),
-        "currentLanguage" :
-        MessageLookupByLibrary.simpleMessage("English"),
-        "logOut" :
-        MessageLookupByLibrary.simpleMessage("Logout"),
+        "previousOrdersText":
+            MessageLookupByLibrary.simpleMessage("PREVIOUS ORDERS"),
+        "profileText": MessageLookupByLibrary.simpleMessage("PROFILE")
       };
 }

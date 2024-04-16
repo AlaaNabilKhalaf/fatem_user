@@ -45,22 +45,26 @@ class AboutView extends StatelessWidget {
                  ),
                  SizedBox(height: 64.h,),
 
-                 RegularText(
-                   text: S.of(context).about,
-                     fontSize: 19,
-                     textColor: Colors.black,
-                     fontFamilyAr: arLight,
-                 maxLine: 6, fontFamilyEn: enExtraLight,)
+                 Padding(
+                   padding: const EdgeInsets.all(18.0),
+                   child: RegularText(
+                     text: S.of(context).about,
+                       fontSizeEn: 18.sp,fontSizeAr: 18.sp,
+                       textColor: Colors.black,
+                       fontFamilyAr: arLight,
+                   maxLine: 6, fontFamilyEn: enExtraLight,),
+                 )
 
                ],
              ),
            ),
            
-           const Padding(
-             padding: EdgeInsets.all(8.0),
+           Padding(
+             padding: const EdgeInsets.all(8.0),
              child: RegularText(
+               fontSizeAr: 11.sp,
                fontFamilyEn: enLight,
-                 fontSize: 11,
+                 fontSizeEn: 11.sp,
                  text: "Copyright©2024-Fatem- All rights Reserved",
                  textColor: Colors.black,
                  fontFamilyAr: enLight),
