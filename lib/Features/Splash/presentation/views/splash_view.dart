@@ -3,10 +3,11 @@ import 'package:fatem_users/Core/widgets/texts.dart';
 import 'package:fatem_users/Features/Profile/Views/profile_view.dart';
 import 'package:fatem_users/test.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../Core/constance.dart';
 import '../../../../Core/utils/assets_data.dart';
 import '../../../Auth/presentation/Views/login_view.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+
 
 class SplashView extends StatefulWidget {
   const SplashView({super.key});
@@ -22,7 +23,7 @@ class _SplashViewState extends State<SplashView> {
     Future.delayed(const Duration(seconds: 2),(){
 
       Navigator.pushReplacement(context, MaterialPageRoute(builder: (context ){
-        return token != null && token != "" ? const Test() : const ProfileView();
+        return token != null && token != "" ? const ProfileView() : const LoginView();
       }));
 
     });
@@ -52,11 +53,11 @@ class _SplashViewState extends State<SplashView> {
                   image: AssetImage(AssetsData.splashBackground, )
               )
           ),
-          child: const Center(child: Column(
+          child: Center(child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SvgImage(imagePath: AssetsData.logo),
-              RegularText(fontSize: 38, text: "FATEM", textColor: Colors.black, fontFamilyAr: ade, fontFamilyEn: ade,)
+              const SvgImage(imagePath: AssetsData.logo),
+              RegularText(fontSizeAr: 38.sp,fontSizeEn: 38.sp, text: "FATEM", textColor: Colors.black, fontFamilyAr: ade, fontFamilyEn: ade,)
             ],
           )),
         ),

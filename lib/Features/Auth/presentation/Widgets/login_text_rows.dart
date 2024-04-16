@@ -21,7 +21,7 @@ class FacebookButton extends StatelessWidget {
         SizedBox(width: 10.w,),
         SvgImage(imagePath: AssetsData.facebookIcon ,height: 50.h,width: 50.w, ),
         SizedBox(width: 5.w,),
-        RegularText(text: s.facebookLogin,fontSize: 15.sp,textColor: Colors.white,fontFamilyAr: arLight,fontFamilyEn: enExtraLight,),
+        RegularText(fontSizeAr: 18.sp,text: s.facebookLogin,fontSizeEn: 15.sp,textColor: Colors.white,fontFamilyAr: arRegular,fontFamilyEn: enLight,),
       ],
     );
   }
@@ -40,7 +40,7 @@ class GoogleButton extends StatelessWidget {
         SizedBox(width: 18.w,),
         SvgImage(imagePath: AssetsData.googleIcon , height: 30.h,width: 30.w,),
         SizedBox(width: 10.w,),
-        RegularText(text: s.googleLogin,fontSize: 15.sp,textColor: Colors.white,fontFamilyAr: arLight,fontFamilyEn: enExtraLight,),
+        RegularText(fontSizeAr:18.sp,text: s.googleLogin,fontSizeEn: 15.sp,textColor: Colors.white,fontFamilyAr: arRegular,fontFamilyEn: enLight,),
         // SizedBox(width: 5.h,),
       ],
     );

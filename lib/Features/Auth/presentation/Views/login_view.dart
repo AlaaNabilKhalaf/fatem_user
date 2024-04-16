@@ -29,9 +29,9 @@ class LoginView extends StatelessWidget {
           // crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             const SvgImage(imagePath: AssetsData.logo),
-            RegularText(fontSize: 38.sp, text: "FATEM", textColor: Colors.black, fontFamilyAr: ade, fontFamilyEn: ade,)
+            RegularText(fontSizeAr: 38.sp,fontSizeEn: 38.sp, text: "FATEM", textColor: Colors.black, fontFamilyAr: ade, fontFamilyEn: ade,)
             ,
-            RegularText(fontSize: 14.sp, text: s.loginSlogan,textColor: Colors.black,fontFamilyAr: arLight,maxLine: 2,fontFamilyEn: enExtraLight,),
+            RegularText(fontSizeAr: 16.sp,fontSizeEn: 14.sp, text: s.loginSlogan,textColor: Colors.black,fontFamilyAr: arLight,maxLine: 2,fontFamilyEn: enExtraLight,),
 
             SizedBox(height: 25.h,),
 

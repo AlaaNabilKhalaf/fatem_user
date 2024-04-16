@@ -21,7 +21,9 @@ class ProfileButton extends StatelessWidget{
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        RegularText(text: s.profileText, fontSize: 22.sp, textColor: Colors.black, fontFamilyAr: arRegular, fontFamilyEn: enRegular)
+        RegularText(
+            fontSizeAr: 31.sp,
+            text: s.profileText, fontSizeEn: 31.sp, textColor: Colors.black, fontFamilyAr: arRegular, fontFamilyEn: enLight)
       ],
     );
   }
@@ -41,8 +43,12 @@ class Account extends StatelessWidget{
         Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            RegularText(text: name!, fontSize: 14.sp, textColor: Colors.black, fontFamilyAr: arRegular, fontFamilyEn: enRegular),
-            RegularText(text: email!, fontSize: 8.sp, textColor: Colors.black, fontFamilyAr: arLight, fontFamilyEn: enLight)
+            RegularText(
+                fontSizeAr: 14.sp,
+                text: name!, fontSizeEn: 14.sp, textColor: Colors.black, fontFamilyAr: arRegular, fontFamilyEn: enLight),
+            RegularText(
+                fontSizeAr: 9.sp,
+                text: email!, fontSizeEn: 9.sp, textColor: Colors.black, fontFamilyAr: arLight, fontFamilyEn: enExtraLight)
           ],
         ),
       ],
@@ -65,7 +71,9 @@ class PreviousOrders extends StatelessWidget{
         SizedBox(width: 20.w,),
         SvgPicture.asset(AssetsData.previousOrders, width: 50.w,height: 50.h),
         SizedBox(width: 15.w,),
-        RegularText(text: s.previousOrdersText, fontSize: 14.sp, textColor: Colors.black, fontFamilyAr: arLight, fontFamilyEn: enLight)
+        RegularText(
+            fontSizeAr: 16.sp,
+            text: s.previousOrdersText, fontSizeEn: 14.sp, textColor: Colors.black, fontFamilyAr: arRegular, fontFamilyEn: enLight)
       ],
     );
   }
@@ -83,9 +91,13 @@ class Languages extends StatelessWidget{
         SizedBox(width: 20.w,),
         SvgPicture.asset(AssetsData.language, width: 50.w,height: 50.h),
         SizedBox(width: 15.w,),
-        RegularText(text: s.languagesText, fontSize: 14.sp, textColor: Colors.black, fontFamilyAr: arLight, fontFamilyEn: enLight),
+        RegularText(
+            fontSizeAr: 16.sp,
+            text: s.languagesText, fontSizeEn: 14.sp, textColor: Colors.black, fontFamilyAr: arRegular, fontFamilyEn: enLight),
         SizedBox(width: 65.w,),
-        RegularText(text: s.currentLanguage, fontSize: 8.sp, textColor: Colors.black, fontFamilyAr: arLight, fontFamilyEn: enLight)
+        RegularText(
+            fontSizeAr: 9.sp,
+            text: s.currentLanguage, fontSizeEn: 9.sp, textColor: Colors.black, fontFamilyAr: arLight, fontFamilyEn: enExtraLight)
       ],
     );
   }
@@ -102,7 +114,9 @@ class LogOut extends StatelessWidget{
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        RegularText(text: s.logOut, fontSize: 14.sp, textColor: Colors.black, fontFamilyAr: arRegular, fontFamilyEn: enRegular),
+        RegularText(
+            fontSizeAr: 17.sp,
+            text: s.logOut, fontSizeEn: 17.sp, textColor: Colors.black, fontFamilyAr: arLight, fontFamilyEn: enLight),
       ],
     );
   }

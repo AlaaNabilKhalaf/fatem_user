@@ -24,21 +24,17 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "about": MessageLookupByLibrary.simpleMessage(
             "يحكي الموسم الأول قصة البطل .حيث انه مجرد عالم اثار استخرج ترسا من قلعة مهجورة في بافاريا وهذا الدرع به حجر في وسطه عليه صورة ديك ثم تاتي عصابة اليد السوداء لتاخذ منه الحجر لكنه يرفض ويقاتلهم ثم يكتشف جاكي وعمه وابنة اخته ان هذا الحجر هو رمز الديك وبه قوة خارقة تسمح للشخص بالطيران . كما انه حجر واحد من 12 حجر منتشرة في العالم لكل حجر قوة خاصة هي : الديك والثور والافعى والارنب والتنين والخروف والحصان والكلب والخنزير والقرد والنمر والجرذ"),
+        "currentLanguage": MessageLookupByLibrary.simpleMessage("العربية"),
         "facebookLogin":
             MessageLookupByLibrary.simpleMessage("تسجيل الدخول بفيسبوك"),
         "googleLogin":
             MessageLookupByLibrary.simpleMessage("تسجيل الدخول بجوجل"),
+        "languagesText": MessageLookupByLibrary.simpleMessage("اللغة"),
+        "logOut": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
         "loginSlogan":
             MessageLookupByLibrary.simpleMessage("حيث يلتقي الجمال والكون"),
-        "profile" :
-            MessageLookupByLibrary.simpleMessage("الحساب"),
-        "previousOrders" :
-        MessageLookupByLibrary.simpleMessage("الطلبات السابقه"),
-        "language" :
-        MessageLookupByLibrary.simpleMessage("اللغة"),
-        "currentLanguage" :
-        MessageLookupByLibrary.simpleMessage("العربية"),
-        "logOut" :
-        MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
+        "previousOrdersText":
+            MessageLookupByLibrary.simpleMessage("الطلبات السابقه"),
+        "profileText": MessageLookupByLibrary.simpleMessage("الحساب")
       };
 }
