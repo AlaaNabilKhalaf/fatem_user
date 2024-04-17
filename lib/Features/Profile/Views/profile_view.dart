@@ -1,6 +1,6 @@
-import 'dart:developer';
+import 'dart:math';
 import 'dart:ui';
-
+import 'package:fatem_users/Core/widgets/ClippedShadowButton.dart';
 import 'package:fatem_users/Core/widgets/back_button.dart';
 import 'package:fatem_users/Core/widgets/image_svg.dart';
 import 'package:fatem_users/Features/About/presentation/views/about_view.dart';
@@ -33,26 +33,31 @@ class ProfileGradButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    return Material(
-        surfaceTintColor: Colors.transparent,
-        color: Colors.transparent,
-        elevation: 20.h,
-        clipBehavior: Clip.antiAliasWithSaveLayer,
-        type: MaterialType.button,
-        borderRadius: BorderRadius.circular(30.w),
-        shadowColor: Colors.black54.withOpacity(0.5),
+    return ClippedShadowButton(
+        boxShadow: shadow,
+        shadowHeight: 3.h,
+        height: 68.h,
+        width: 294.w,
+        shadowRadius: 25.w,
+        cutRadius: 18.w,
+        heightPercentage: 0.97,
+        shouldClip: true,
 
         child: GradButton(
           width: 295.w,
           height: 62.h,
           buttonColors: [
-            gradColor[0].withOpacity(0.6),
+            gradColor[0].withOpacity(0.4),
             gradColor[1].withOpacity(0.4)
           ],
           borderRadius: 25.w,
           onTap: onTap,
-          boxShadow: [],
           text: passedWidget,
+          border: Border.all(
+              color : const Color(0xffDCCEB8),
+              width: 1.w,
+              style: BorderStyle.solid
+          ),
         )
     );
   }
@@ -105,28 +110,49 @@ class ProfileView extends StatelessWidget
                   child: const MyBackButton(),
               ),
 
-
-
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
 
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(30.w),
-                    clipBehavior: Clip.antiAlias,
-                    child: BackdropFilter(
-                      filter: ImageFilter.blur(
-                        sigmaX: 2.w,
-                        sigmaY: 2.h,
+
+                  ClippedShadowButton(
+                    boxShadow: shadow,
+                    shadowHeight: 3.h,
+                    height: 68.h,
+                    width: 294.w,
+                    shadowRadius: 25.w,
+                    cutRadius: 18.w,
+                    heightPercentage: 0.97,
+                    shouldClip: true,
+
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(25.w),
+                      clipBehavior: Clip.antiAlias,
+                      child: BackdropFilter(
+                        filter: ImageFilter.blur(
+                          sigmaX: 2,
+                          sigmaY: 2,
+                        ),
+                        child: GradButton(
+                              width: 295.w,
+                              height: 62.h,
+                              buttonColors: [
+                                gradColor[0].withOpacity(0.4),
+                                gradColor[1].withOpacity(0.4)
+                              ],
+                              borderRadius: 25.w,
+                              onTap: (){},
+                              text: const ProfileButton(),
+                              border: Border.all(
+                                  color : const Color(0xffDCCEB8),
+                                  width: 1.w,
+                                  style: BorderStyle.solid
+                              ),
+                            )
+                        )
                       ),
-                      child: ProfileGradButton(
-                        passedWidget: const ProfileButton(),
-                        onTap: () {
-                          return null;
-                        },
-                      ),
-                    ),
                   ),
+
 
                   SizedBox(
                     height: 71.h,
@@ -148,7 +174,7 @@ class ProfileView extends StatelessWidget
                   ProfileGradButton(
                     passedWidget: const PreviousOrders(),
                     onTap: () {
-                      log("Pressed");
+                      print(avatar);
                     },
                   ),
 
@@ -158,22 +184,22 @@ class ProfileView extends StatelessWidget
 
                   ProfileGradButton(
                       passedWidget: const Languages(),
-                      onTap: (){
+                      onTap: () async {
                         switch(Intl.getCurrentLocale())
                         {
                           case "en":
-                            log("EN");
                             S.delegate.load(const Locale("ar"));
+                            await WidgetsBinding.instance.performReassemble();
                             break;
                           case "ar":
-                            log("AR");
                             S.delegate.load(const Locale("en"));
+                            await WidgetsBinding.instance.performReassemble();
                             break;
                         }
                       }),
 
                   SizedBox(
-                    height: 35.h,
+                    height: 25.h,
                   ),
 
                   GestureDetector(

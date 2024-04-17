@@ -70,10 +70,10 @@ class S {
     );
   }
 
-  /// `WHERE BEAUTY MEETS THE UNIVERSE`
+  /// `WHERE BEAUTY MEETS THE UNIVERSE!`
   String get loginSlogan {
     return Intl.message(
-      'WHERE BEAUTY MEETS THE UNIVERSE',
+      'WHERE BEAUTY MEETS THE UNIVERSE!',
       name: 'loginSlogan',
       desc: '',
       args: [],

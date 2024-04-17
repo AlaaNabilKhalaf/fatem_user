@@ -43,7 +43,7 @@ class _SplashViewState extends State<SplashView> {
       body: GestureDetector(
         onTap: (){
           Navigator.pushReplacement(context, MaterialPageRoute(builder: (context ){
-            return token != null && token != "" ? const Test() : const ProfileView();
+            return token != null && token != "" ? const ProfileView() : const LoginView();
           }));
         },
         child: Container(

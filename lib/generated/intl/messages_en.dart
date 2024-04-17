@@ -32,7 +32,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "languagesText": MessageLookupByLibrary.simpleMessage("LANGUAGE"),
         "logOut": MessageLookupByLibrary.simpleMessage("Logout"),
         "loginSlogan": MessageLookupByLibrary.simpleMessage(
-            "WHERE BEAUTY MEETS THE UNIVERSE"),
+            "WHERE BEAUTY MEETS THE UNIVERSE!"),
         "previousOrdersText":
             MessageLookupByLibrary.simpleMessage("PREVIOUS ORDERS"),
         "profileText": MessageLookupByLibrary.simpleMessage("PROFILE")

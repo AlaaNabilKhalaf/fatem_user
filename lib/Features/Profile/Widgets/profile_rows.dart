@@ -1,6 +1,7 @@
 import 'package:fatem_users/Core/constance.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_svg/svg.dart';
@@ -37,18 +38,40 @@ class Account extends StatelessWidget{
     final s = S.of(context);
 
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        ///SvgPicture.network(avatar!),
+
+        SizedBox(width: 20.w),
+
+        CircleAvatar(
+          radius: 17.5.w,
+          backgroundColor: Colors.black,
+          child:  Padding(
+            padding: EdgeInsets.all(1.5.w),
+            child: ClipOval(
+              child: Image.network(
+                avatar!,
+                isAntiAlias: true,
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
+        ),
+
+        SizedBox(width: 7.w),
         Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+
+            SizedBox(height: 16.h),
             RegularText(
                 fontSizeAr: 14.sp,
-                text: name!, fontSizeEn: 14.sp, textColor: Colors.black, fontFamilyAr: arRegular, fontFamilyEn: enLight),
+                text: name!, fontSizeEn: 14.sp, textColor: Colors.black, fontFamilyAr: arRegular, fontFamilyEn: enRegular),
+
             RegularText(
                 fontSizeAr: 9.sp,
-                text: email!, fontSizeEn: 9.sp, textColor: Colors.black, fontFamilyAr: arLight, fontFamilyEn: enExtraLight)
+                text: email!, fontSizeEn: 9.sp, textColor: Colors.black, fontFamilyAr: arRegular, fontFamilyEn: enRegular)
           ],
         ),
       ],
@@ -69,7 +92,7 @@ class PreviousOrders extends StatelessWidget{
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
         SizedBox(width: 20.w,),
-        SvgPicture.asset(AssetsData.previousOrders, width: 50.w,height: 50.h),
+        SvgPicture.asset(AssetsData.previousOrders, width: 38.w,height: 38.h),
         SizedBox(width: 15.w,),
         RegularText(
             fontSizeAr: 16.sp,
@@ -89,7 +112,7 @@ class Languages extends StatelessWidget{
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
         SizedBox(width: 20.w,),
-        SvgPicture.asset(AssetsData.language, width: 50.w,height: 50.h),
+        SvgPicture.asset(AssetsData.language, width: 35.w,height: 35.h),
         SizedBox(width: 15.w,),
         RegularText(
             fontSizeAr: 16.sp,

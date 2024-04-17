@@ -9,7 +9,8 @@ class GradButton extends StatelessWidget {
     required this.buttonColors,
     required this.borderRadius,
     required this.onTap,
-    required this.boxShadow,
+    this.boxShadow,
+    this.border
   });
 
   final Widget text ;
@@ -18,7 +19,9 @@ class GradButton extends StatelessWidget {
   final List<Color> buttonColors ;
   final double borderRadius ;
   final Function onTap;
-  final List<BoxShadow> boxShadow;
+  final List<BoxShadow>? boxShadow;
+  final BoxBorder? border;
+
 
   @override
   Widget build(BuildContext context) {
@@ -33,6 +36,7 @@ class GradButton extends StatelessWidget {
           gradient: LinearGradient(colors: buttonColors),
           borderRadius: BorderRadius.circular(borderRadius),
           boxShadow: boxShadow,
+          border: border
         ),
         child: text,
       ),

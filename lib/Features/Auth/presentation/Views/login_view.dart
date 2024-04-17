@@ -1,3 +1,4 @@
+import 'package:fatem_users/Core/widgets/ClippedShadowButton.dart';
 import 'package:fatem_users/Core/widgets/image_svg.dart';
 import 'package:fatem_users/Features/About/presentation/views/about_view.dart';
 import 'package:flutter/material.dart';
@@ -31,38 +32,65 @@ class LoginView extends StatelessWidget {
             const SvgImage(imagePath: AssetsData.logo),
             RegularText(fontSizeAr: 38.sp,fontSizeEn: 38.sp, text: "FATEM", textColor: Colors.black, fontFamilyAr: ade, fontFamilyEn: ade,)
             ,
-            RegularText(fontSizeAr: 16.sp,fontSizeEn: 14.sp, text: s.loginSlogan,textColor: Colors.black,fontFamilyAr: arLight,maxLine: 2,fontFamilyEn: enExtraLight,),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 24.w),
+              child: RegularText(letterSpacing: -1,fontSizeAr: 13.sp,fontSizeEn: 13.sp, text: s.loginSlogan,textColor: Colors.black,fontFamilyAr: arLight,maxLine: 2,fontFamilyEn: enExtraLight,),
+            ),
 
             SizedBox(height: 25.h,),
 
-            RegularButton(
-              height: 45.h,
-              width: 290.w,
-              borderRadius: 16.w,
-              buttonColor: buttonColor,
-              onTap: () {
-                signInWithGoogle().then((value) => {
-                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> const AboutView()))
-                }) ;
-    // ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Container(
-    // color: Colors.redAccent,
-    // alignment: Alignment.center,
-    // height: 25.h,
-    // child: const Text("Something went wrong try again later"),
-    // ))) ;
-              },
-              text: const GoogleButton(),
+
+
+            ClippedShadowButton(
+              boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.3),  blurRadius: 4, offset: const Offset(0, 4))],
+              shadowHeight: 2.h,
+              height: 38.h,
+              width: 289.w,
+              shadowRadius: 16.w,
+              cutRadius: 12.w,
+              heightPercentage: 0.9,
+              shouldClip: true,
+
+              child: RegularButton(
+                height: 37.h,
+                width: 289.w,
+                borderRadius: 16.w,
+                buttonColor: buttonColor,
+                onTap: () {
+                  signInWithGoogle().then((value) => {
+                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> const AboutView()))
+                  }) ;
+                  // ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Container(
+                  // color: Colors.redAccent,
+                  // alignment: Alignment.center,
+                  // height: 25.h,
+                  // child: const Text("Something went wrong try again later"),
+                  // ))) ;
+                },
+                text: const GoogleButton(),
+              ),
             ),
 
             SizedBox(height: 15.h,),
 
-            RegularButton(
-              height: 42.h,
-              width: 290.w,
-              borderRadius: 16.w,
-              buttonColor: buttonColor,
-              onTap: (){},
-              text: const FacebookButton(),
+            ClippedShadowButton(
+              boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.3),  blurRadius: 4, offset: const Offset(0, 4))],
+              shadowHeight: 2.h,
+              height: 38.h,
+              width: 289.w,
+              shadowRadius: 16.w,
+              cutRadius: 12.w,
+              heightPercentage: 0.9,
+              shouldClip: true,
+
+              child: RegularButton(
+                height: 37.h,
+                width: 289.w,
+                borderRadius: 16.w,
+                buttonColor: buttonColor,
+                onTap: (){},
+                text: const FacebookButton(),
+              ),
             ),
           ],
         ),
