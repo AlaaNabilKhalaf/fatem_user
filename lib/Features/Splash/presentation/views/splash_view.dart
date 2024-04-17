@@ -1,7 +1,6 @@
 import 'package:fatem_users/Core/widgets/image_svg.dart';
 import 'package:fatem_users/Core/widgets/texts.dart';
 import 'package:fatem_users/Features/Profile/Views/profile_view.dart';
-import 'package:fatem_users/test.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../Core/constance.dart';

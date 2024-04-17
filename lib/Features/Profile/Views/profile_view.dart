@@ -1,4 +1,3 @@
-import 'dart:math';
 import 'dart:ui';
 import 'package:fatem_users/Core/widgets/ClippedShadowButton.dart';
 import 'package:fatem_users/Core/widgets/back_button.dart';
@@ -73,7 +72,6 @@ class ProfileView extends StatelessWidget
 
   @override
   Widget build(BuildContext context) {
-    final s = S.of(context);
 
 
     return Scaffold(

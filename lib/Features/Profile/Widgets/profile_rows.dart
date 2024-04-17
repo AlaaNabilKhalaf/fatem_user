@@ -35,7 +35,6 @@ class Account extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-    final s = S.of(context);
 
     return Row(
       mainAxisAlignment: MainAxisAlignment.start,
