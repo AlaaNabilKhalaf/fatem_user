@@ -139,6 +139,36 @@ class S {
       args: [],
     );
   }
+
+  /// `NO PREVIOUS ORDERS`
+  String get noPreviousOrders {
+    return Intl.message(
+      'NO PREVIOUS ORDERS',
+      name: 'noPreviousOrders',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `BAG`
+  String get bag {
+    return Intl.message(
+      'BAG',
+      name: 'bag',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `YOUR BAG IS STILL EMPTY`
+  String get bagEmpty {
+    return Intl.message(
+      'YOUR BAG IS STILL EMPTY',
+      name: 'bagEmpty',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

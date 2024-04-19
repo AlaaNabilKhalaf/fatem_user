@@ -81,6 +81,8 @@ flutter:
     - assets/fonts/
     - assets/images/profile_view/
     - assets/images/bottom_nav_icons/
+    - assets/images/previous_orders_view/
+    - assets/images/bag_view/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

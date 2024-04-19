@@ -7,11 +7,11 @@ class MyBackButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 20.w),
+      padding: EdgeInsets.symmetric(horizontal: 24.w),
       child: IconButton(
-        icon: const Icon(Icons.arrow_back_outlined,
+        icon: Icon(Icons.arrow_back_outlined,
           color: Colors.black,
-          size: 30,
+          size: 26.h,
         textDirection: TextDirection.ltr,
         ),
         onPressed: () {

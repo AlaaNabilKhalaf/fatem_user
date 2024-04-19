@@ -24,6 +24,9 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "about": MessageLookupByLibrary.simpleMessage(
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry."),
+        "bag": MessageLookupByLibrary.simpleMessage("BAG"),
+        "bagEmpty":
+            MessageLookupByLibrary.simpleMessage("YOUR BAG IS STILL EMPTY"),
         "currentLanguage": MessageLookupByLibrary.simpleMessage("English"),
         "facebookLogin":
             MessageLookupByLibrary.simpleMessage("LOGIN WITH FACEBOOK"),
@@ -33,6 +36,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "logOut": MessageLookupByLibrary.simpleMessage("Logout"),
         "loginSlogan": MessageLookupByLibrary.simpleMessage(
             "WHERE BEAUTY MEETS THE UNIVERSE!"),
+        "noPreviousOrders":
+            MessageLookupByLibrary.simpleMessage("NO PREVIOUS ORDERS"),
         "previousOrdersText":
             MessageLookupByLibrary.simpleMessage("PREVIOUS ORDERS"),
         "profileText": MessageLookupByLibrary.simpleMessage("PROFILE")

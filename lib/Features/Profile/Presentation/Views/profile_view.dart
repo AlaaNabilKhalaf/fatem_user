@@ -1,5 +1,5 @@
 import 'dart:ui';
-import 'package:fatem_users/Core/widgets/ClippedShadowButton.dart';
+import 'package:fatem_users/Core/widgets/Blurred_Clipped_Button.dart';
 import 'package:fatem_users/Core/widgets/back_button.dart';
 import 'package:fatem_users/Core/widgets/image_svg.dart';
 import 'package:fatem_users/Features/About/presentation/views/about_view.dart';
@@ -11,10 +11,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import '../../../../Core/constance.dart';
 import '../../../../Core/utils/assets_data.dart';
-import '../../../../Core/widgets/custom_grad_button.dart';
 import '../../../../generated/l10n.dart';
 import 'package:intl/intl.dart';
-import '../../Auth/presentation/Controller/AuthLocal/auth_cache_network.dart';
+import '../../../Auth/presentation/Controller/AuthLocal/auth_cache_network.dart';
+import '../../../PreviousOrders/Presentation/Views/previous_orders_view.dart';
 import '../Widgets/profile_rows.dart';
 
 
@@ -32,32 +32,31 @@ class ProfileGradButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    return ClippedShadowButton(
-        boxShadow: shadow,
-        shadowHeight: 3.h,
-        height: 68.h,
-        width: 294.w,
+    return BlurredClippedButton(
+        passedWidget: passedWidget,
+        onTap: onTap,
+        shadow: shadow,
+        shadowThickness: 3.h,
         shadowRadius: 25.w,
         cutRadius: 18.w,
-        heightPercentage: 0.97,
+        shadowHeight: 68.h,
+        shadowWidth: 294.w,
+        shadowHeightPercentage: 0.97,
         shouldClip: true,
-
-        child: GradButton(
-          width: 295.w,
-          height: 62.h,
-          buttonColors: [
-            gradColor[0].withOpacity(0.4),
-            gradColor[1].withOpacity(0.4)
-          ],
-          borderRadius: 25.w,
-          onTap: onTap,
-          text: passedWidget,
-          border: Border.all(
-              color : const Color(0xffDCCEB8),
-              width: 1.w,
-              style: BorderStyle.solid
-          ),
-        )
+        buttonColors: [
+          gradColor[0].withOpacity(0.4),
+          gradColor[1].withOpacity(0.4)
+        ],
+        buttonClipRadius: 25.w,
+        sigmaX: 2,
+        sigmaY: 2,
+        buttonHeight: 62.h,
+        buttonWidth: 295.w,
+        buttonRadius: 25.w,
+        hasBorder: true,
+        borderColor: const Color(0xffDCCEB8),
+        borderWidth: 1.w,
+        borderStyle: BorderStyle.solid,
     );
   }
 }
@@ -88,22 +87,22 @@ class ProfileView extends StatelessWidget
             alignment: AlignmentDirectional.center,
             children: [
               Positioned(
-                  top: 15.h,
-                  right: 2.w,
+                  top: 20.h,
+                  right: 29.w,
                   child: GestureDetector(
                     onTap: (){
                       Navigator.push(context, MaterialPageRoute(builder: (context)=> const AboutView()));
                     },
                     child: SvgImage(
                       imagePath: AssetsData.logoEnglish,
-                        width: 100.w,
-                        height: 100.h),
+                        width: 61.w,
+                        height: 90.h),
                   )
               ),
 
 
               Positioned(
-                  top: 45.h,
+                  top: 39.h,
                   left: 0.w,
                   child: const MyBackButton(),
               ),
@@ -112,45 +111,48 @@ class ProfileView extends StatelessWidget
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
 
-
-                  ClippedShadowButton(
-                    boxShadow: shadow,
-                    shadowHeight: 3.h,
-                    height: 68.h,
-                    width: 294.w,
-                    shadowRadius: 25.w,
-                    cutRadius: 18.w,
-                    heightPercentage: 0.97,
-                    shouldClip: true,
-
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(25.w),
-                      clipBehavior: Clip.antiAlias,
-                      child: BackdropFilter(
-                        filter: ImageFilter.blur(
-                          sigmaX: 2,
-                          sigmaY: 2,
-                        ),
-                        child: GradButton(
-                              width: 295.w,
-                              height: 62.h,
-                              buttonColors: [
-                                gradColor[0].withOpacity(0.4),
-                                gradColor[1].withOpacity(0.4)
-                              ],
-                              borderRadius: 25.w,
-                              onTap: (){},
-                              text: const ProfileButton(),
-                              border: Border.all(
-                                  color : const Color(0xffDCCEB8),
-                                  width: 1.w,
-                                  style: BorderStyle.solid
-                              ),
-                            )
-                        )
-                      ),
+                  ProfileGradButton(
+                      passedWidget: const ProfileButton(),
+                      onTap: (){}
                   ),
 
+                  // ClippedShadowButton(
+                  //   boxShadow: shadow,
+                  //   shadowHeight: 3.h,
+                  //   height: 68.h,
+                  //   width: 294.w,
+                  //   shadowRadius: 25.w,
+                  //   cutRadius: 18.w,
+                  //   heightPercentage: 0.97,
+                  //   shouldClip: true,
+                  //
+                  //   child: ClipRRect(
+                  //     borderRadius: BorderRadius.circular(25.w),
+                  //     clipBehavior: Clip.antiAlias,
+                  //     child: BackdropFilter(
+                  //       filter: ImageFilter.blur(
+                  //         sigmaX: 2,
+                  //         sigmaY: 2,
+                  //       ),
+                  //       child: GradButton(
+                  //             width: 295.w,
+                  //             height: 62.h,
+                  //             buttonColors: [
+                  //               gradColor[0].withOpacity(0.4),
+                  //               gradColor[1].withOpacity(0.4)
+                  //             ],
+                  //             borderRadius: 25.w,
+                  //             onTap: (){},
+                  //             text: const ProfileButton(),
+                  //             border: Border.all(
+                  //                 color : const Color(0xffDCCEB8),
+                  //                 width: 1.w,
+                  //                 style: BorderStyle.solid
+                  //             ),
+                  //           )
+                  //       )
+                  //     ),
+                  // ),
 
                   SizedBox(
                     height: 71.h,
@@ -163,21 +165,19 @@ class ProfileView extends StatelessWidget
                         },
                   ),
 
-
                   SizedBox(
-                    height: 35.h,
+                    height: 17.h,
                   ),
-
 
                   ProfileGradButton(
                     passedWidget: const PreviousOrders(),
                     onTap: () {
-                      print(avatar);
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => const PreviousOrdersView()));
                     },
                   ),
 
                   SizedBox(
-                    height: 35.h,
+                    height: 17.h,
                   ),
 
                   ProfileGradButton(
@@ -197,7 +197,7 @@ class ProfileView extends StatelessWidget
                       }),
 
                   SizedBox(
-                    height: 25.h,
+                    height: 26.h,
                   ),
 
                   GestureDetector(
@@ -219,7 +219,7 @@ class ProfileView extends StatelessWidget
                     },
                     child: const LogOut(),
                   ),
-                ],
+                ]
               ),
             ],
           ),

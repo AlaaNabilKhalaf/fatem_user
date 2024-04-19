@@ -7,5 +7,8 @@
   "previousOrdersText" : "PREVIOUS ORDERS",
   "languagesText" : "LANGUAGE",
   "currentLanguage" : "English",
-  "logOut" : "Logout"
+  "logOut" : "Logout",
+  "noPreviousOrders" : "NO PREVIOUS ORDERS",
+  "bag" : "BAG",
+  "bagEmpty" : "YOUR BAG IS STILL EMPTY"
 }

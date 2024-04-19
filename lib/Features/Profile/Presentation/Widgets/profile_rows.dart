@@ -5,9 +5,11 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_svg/svg.dart';
+import '../../../../Core/utils/app_logger.dart';
 import '../../../../Core/utils/assets_data.dart';
 import '../../../../Core/widgets/texts.dart';
 import '../../../../generated/l10n.dart';
+
 
 
 
@@ -104,9 +106,11 @@ class PreviousOrders extends StatelessWidget{
 
 class Languages extends StatelessWidget{
   const Languages({super.key});
+
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
+
     return Row(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
@@ -117,13 +121,18 @@ class Languages extends StatelessWidget{
             fontSizeAr: 16.sp,
             text: s.languagesText, fontSizeEn: 14.sp, textColor: Colors.black, fontFamilyAr: arRegular, fontFamilyEn: enLight),
         SizedBox(width: 65.w,),
+        extraSizedBox(80.w),
         RegularText(
             fontSizeAr: 9.sp,
-            text: s.currentLanguage, fontSizeEn: 9.sp, textColor: Colors.black, fontFamilyAr: arLight, fontFamilyEn: enExtraLight)
+            text: s.currentLanguage, fontSizeEn: 9.sp, textColor: Colors.black, fontFamilyAr: arLight, fontFamilyEn: enExtraLight),
       ],
     );
   }
 
+
+  Widget extraSizedBox(double width){
+    return isArabic()? SizedBox(width: width) : const SizedBox();
+  }
 }
 
 
@@ -142,5 +151,4 @@ class LogOut extends StatelessWidget{
       ],
     );
   }
-
 }

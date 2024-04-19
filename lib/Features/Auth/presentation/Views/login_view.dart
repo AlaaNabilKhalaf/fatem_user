@@ -1,6 +1,5 @@
 import 'package:fatem_users/Core/widgets/ClippedShadowButton.dart';
 import 'package:fatem_users/Core/widgets/image_svg.dart';
-import 'package:fatem_users/Features/About/presentation/views/about_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../Core/constance.dart';
@@ -8,6 +7,7 @@ import '../../../../Core/utils/assets_data.dart';
 import '../../../../Core/widgets/texts.dart';
 import '../../../../Core/widgets/custom_button.dart';
 import '../../../../generated/l10n.dart';
+import '../../../Profile/Presentation/Views/profile_view.dart';
 import '../Controller/Auth/google_auth.dart';
 import '../Widgets/login_text_rows.dart';
 
@@ -58,7 +58,7 @@ class LoginView extends StatelessWidget {
                 buttonColor: buttonColor,
                 onTap: () {
                   signInWithGoogle().then((value) => {
-                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> const AboutView()))
+                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> const ProfileView()))
                   }) ;
                   // ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Container(
                   // color: Colors.redAccent,

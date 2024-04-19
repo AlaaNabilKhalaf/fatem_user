@@ -14,7 +14,6 @@ class BackgroundPage extends StatelessWidget
   const BackgroundPage({
     super.key,
     required this.bodyWidget,
-    required this.upperWidget,
     this.topPosition,
     this.leftPosition,
     this.rightPosition,
@@ -23,7 +22,6 @@ class BackgroundPage extends StatelessWidget
 
 
   final Widget bodyWidget;
-  final Widget upperWidget;
   final double? topPosition;
   final double? leftPosition;
   final double? rightPosition;
@@ -44,18 +42,18 @@ class BackgroundPage extends StatelessWidget
           alignment: AlignmentDirectional.center,
           children: [
 
-            GestureDetector(
-              child: Positioned(
-                  top: 15.h,
-                  right: 2.w,
+            Positioned(
+                top: 20.h,
+                right: 29.w,
+                child: GestureDetector(
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=> const AboutView()));
+                  },
                   child: SvgImage(
                       imagePath: AssetsData.logoEnglish,
-                      width: 100.w,
-                      height: 100.h)
-              ),
-              onTap: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context)=> const AboutView()));
-              },
+                      width: 61.w,
+                      height: 90.h),
+                )
             ),
 
 
@@ -65,6 +63,8 @@ class BackgroundPage extends StatelessWidget
 
               child: const MyBackButton(),
             ),
+
+            bodyWidget,
           ],
         ),
       ),

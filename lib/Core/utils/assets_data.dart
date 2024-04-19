@@ -24,4 +24,12 @@ class AssetsData{
   // PROFILE VIEW
   static const String previousOrders = "assets/images/profile_view/previous_orders.svg";
   static const String language = "assets/images/profile_view/language.svg";
+
+
+  // PREVIOUS ORDERS VIEW
+  static const String noOrders = "assets/images/previous_orders_view/Order_Cancel.png";
+
+
+  // BAG VIEW
+  static const String emptyBag = "assets/images/bag_view/bag_empty.png";
 }
