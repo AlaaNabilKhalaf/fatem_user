@@ -18,7 +18,13 @@ class AssetsData{
   static const String profileIcon = "assets/images/bottom_nav_icons/profile_icon.svg" ;
   static const String bagIcon = "assets/images/bottom_nav_icons/bag_icon.svg" ;
   static const String favoriteIcon = "assets/images/bottom_nav_icons/favorite_icon.svg" ;
-  static const String homeIcon = "assets/images/bottom_nav_icons/home_icon.svg" ;
+  static const String homeIcon = "assets/images/bottom_nav_icons/home_icon2.svg" ;
+  static const List<String> bottomNavIcons = [
+    "assets/images/bottom_nav_icons/profile_icon.svg",
+    "assets/images/bottom_nav_icons/favorite_icon.svg",
+    "assets/images/bottom_nav_icons/bag_icon.svg",
+    "assets/images/bottom_nav_icons/home_icon2.svg"
+  ];
 
 
   // PROFILE VIEW

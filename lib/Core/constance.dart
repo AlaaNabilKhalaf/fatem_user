@@ -1,7 +1,4 @@
-import 'dart:ui';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 // Cache Data
 String? token ;
@@ -12,8 +9,17 @@ String? avatar ;
 String? cachedLang;
 
 
+//BottomNavBar Pages indices (Depends on bottomNavIcons List)
+//0-> Profile, 1-> Fav, 2-> Bag, 3-> Home
+int pageIndex = -1;
+
+const List<List<int>> bottomNavBarIconSize = [[35,35], [27,31], [31,31], [30,30]];
+
+
 // Colors
-const buttonColor = Color(0xffC69670);
+const Color buttonColor = Color(0xffC69670);
+const Color bottomNaviBarColor = Color(0xFFB79D7F);
+const Color bottomNaviBarBorderColor = Color(0xFF886552);
 const List<Color> gradColor= [Color(0xffD5C5A9), Color(0xffF4ECDD)];
 List<BoxShadow> shadow = [BoxShadow(color: Colors.black.withOpacity(0.25),  blurRadius: 6, offset: const Offset(0, 4))];
 

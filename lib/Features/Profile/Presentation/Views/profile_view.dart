@@ -11,6 +11,7 @@ import 'package:google_sign_in/google_sign_in.dart';
 import '../../../../Core/constance.dart';
 import '../../../../Core/utils/assets_data.dart';
 import '../../../Auth/presentation/Controller/AuthLocal/auth_cache_network.dart';
+import '../../../Home/Presentation/Views/bottom_navigation_view.dart';
 import '../../../PreviousOrders/Presentation/Views/previous_orders_view.dart';
 import '../Widgets/profile_rows.dart';
 
@@ -73,6 +74,8 @@ class ProfileView extends StatelessWidget
     final cubit = BlocProvider.of<LangCubit>(context);
 
     return Scaffold(
+      extendBody: true,
+      bottomNavigationBar: const BottomNavigationView(),
       body: Container(
         width: double.infinity,
         height: double.infinity,
@@ -114,44 +117,6 @@ class ProfileView extends StatelessWidget
                       passedWidget: const ProfileButton(),
                       onTap: (){}
                   ),
-
-                  // ClippedShadowButton(
-                  //   boxShadow: shadow,
-                  //   shadowHeight: 3.h,
-                  //   height: 68.h,
-                  //   width: 294.w,
-                  //   shadowRadius: 25.w,
-                  //   cutRadius: 18.w,
-                  //   heightPercentage: 0.97,
-                  //   shouldClip: true,
-                  //
-                  //   child: ClipRRect(
-                  //     borderRadius: BorderRadius.circular(25.w),
-                  //     clipBehavior: Clip.antiAlias,
-                  //     child: BackdropFilter(
-                  //       filter: ImageFilter.blur(
-                  //         sigmaX: 2,
-                  //         sigmaY: 2,
-                  //       ),
-                  //       child: GradButton(
-                  //             width: 295.w,
-                  //             height: 62.h,
-                  //             buttonColors: [
-                  //               gradColor[0].withOpacity(0.4),
-                  //               gradColor[1].withOpacity(0.4)
-                  //             ],
-                  //             borderRadius: 25.w,
-                  //             onTap: (){},
-                  //             text: const ProfileButton(),
-                  //             border: Border.all(
-                  //                 color : const Color(0xffDCCEB8),
-                  //                 width: 1.w,
-                  //                 style: BorderStyle.solid
-                  //             ),
-                  //           )
-                  //       )
-                  //     ),
-                  // ),
 
                   SizedBox(
                     height: 71.h,

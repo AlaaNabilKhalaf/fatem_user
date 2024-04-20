@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../Core/constance.dart';
 import '../../../../Core/utils/assets_data.dart';
-import '../../../Auth/presentation/Views/login_view.dart';
 import '../../../Profile/Presentation/Views/profile_view.dart';
 
 
@@ -22,7 +21,7 @@ class _SplashViewState extends State<SplashView> {
     Future.delayed(const Duration(seconds: 2),(){
 
       Navigator.pushReplacement(context, MaterialPageRoute(builder: (context ){
-        return token != null && token != "" ? const ProfileView() : const LoginView();
+        return token != null && token != "" ? const ProfileView() : const ProfileView();
       }));
 
     });
@@ -42,7 +41,7 @@ class _SplashViewState extends State<SplashView> {
       body: GestureDetector(
         onTap: (){
           Navigator.pushReplacement(context, MaterialPageRoute(builder: (context ){
-            return token != null && token != "" ? const ProfileView() : const LoginView();
+            return token != null && token != "" ? const ProfileView() : const ProfileView();
           }));
         },
         child: Container(

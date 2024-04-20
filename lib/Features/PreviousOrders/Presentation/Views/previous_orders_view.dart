@@ -1,4 +1,5 @@
 import 'package:fatem_users/Core/widgets/Blurred_Clipped_Button.dart';
+import 'package:fatem_users/Features/Home/Presentation/Views/bottom_navigation_view.dart';
 import 'package:fatem_users/Features/PreviousOrders/Presentation/Widgets/previous_orders_rows.dart';
 import 'package:fatem_users/Features/Profile/Presentation/Views/profile_view.dart';
 import 'package:flutter/cupertino.dart';
@@ -17,6 +18,7 @@ class PreviousOrdersView extends StatelessWidget
   Widget build(BuildContext context)
   {
     return BackgroundPage(
+      bottomNavigationBar: const BottomNavigationView(),
       topPosition: 39.h,
       leftPosition: 0.w,
       bodyWidget: Column(

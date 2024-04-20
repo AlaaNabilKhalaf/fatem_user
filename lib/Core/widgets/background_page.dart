@@ -1,9 +1,7 @@
-import 'package:flutter/cupertino.dart';
+import 'package:fatem_users/Core/widgets/back_button.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../Features/About/presentation/views/about_view.dart';
-import '../../Features/About/presentation/widgets/back_button.dart';
 import '../utils/assets_data.dart';
 import 'image_svg.dart';
 
@@ -13,6 +11,7 @@ class BackgroundPage extends StatelessWidget
 {
   const BackgroundPage({
     super.key,
+    required this.bottomNavigationBar,
     required this.bodyWidget,
     this.topPosition,
     this.leftPosition,
@@ -20,7 +19,7 @@ class BackgroundPage extends StatelessWidget
   });
 
 
-
+  final Widget bottomNavigationBar;
   final Widget bodyWidget;
   final double? topPosition;
   final double? leftPosition;
@@ -30,6 +29,8 @@ class BackgroundPage extends StatelessWidget
   Widget build(BuildContext context) {
 
     return Scaffold(
+      extendBody: true,
+      bottomNavigationBar: bottomNavigationBar,
       body: Container(
         width: double.infinity,
         height: double.infinity,
