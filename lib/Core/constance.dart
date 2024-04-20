@@ -9,6 +9,7 @@ String? name ;
 String? email ;
 String? phone ;
 String? avatar ;
+String? cachedLang;
 
 
 // Colors

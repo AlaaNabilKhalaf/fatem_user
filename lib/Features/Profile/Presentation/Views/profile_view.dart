@@ -1,18 +1,15 @@
-import 'dart:ui';
 import 'package:fatem_users/Core/widgets/Blurred_Clipped_Button.dart';
 import 'package:fatem_users/Core/widgets/back_button.dart';
 import 'package:fatem_users/Core/widgets/image_svg.dart';
 import 'package:fatem_users/Features/About/presentation/views/about_view.dart';
 import 'package:fatem_users/Features/Auth/presentation/Views/login_view.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:fatem_users/Features/Profile/Controller/Cubits/Languages/language_cubit.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import '../../../../Core/constance.dart';
 import '../../../../Core/utils/assets_data.dart';
-import '../../../../generated/l10n.dart';
-import 'package:intl/intl.dart';
 import '../../../Auth/presentation/Controller/AuthLocal/auth_cache_network.dart';
 import '../../../PreviousOrders/Presentation/Views/previous_orders_view.dart';
 import '../Widgets/profile_rows.dart';
@@ -69,9 +66,11 @@ class ProfileView extends StatelessWidget
 {
   const ProfileView({super.key});
 
+
   @override
   Widget build(BuildContext context) {
 
+    final cubit = BlocProvider.of<LangCubit>(context);
 
     return Scaffold(
       body: Container(
@@ -160,9 +159,7 @@ class ProfileView extends StatelessWidget
 
                   ProfileGradButton(
                       passedWidget: const Account(),
-                      onTap: () {
-                        return null;
-                        },
+                      onTap: () {},
                   ),
 
                   SizedBox(
@@ -182,18 +179,12 @@ class ProfileView extends StatelessWidget
 
                   ProfileGradButton(
                       passedWidget: const Languages(),
-                      onTap: () async {
-                        switch(Intl.getCurrentLocale())
-                        {
-                          case "en":
-                            S.delegate.load(const Locale("ar"));
-                            await WidgetsBinding.instance.performReassemble();
-                            break;
-                          case "ar":
-                            S.delegate.load(const Locale("en"));
-                            await WidgetsBinding.instance.performReassemble();
-                            break;
-                        }
+                      onTap: ()
+                      {
+                        cubit.changeLanguage();
+                        CacheNetwork.deleteCacheItem(key: "lang");
+                        CacheNetwork.insertStrings(key: "lang", value: cubit.currentLang??"");
+                        cachedLang = CacheNetwork.getCacheData(key: "lang");
                       }),
 
                   SizedBox(
