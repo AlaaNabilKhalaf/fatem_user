@@ -9,30 +9,35 @@ class RegularText extends StatelessWidget {
     required this.fontSizeEn,
     required this.textColor,
     required this.fontFamilyAr,
-   required this.fontFamilyEn,
-   required this.fontSizeAr,
+    required this.fontFamilyEn,
+    required this.fontSizeAr,
     this.maxLine,
     this.letterSpacing,
-
-
+    this.textAlign,
+    this.textDirection
   });
- final double fontSizeEn ;
- final double fontSizeAr ;
+
+  final double fontSizeEn ;
+  final double fontSizeAr ;
   final double? letterSpacing;
   final String text ;
- final String fontFamilyAr ;
- final String fontFamilyEn ;
+  final String fontFamilyAr ;
+  final String fontFamilyEn ;
   final int? maxLine;
   final Color textColor;
+  final TextAlign? textAlign;
+  final TextDirection? textDirection;
+
   @override
   Widget build(BuildContext context) {
 
     return  Text(
       text,
-      textAlign: TextAlign.center,
+      textAlign: textAlign?? TextAlign.center,
       maxLines: maxLine,
+      textDirection: textDirection,
       style: TextStyle(
-        letterSpacing: letterSpacing,
+        letterSpacing: letterSpacingChecking(letterSpacing),
         fontSize: fontSizeFun(fontSizeAr , fontSizeEn),
         fontFamily: fontFamilyFun(fontFamilyAr , fontFamilyEn),
             color: textColor,
@@ -52,4 +57,9 @@ String fontFamilyFun(String ar ,String en ){
 double fontSizeFun(double ar ,double en ){
 
   return isArabic()? ar : en;
+}
+
+
+double? letterSpacingChecking(double? letterSpacing){
+  return isArabic()? null : letterSpacing;
 }

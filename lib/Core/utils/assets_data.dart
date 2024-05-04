@@ -6,6 +6,11 @@ class AssetsData{
   static const String logoEnglish ="assets/images/Logo_English.svg" ;
 
 
+  // HOME VIEW
+  static const String itemTemp = "assets/images/home_view/Item_Temp.png";
+  static const String emptyHeart = "assets/images/home_view/empty_heart.svg";
+  static const String heart = "assets/images/home_view/heart.svg";
+
   // LOGIN VIEW
   static const String loginBackground = "assets/images/login_view/Login_background.png" ;
   static const String facebookIcon = "assets/images/login_view/facebook_icon.svg" ;

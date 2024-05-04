@@ -27,11 +27,16 @@ class MessageLookup extends MessageLookupByLibrary {
         "bag": MessageLookupByLibrary.simpleMessage("الحقيبة"),
         "bagEmpty":
             MessageLookupByLibrary.simpleMessage("ما زالت الحقيبة فارغة"),
+        "bestSelling":
+            MessageLookupByLibrary.simpleMessage("الأفضــل مبـــيعاً"),
+        "body": MessageLookupByLibrary.simpleMessage("الجسم"),
         "currentLanguage": MessageLookupByLibrary.simpleMessage("العربية"),
+        "deodorant": MessageLookupByLibrary.simpleMessage("مزيل للعرق"),
         "facebookLogin":
             MessageLookupByLibrary.simpleMessage("تسجيل الدخول بفيسبوك"),
         "googleLogin":
             MessageLookupByLibrary.simpleMessage("تسجيل الدخول بجوجل"),
+        "hair": MessageLookupByLibrary.simpleMessage("الشعر"),
         "languagesText": MessageLookupByLibrary.simpleMessage("اللغة"),
         "logOut": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
         "loginSlogan":
@@ -40,6 +45,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("لا توجد طلبات سابقة"),
         "previousOrdersText":
             MessageLookupByLibrary.simpleMessage("الطلبات السابقة"),
-        "profileText": MessageLookupByLibrary.simpleMessage("الملف الشخصي")
+        "profileText": MessageLookupByLibrary.simpleMessage("الملف الشخصي"),
+        "skin": MessageLookupByLibrary.simpleMessage("الـبشــرة"),
+        "welcome": MessageLookupByLibrary.simpleMessage("أهلا وسهلاً")
       };
 }

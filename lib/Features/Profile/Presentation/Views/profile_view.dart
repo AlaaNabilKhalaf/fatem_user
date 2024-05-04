@@ -73,113 +73,116 @@ class ProfileView extends StatelessWidget
 
     final cubit = BlocProvider.of<LangCubit>(context);
 
-    return Scaffold(
-      extendBody: true,
-      bottomNavigationBar: const BottomNavigationView(),
-      body: Container(
-        width: double.infinity,
-        height: double.infinity,
+    return PopScope(
+      canPop: false,
+      child: Scaffold(
+        extendBody: true,
+        bottomNavigationBar: const BottomNavigationView(),
+        body: Container(
+          width: double.infinity,
+          height: double.infinity,
 
-        decoration: const BoxDecoration(
-          image: DecorationImage(image: AssetImage(AssetsData.loginBackground),
-          fit: BoxFit.fill)
-        ),
-          child :
-          Stack(
-            alignment: AlignmentDirectional.center,
-            children: [
-              Positioned(
-                  top: 20.h,
-                  right: 29.w,
-                  child: GestureDetector(
-                    onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=> const AboutView()));
-                    },
-                    child: SvgImage(
-                      imagePath: AssetsData.logoEnglish,
-                        width: 61.w,
-                        height: 90.h),
-                  )
-              ),
-
-
-              Positioned(
-                  top: 39.h,
-                  left: 0.w,
-                  child: const MyBackButton(),
-              ),
-
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-
-                  ProfileGradButton(
-                      passedWidget: const ProfileButton(),
-                      onTap: (){}
-                  ),
-
-                  SizedBox(
-                    height: 71.h,
-                  ),
-
-                  ProfileGradButton(
-                      passedWidget: const Account(),
-                      onTap: () {},
-                  ),
-
-                  SizedBox(
-                    height: 17.h,
-                  ),
-
-                  ProfileGradButton(
-                    passedWidget: const PreviousOrders(),
-                    onTap: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => const PreviousOrdersView()));
-                    },
-                  ),
-
-                  SizedBox(
-                    height: 17.h,
-                  ),
-
-                  ProfileGradButton(
-                      passedWidget: const Languages(),
-                      onTap: ()
-                      {
-                        cubit.changeLanguage();
-                        CacheNetwork.deleteCacheItem(key: "lang");
-                        CacheNetwork.insertStrings(key: "lang", value: cubit.currentLang??"");
-                        cachedLang = CacheNetwork.getCacheData(key: "lang");
-                      }),
-
-                  SizedBox(
-                    height: 26.h,
-                  ),
-
-                  GestureDetector(
-                    onTap: (){
+          decoration: const BoxDecoration(
+            image: DecorationImage(image: AssetImage(AssetsData.loginBackground),
+            fit: BoxFit.fill)
+          ),
+            child :
+            Stack(
+              alignment: AlignmentDirectional.center,
+              children: [
+                Positioned(
+                    top: 20.h,
+                    right: 29.w,
+                    child: GestureDetector(
+                      onTap: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=> const AboutView()));
+                      },
+                      child: SvgImage(
+                        imagePath: AssetsData.logoEnglish,
+                          width: 61.w,
+                          height: 90.h),
+                    )
+                ),
 
 
-                   {   GoogleSignIn google = GoogleSignIn();
-                   google.disconnect().then((value) => {
-                     Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> const LoginView()))
-                   });
+                Positioned(
+                    top: 39.h,
+                    left: 0.w,
+                    child: const MyBackButton(),
+                ),
 
-                   CacheNetwork.deleteCacheItem( key: 'token');
-                   CacheNetwork.deleteCacheItem( key: 'name');
-                   CacheNetwork.deleteCacheItem( key: 'email');
-                   CacheNetwork.deleteCacheItem( key: 'avatarPath');
-                   CacheNetwork.deleteCacheItem( key: 'phoneNumber');
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
 
-                   }
-                    },
-                    child: const LogOut(),
-                  ),
-                ]
-              ),
-            ],
+                    ProfileGradButton(
+                        passedWidget: const ProfileButton(),
+                        onTap: (){}
+                    ),
+
+                    SizedBox(
+                      height: 71.h,
+                    ),
+
+                    ProfileGradButton(
+                        passedWidget: const Account(),
+                        onTap: () {},
+                    ),
+
+                    SizedBox(
+                      height: 17.h,
+                    ),
+
+                    ProfileGradButton(
+                      passedWidget: const PreviousOrders(),
+                      onTap: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => const PreviousOrdersView()));
+                      },
+                    ),
+
+                    SizedBox(
+                      height: 17.h,
+                    ),
+
+                    ProfileGradButton(
+                        passedWidget: const Languages(),
+                        onTap: ()
+                        {
+                          cubit.changeLanguage();
+                          CacheNetwork.deleteCacheItem(key: "lang");
+                          CacheNetwork.insertStrings(key: "lang", value: cubit.currentLang??"");
+                          cachedLang = CacheNetwork.getCacheData(key: "lang");
+                        }),
+
+                    SizedBox(
+                      height: 26.h,
+                    ),
+
+                    GestureDetector(
+                      onTap: (){
+
+
+                     {   GoogleSignIn google = GoogleSignIn();
+                     google.disconnect().then((value) => {
+                       Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> const LoginView()))
+                     });
+
+                     CacheNetwork.deleteCacheItem( key: 'token');
+                     CacheNetwork.deleteCacheItem( key: 'name');
+                     CacheNetwork.deleteCacheItem( key: 'email');
+                     CacheNetwork.deleteCacheItem( key: 'avatarPath');
+                     CacheNetwork.deleteCacheItem( key: 'phoneNumber');
+
+                     }
+                      },
+                      child: const LogOut(),
+                    ),
+                  ]
+                ),
+              ],
+            ),
           ),
         ),
-      );
+    );
   }
 }

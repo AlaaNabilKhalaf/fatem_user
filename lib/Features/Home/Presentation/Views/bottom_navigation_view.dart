@@ -1,6 +1,7 @@
 import 'dart:ui';
 import 'package:fatem_users/Core/constance.dart';
 import 'package:fatem_users/Features/Bag/Presentation/Views/bag_view.dart';
+import 'package:fatem_users/Features/Home/Presentation/Views/home_view.dart';
 import 'package:fatem_users/Features/Profile/Presentation/Views/profile_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -19,12 +20,16 @@ class BottomNavigationView extends StatefulWidget {
 class _BottomNavigationViewState extends State<BottomNavigationView> {
 
 
-  List<Widget?> pages = [const ProfileView(), null, const BagView(), null];
-
+  List<Widget?> pages = [const ProfileView(), null, const BagView(), const HomeView()];
 
   void navigateToPage(int index)
   {
-    Navigator.push(context, MaterialPageRoute(builder: (context)=> pages[index]!));
+    if(index == 3)
+      {
+        currentPageIndex.clear();
+        currentPageIndex.addFirst(3);
+      }
+    Navigator.push(context, MaterialPageRoute(settings: RouteSettings(name: pages[index]!.toString()),builder: (context)=> pages[index]!));
   }
 
   @override
@@ -38,7 +43,7 @@ class _BottomNavigationViewState extends State<BottomNavigationView> {
           sigmaX: 2,
         ),
         child: Container(
-          margin: EdgeInsets.only(top: 1.5.h, right: 1.h,left: 1.h),
+          margin: EdgeInsets.only(top: 1.5.h, right: 1.w,left: 1.w),
           height: 62.h,
           width: 360.w,
           decoration: BoxDecoration(
@@ -55,11 +60,19 @@ class _BottomNavigationViewState extends State<BottomNavigationView> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: List.generate(
                 AssetsData.bottomNavIcons.length, (index) => GestureDetector(
-                  onTap: (){
-                    setState(() {
-                      pageIndex = index;
-                      navigateToPage(index);
-                    });
+                  onTap: ()
+                  {
+                    if(currentPageIndex.isEmpty || currentPageIndex.first != index)
+                    {
+                      //printing the current page name (same as Class name)
+                      //print(ModalRoute.of(context)?.settings.name);
+                      setState(() {
+                        pageIndex = index;
+                        currentPageIndex.addFirst(index);
+                        navigateToPage(index);
+                        }
+                      );
+                    }
                   },
                   child: SizedBox(
                     height: bottomNavBarIconSize[index][1].h,

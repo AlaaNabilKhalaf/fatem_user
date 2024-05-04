@@ -16,11 +16,13 @@ class BackgroundPage extends StatelessWidget
     this.topPosition,
     this.leftPosition,
     this.rightPosition,
+    this.topLeftWidget
   });
 
 
   final Widget bottomNavigationBar;
   final Widget bodyWidget;
+  final Widget? topLeftWidget;
   final double? topPosition;
   final double? leftPosition;
   final double? rightPosition;
@@ -28,45 +30,48 @@ class BackgroundPage extends StatelessWidget
   @override
   Widget build(BuildContext context) {
 
-    return Scaffold(
-      extendBody: true,
-      bottomNavigationBar: bottomNavigationBar,
-      body: Container(
-        width: double.infinity,
-        height: double.infinity,
-        decoration: const BoxDecoration(
-            image: DecorationImage(image: AssetImage(AssetsData.loginBackground),
-                fit: BoxFit.fill)
-        ),
-        child :
-        Stack(
-          alignment: AlignmentDirectional.center,
-          children: [
+    return PopScope(
+      canPop: false,
+      child: Scaffold(
+        extendBody: true,
+        bottomNavigationBar: bottomNavigationBar,
+        body: Container(
+          width: double.infinity,
+          height: double.infinity,
+          decoration: const BoxDecoration(
+              image: DecorationImage(image: AssetImage(AssetsData.loginBackground),
+                  fit: BoxFit.fill)
+          ),
+          child :
+          Stack(
+            alignment: AlignmentDirectional.center,
+            children: [
 
-            Positioned(
-                top: 20.h,
-                right: 29.w,
-                child: GestureDetector(
-                  onTap: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=> const AboutView()));
-                  },
-                  child: SvgImage(
-                      imagePath: AssetsData.logoEnglish,
-                      width: 61.w,
-                      height: 90.h),
-                )
-            ),
+              Positioned(
+                  top: 20.h,
+                  right: 29.w,
+                  child: GestureDetector(
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=> const AboutView()));
+                    },
+                    child: SvgImage(
+                        imagePath: AssetsData.logoEnglish,
+                        width: 61.w,
+                        height: 90.h),
+                  )
+              ),
 
 
-            Positioned(
-              top: topPosition?? null,
-              left: leftPosition?? null,
+              Positioned(
+                top: topPosition,
+                left: leftPosition,
 
-              child: const MyBackButton(),
-            ),
+                child: topLeftWidget?? const MyBackButton(),
+              ),
 
-            bodyWidget,
-          ],
+              bodyWidget,
+            ],
+          ),
         ),
       ),
     );

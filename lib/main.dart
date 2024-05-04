@@ -32,6 +32,9 @@ Future<void> main() async {
  phone = CacheNetwork.getCacheData(key:"phoneNumber");
  avatar = CacheNetwork.getCacheData(key:"avatarPath");
  cachedLang = CacheNetwork.getCacheData(key: "lang");
+
+ //adding HomePage Index to the queue
+ currentPageIndex.addFirst(3);
  }
 
   runApp( MultiBlocProvider(

@@ -27,11 +27,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "bag": MessageLookupByLibrary.simpleMessage("BAG"),
         "bagEmpty":
             MessageLookupByLibrary.simpleMessage("YOUR BAG IS STILL EMPTY"),
+        "bestSelling": MessageLookupByLibrary.simpleMessage("BEST SELLING"),
+        "body": MessageLookupByLibrary.simpleMessage("BODY"),
         "currentLanguage": MessageLookupByLibrary.simpleMessage("English"),
+        "deodorant": MessageLookupByLibrary.simpleMessage("DEODORANT"),
         "facebookLogin":
             MessageLookupByLibrary.simpleMessage("LOGIN WITH FACEBOOK"),
         "googleLogin":
             MessageLookupByLibrary.simpleMessage("LOGIN WITH GOOGLE"),
+        "hair": MessageLookupByLibrary.simpleMessage("HAIR"),
         "languagesText": MessageLookupByLibrary.simpleMessage("LANGUAGE"),
         "logOut": MessageLookupByLibrary.simpleMessage("Logout"),
         "loginSlogan": MessageLookupByLibrary.simpleMessage(
@@ -40,6 +44,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("NO PREVIOUS ORDERS"),
         "previousOrdersText":
             MessageLookupByLibrary.simpleMessage("PREVIOUS ORDERS"),
-        "profileText": MessageLookupByLibrary.simpleMessage("PROFILE")
+        "profileText": MessageLookupByLibrary.simpleMessage("PROFILE"),
+        "skin": MessageLookupByLibrary.simpleMessage("SKIN"),
+        "welcome": MessageLookupByLibrary.simpleMessage("WELCOME")
       };
 }

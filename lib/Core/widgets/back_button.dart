@@ -1,3 +1,4 @@
+import 'package:fatem_users/Core/constance.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -16,6 +17,7 @@ class MyBackButton extends StatelessWidget {
         ),
         onPressed: () {
           Navigator.pop(context);
+          currentPageIndex.removeFirst();
         },),
     );
   }

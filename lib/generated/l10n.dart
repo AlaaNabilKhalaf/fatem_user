@@ -169,6 +169,66 @@ class S {
       args: [],
     );
   }
+
+  /// `WELCOME`
+  String get welcome {
+    return Intl.message(
+      'WELCOME',
+      name: 'welcome',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `SKIN`
+  String get skin {
+    return Intl.message(
+      'SKIN',
+      name: 'skin',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `HAIR`
+  String get hair {
+    return Intl.message(
+      'HAIR',
+      name: 'hair',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `BODY`
+  String get body {
+    return Intl.message(
+      'BODY',
+      name: 'body',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `BEST SELLING`
+  String get bestSelling {
+    return Intl.message(
+      'BEST SELLING',
+      name: 'bestSelling',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `DEODORANT`
+  String get deodorant {
+    return Intl.message(
+      'DEODORANT',
+      name: 'deodorant',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

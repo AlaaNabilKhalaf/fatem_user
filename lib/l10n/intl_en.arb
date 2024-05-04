@@ -10,5 +10,11 @@
   "logOut" : "Logout",
   "noPreviousOrders" : "NO PREVIOUS ORDERS",
   "bag" : "BAG",
-  "bagEmpty" : "YOUR BAG IS STILL EMPTY"
+  "bagEmpty" : "YOUR BAG IS STILL EMPTY",
+  "welcome" : "WELCOME",
+  "skin" : "SKIN",
+  "hair" : "HAIR",
+  "body" : "BODY",
+  "bestSelling" : "BEST SELLING",
+  "deodorant" : "DEODORANT"
 }
