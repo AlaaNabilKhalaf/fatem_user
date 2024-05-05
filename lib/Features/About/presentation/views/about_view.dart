@@ -27,6 +27,7 @@ class AboutView extends StatelessWidget {
          children: [
            Expanded(
              child: Column(
+               textDirection: TextDirection.ltr,
                crossAxisAlignment: CrossAxisAlignment.start,
                children: [
                  SizedBox(height: 45.h,),
