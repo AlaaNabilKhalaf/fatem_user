@@ -158,7 +158,8 @@ class BlurredRectangle extends StatelessWidget {
 class CardsGrid extends StatelessWidget {
   const CardsGrid({super.key});
 
-  final itemsCount = 8;
+  //8 cards and 1 for empty space in bottom
+  final itemsCount = 9;
 
   @override
   Widget build(BuildContext context) {
@@ -167,7 +168,7 @@ class CardsGrid extends StatelessWidget {
         clipBehavior: Clip.antiAlias,
         shrinkWrap: true,
         physics: const BouncingScrollPhysics(),
-        padding: EdgeInsets.zero,
+        padding: EdgeInsets.symmetric(horizontal: 16.w),
         itemCount: itemsCount,
         scrollDirection: Axis.vertical,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -178,7 +179,13 @@ class CardsGrid extends StatelessWidget {
         ),
         itemBuilder: (BuildContext context, int index)
         {
-          return  _ItemCard();
+          if(index != itemsCount -1) {
+            return  _ItemCard();
+          }
+          else
+            {
+              return SizedBox(height: 10.h,);
+            }
         },
       );
   }

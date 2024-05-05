@@ -1,6 +1,7 @@
 import 'package:fatem_users/Core/utils/app_logger.dart';
 import 'package:fatem_users/Core/widgets/background_page.dart';
 import 'package:fatem_users/Features/Home/Presentation/Widgets/home_widgets.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../Core/constance.dart';
@@ -63,10 +64,8 @@ class HomeView extends StatelessWidget
 
             SizedBox(height: 16.h),
 
-            SizedBox(
-                width: 328.w,
-                height: 300.h,
-                child: const CardsGrid()
+            const Expanded(
+                child: CardsGrid()
             ),
           ],
         )
