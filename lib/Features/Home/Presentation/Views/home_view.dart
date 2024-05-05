@@ -21,7 +21,6 @@ class HomeView extends StatelessWidget
   Widget build(BuildContext context)
   {
     final s = S.of(context);
-
     return BackgroundPage
       (
         topPosition: 34.h,
@@ -40,6 +39,7 @@ class HomeView extends StatelessWidget
             fontFamilyAr: enExtraLight,
             fontFamilyEn: enExtraLight,
             textAlign: TextAlign.start,
+            textOverflow: TextOverflow.visible,
             letterSpacing: 2,
           )
         ),

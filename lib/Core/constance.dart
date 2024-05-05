@@ -6,7 +6,7 @@ String? token ;
 String? name ;
 String? email ;
 String? phone ;
-String? avatar ;
+String? cachedAvatar ;
 String? cachedLang;
 
 

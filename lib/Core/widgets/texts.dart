@@ -11,6 +11,7 @@ class RegularText extends StatelessWidget {
     required this.fontFamilyAr,
     required this.fontFamilyEn,
     required this.fontSizeAr,
+    this.textOverflow,
     this.maxLine,
     this.letterSpacing,
     this.textAlign,
@@ -27,12 +28,14 @@ class RegularText extends StatelessWidget {
   final Color textColor;
   final TextAlign? textAlign;
   final TextDirection? textDirection;
+  final TextOverflow? textOverflow;
 
   @override
   Widget build(BuildContext context) {
 
-    return  Text(
+    return Text(
       text,
+      overflow: textOverflow?? TextOverflow.ellipsis,
       textAlign: textAlign?? TextAlign.center,
       maxLines: maxLine,
       textDirection: textDirection,

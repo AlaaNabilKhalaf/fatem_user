@@ -47,6 +47,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("الطلبات السابقة"),
         "profileText": MessageLookupByLibrary.simpleMessage("الملف الشخصي"),
         "skin": MessageLookupByLibrary.simpleMessage("الـبشــرة"),
+        "there": MessageLookupByLibrary.simpleMessage("بكــم"),
         "welcome": MessageLookupByLibrary.simpleMessage("أهلا وسهلاً")
       };
 }

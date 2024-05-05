@@ -1,14 +1,39 @@
 import 'package:bloc/bloc.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-
+import '../../../Data/Models/user_model.dart';
+import '../AuthLocal/auth_cache_network.dart';
 import 'auth_states.dart';
+
 
 class AuthCubit extends Cubit <AuthStates> {
   AuthCubit() : super(AuthInitialState());
 
+  String? avatar;
+  String? displayName;
+  String? email;
 
-// Google Auth
+
+  void getDisplayName(String? get)
+  {
+    displayName = get;
+    emit(DisplayNameRetrieved());
+  }
+
+  void getEmail(String? get)
+  {
+    email = get;
+    emit(EmailRetrieved());
+  }
+
+  void getAvatar(String? networkURL)
+  {
+    avatar = networkURL;
+    emit(AvatarRetrieved());
+  }
+
+
+  // Google Auth
   Future<Object> signInWithGoogle() async {
     emit(GoogleAuthLoading());
     // Trigger the authentication flow
@@ -33,13 +58,23 @@ class AuthCubit extends Cubit <AuthStates> {
     // Once signed in, return the UserCredential
     return {
       await FirebaseAuth.instance.signInWithCredential(credential).then((
-          value) async {
-        emit(GoogleAuthSuccess());
-      }),
+          value)
+      {
+            getDisplayName(value.user!.displayName);
+            getEmail(value.user!.email);
+            getAvatar(value.user!.photoURL);
 
+            CacheNetwork.insertStrings(
+            key: "token", value: value.user!.uid);
+            UserModel.cacheData(
+            nameF: value.user!.displayName,
+            emailF: value.user!.email,
+            phoneNumberF: value.user!.phoneNumber,
+                avatarPathF: value.user!.photoURL
+        );
+      }),
     };
   }
-
 
 //
 // User(displayName: Alaa Khalaf, email: alaakhalaf696@gmail.com, isEmailVerified: true, isAnonymous: false, metadata:
@@ -54,6 +89,4 @@ class AuthCubit extends Cubit <AuthStates> {
 //
 // }],
 // refreshToken: null, tenantId: null, uid:
-
-
 }

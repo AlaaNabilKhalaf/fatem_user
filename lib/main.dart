@@ -30,10 +30,11 @@ Future<void> main() async {
  name = CacheNetwork.getCacheData(key:"name");
  email = CacheNetwork.getCacheData(key:"email");
  phone = CacheNetwork.getCacheData(key:"phoneNumber");
- avatar = CacheNetwork.getCacheData(key:"avatarPath");
+ cachedAvatar = CacheNetwork.getCacheData(key:"avatarPath");
  cachedLang = CacheNetwork.getCacheData(key: "lang");
 
  //adding HomePage Index to the queue
+ currentPageIndex.clear();
  currentPageIndex.addFirst(3);
  }
 

@@ -1,5 +1,6 @@
 import 'package:fatem_users/Core/widgets/image_svg.dart';
 import 'package:fatem_users/Core/widgets/texts.dart';
+import 'package:fatem_users/Features/Auth/presentation/Views/login_view.dart';
 import 'package:fatem_users/Features/Home/Presentation/Views/home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -20,7 +21,7 @@ class _SplashViewState extends State<SplashView> {
     Future.delayed(const Duration(seconds: 2),(){
 
       Navigator.pushReplacement(context, MaterialPageRoute(builder: (context ){
-        return token != null && token != "" ? const HomeView() : const HomeView();
+        return token != null && token != "" ? const HomeView() : const LoginView();
       }));
 
     });
@@ -37,27 +38,20 @@ class _SplashViewState extends State<SplashView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: GestureDetector(
-        onTap: (){
-          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context ){
-            return token != null && token != "" ? const HomeView() : const HomeView();
-          }));
-        },
-        child: Container(
-          decoration: const BoxDecoration(
-              image: DecorationImage(
-                fit: BoxFit.fill,
-                  image: AssetImage(AssetsData.splashBackground, )
-              )
-          ),
-          child: Center(child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const SvgImage(imagePath: AssetsData.logo),
-              RegularText(fontSizeAr: 38.sp,fontSizeEn: 38.sp, text: "FATEM", textColor: Colors.black, fontFamilyAr: ade, fontFamilyEn: ade,)
-            ],
-          )),
+      body: Container(
+        decoration: const BoxDecoration(
+            image: DecorationImage(
+              fit: BoxFit.fill,
+                image: AssetImage(AssetsData.splashBackground, )
+            )
         ),
+        child: Center(child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const SvgImage(imagePath: AssetsData.logo),
+            RegularText(fontSizeAr: 38.sp,fontSizeEn: 38.sp, text: "FATEM", textColor: Colors.black, fontFamilyAr: ade, fontFamilyEn: ade,)
+          ],
+        )),
       ),
     );
   }

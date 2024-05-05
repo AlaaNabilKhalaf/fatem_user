@@ -172,7 +172,7 @@ class ProfileView extends StatelessWidget
                      CacheNetwork.deleteCacheItem( key: 'email');
                      CacheNetwork.deleteCacheItem( key: 'avatarPath');
                      CacheNetwork.deleteCacheItem( key: 'phoneNumber');
-
+                      currentPageIndex.clear();
                      }
                       },
                       child: const LogOut(),

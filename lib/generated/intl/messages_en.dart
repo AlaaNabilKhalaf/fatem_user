@@ -46,6 +46,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("PREVIOUS ORDERS"),
         "profileText": MessageLookupByLibrary.simpleMessage("PROFILE"),
         "skin": MessageLookupByLibrary.simpleMessage("SKIN"),
+        "there": MessageLookupByLibrary.simpleMessage("THERE"),
         "welcome": MessageLookupByLibrary.simpleMessage("WELCOME")
       };
 }

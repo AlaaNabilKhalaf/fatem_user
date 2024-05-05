@@ -7,3 +7,6 @@ class GoogleAuthSuccess extends AuthStates {}
 class GoogleAuthLoggedOUT extends AuthStates {}
 
 
+class DisplayNameRetrieved extends AuthStates {}
+class EmailRetrieved extends AuthStates {}
+class AvatarRetrieved extends AuthStates {}

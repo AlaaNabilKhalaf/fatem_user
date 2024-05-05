@@ -1,6 +1,10 @@
 import 'package:fatem_users/Core/utils/assets_data.dart';
 import 'package:fatem_users/Core/widgets/image_svg.dart';
+import 'package:fatem_users/Features/Auth/presentation/Controller/Auth/auth_cubit.dart';
+import 'package:fatem_users/Features/Auth/presentation/Controller/Auth/auth_states.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../Core/constance.dart';
 import '../../../../Core/utils/app_logger.dart';
@@ -9,29 +13,53 @@ import '../../../../generated/l10n.dart';
 
 
 
-class WelcomeMessage extends StatelessWidget {
+class WelcomeMessage extends StatefulWidget {
   const WelcomeMessage({super.key});
+
+  @override
+  State<WelcomeMessage> createState() => _WelcomeMessageState();
+}
+
+class _WelcomeMessageState extends State<WelcomeMessage> {
+
+  @override
+  void initState() {
+    if(context.read<AuthCubit>().displayName == null || context.read<AuthCubit>().displayName == "")
+    {
+      context.read<AuthCubit>().displayName = name;
+    }
+    super.initState();
+  }
+
 
   @override
   Widget build(BuildContext context)
   {
-    final s = S.of(context);
+    return BlocBuilder<AuthCubit,AuthStates>(
+      builder: (context,states){
+        final cubit = BlocProvider.of<AuthCubit>(context);
+        final s = S.of(context);
+        return Align(
+          child: Column(
+              children:[
+                RegularText(
+                  fontSizeAr: 27.sp,
+                  text: s.welcome,fontSizeEn: 22.sp, textColor: Colors.black, fontFamilyAr: arLight, fontFamilyEn: ade, letterSpacing: 4,),
+                SizedBox(height: 3.h),
 
-    return Align(
-      child: Column(
-        children:[
-          RegularText(
-            fontSizeAr: 27.sp,
-            text: s.welcome,fontSizeEn: 22.sp, textColor: Colors.black, fontFamilyAr: arLight, fontFamilyEn: ade, letterSpacing: 4,),
-          SizedBox(height: 3.h),
-          RegularText(
-              fontSizeAr: 17.sp,
-              text: name! == "" ? "PlaceHolder 👋" : "${name!} 👋",
-              fontSizeEn: 17.sp, textColor: Colors.black,
-              fontFamilyAr: enExtraLight, fontFamilyEn: enExtraLight,
-              textDirection: TextDirection.ltr,),
-        ]
-      ),
+                SizedBox(
+                  child: RegularText(
+                    fontSizeAr: 17.sp,
+                    text: cubit.displayName == "" || cubit.displayName == null?
+                    "${s.there} 👋" : "${cubit.displayName} 👋",
+                    fontSizeEn: 17.sp, textColor: Colors.black,
+                    fontFamilyAr: enExtraLight, fontFamilyEn: enExtraLight,
+                    textDirection: TextDirection.ltr,),
+                ),
+              ]
+          ),
+        );
+      },
     );
   }
 }
@@ -46,6 +74,7 @@ class ListItems extends StatelessWidget
   @override
   Widget build(BuildContext context)
   {
+
     return SizedBox(
       height: 171.h,
       child: ListView.builder(
@@ -57,17 +86,31 @@ class ListItems extends StatelessWidget
           itemExtent: 127.w,
           itemBuilder: (BuildContext context, int index)
           {
-              return Padding(
-                  padding: EdgeInsets.only(left: 7.w, right: 7.w),
-                  child: _listViewItem(context, index));
+              return ListViewItem(index: index);
           },
         ),
     );
   }
 
-  Widget _listViewItem(BuildContext context, int index) {
+}
+
+
+class ListViewItem extends StatelessWidget
+{
+  const ListViewItem({
+    super.key,
+    required this.index
+  });
+
+  final int index;
+
+
+  @override
+  Widget build(BuildContext context) {
     final s = S.of(context);
-    return Column(
+    return Padding(
+      padding: EdgeInsets.only(left: 7.w, right: 7.w),
+      child: Column(
         children: <Widget>
         [
           GestureDetector(
@@ -75,22 +118,25 @@ class ListItems extends StatelessWidget
               log(index.toString());
             },
             child: Container(
-                    height: 127.h,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(Radius.circular(5.r),),
-                      image: const DecorationImage(image: AssetImage(AssetsData.itemTemp), fit: BoxFit.fitHeight, isAntiAlias: true)
-                    ),
-                  ),
+              height: 127.h,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(5.r),),
+                  image: const DecorationImage(image: AssetImage(AssetsData.itemTemp), fit: BoxFit.fitHeight, isAntiAlias: true)
+              ),
             ),
+          ),
 
           RegularText(
-              fontSizeAr: 27.sp,
-              text: s.skin,fontSizeEn: 22.sp, textColor: Colors.black, fontFamilyAr: arLight, fontFamilyEn: enRegular, letterSpacing: 9,),
+            fontSizeAr: 27.sp,
+            text: s.skin,fontSizeEn: 22.sp, textColor: Colors.black, fontFamilyAr: arLight, fontFamilyEn: enRegular, letterSpacing: 9,),
         ],
+      ),
     );
   }
-
 }
+
+
+
 
 class BlurredRectangle extends StatelessWidget {
   const BlurredRectangle({super.key});
