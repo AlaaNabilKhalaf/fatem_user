@@ -47,9 +47,10 @@ Future<void> main() async {
   );
 
 }
+
+
 class FatemUser extends StatelessWidget {
   const FatemUser({super.key});
-
 
 
   // This widget is the root of your application.
@@ -70,73 +71,37 @@ class FatemUser extends StatelessWidget {
         {
               if(cachedLang != "" && state is! SelectedLangState)
               {
-                return ScreenUtilInit(
-                  designSize: const Size(360, 800),
-                  minTextAdapt: true,
-                  splitScreenMode: true,
-                  builder: (context, child) {
-                    return MaterialApp(
-                      locale: Locale(cachedLang!),
-                      localizationsDelegates: const [
-                        S.delegate,
-                        GlobalMaterialLocalizations.delegate,
-                        GlobalWidgetsLocalizations.delegate,
-                        GlobalCupertinoLocalizations.delegate,
-                      ],
-                      supportedLocales: S.delegate.supportedLocales,
-                      debugShowCheckedModeBanner: false,
-                      themeMode: ThemeMode.system,
-                      home: const SplashView(),
-                    );
-                  },
-                );
+                  locale = Locale(cachedLang!);
               }
               else if(state is SelectedLangState)
               {
-                return ScreenUtilInit(
-                  designSize: const Size(360, 800),
-                  minTextAdapt: true,
-                  splitScreenMode: true,
-                  builder: (context, child) {
-                    return MaterialApp(
-                      locale: state.locale,
-                      localizationsDelegates: const [
-                        S.delegate,
-                        GlobalMaterialLocalizations.delegate,
-                        GlobalWidgetsLocalizations.delegate,
-                        GlobalCupertinoLocalizations.delegate,
-                      ],
-                      supportedLocales: S.delegate.supportedLocales,
-                      debugShowCheckedModeBanner: false,
-                      themeMode: ThemeMode.system,
-                      home: const SplashView(),
-                    );
-                  },
-                );
-            }
-            else
-            {
-                return ScreenUtilInit(
-                  designSize: const Size(360, 800),
-                  minTextAdapt: true,
-                  splitScreenMode: true,
-                  builder: (context, child) {
-                    return MaterialApp(
-                      locale: Locale(Intl.getCurrentLocale()),
-                      localizationsDelegates: const [
-                        S.delegate,
-                        GlobalMaterialLocalizations.delegate,
-                        GlobalWidgetsLocalizations.delegate,
-                        GlobalCupertinoLocalizations.delegate,
-                      ],
-                      supportedLocales: S.delegate.supportedLocales,
-                      debugShowCheckedModeBanner: false,
-                      themeMode: ThemeMode.system,
-                      home: const SplashView(),
-                    );
-                  },
-                );
-            }
+                  locale = state.locale;
+              }
+              else
+              {
+                  locale = Locale(Intl.getCurrentLocale());
+              }
+
+              return ScreenUtilInit(
+                designSize: const Size(360, 800),
+                minTextAdapt: true,
+                splitScreenMode: true,
+                builder: (context, child) {
+                  return MaterialApp(
+                    locale: locale,
+                    localizationsDelegates: const [
+                      S.delegate,
+                      GlobalMaterialLocalizations.delegate,
+                      GlobalWidgetsLocalizations.delegate,
+                      GlobalCupertinoLocalizations.delegate,
+                    ],
+                    supportedLocales: S.delegate.supportedLocales,
+                    debugShowCheckedModeBanner: false,
+                    themeMode: ThemeMode.system,
+                    home: const SplashView(),
+                  );
+                },
+              );
         }
       );
   }

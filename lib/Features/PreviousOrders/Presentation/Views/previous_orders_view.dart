@@ -1,4 +1,4 @@
-import 'package:fatem_users/Core/widgets/Blurred_Clipped_Button.dart';
+import 'package:fatem_users/Core/widgets/blurred_clipped_button.dart';
 import 'package:fatem_users/Features/Home/Presentation/Views/bottom_navigation_view.dart';
 import 'package:fatem_users/Features/PreviousOrders/Presentation/Widgets/previous_orders_rows.dart';
 import 'package:fatem_users/Features/Profile/Presentation/Views/profile_view.dart';

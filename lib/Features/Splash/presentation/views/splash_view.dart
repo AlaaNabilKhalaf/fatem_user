@@ -1,6 +1,5 @@
 import 'package:fatem_users/Core/widgets/image_svg.dart';
 import 'package:fatem_users/Core/widgets/texts.dart';
-import 'package:fatem_users/Features/Auth/presentation/Views/login_view.dart';
 import 'package:fatem_users/Features/Home/Presentation/Views/home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -21,7 +20,7 @@ class _SplashViewState extends State<SplashView> {
     Future.delayed(const Duration(seconds: 2),(){
 
       Navigator.pushReplacement(context, MaterialPageRoute(builder: (context ){
-        return token != null && token != "" ? const HomeView() : const LoginView();
+        return token != null && token != "" ? const HomeView() : const HomeView();
       }));
 
     });
@@ -41,7 +40,7 @@ class _SplashViewState extends State<SplashView> {
       body: GestureDetector(
         onTap: (){
           Navigator.pushReplacement(context, MaterialPageRoute(builder: (context ){
-            return token != null && token != "" ? const HomeView() : const LoginView();
+            return token != null && token != "" ? const HomeView() : const HomeView();
           }));
         },
         child: Container(

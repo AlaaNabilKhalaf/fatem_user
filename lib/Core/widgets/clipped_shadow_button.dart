@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:shadow_clip/shadow_clip.dart';
-import 'InvertedClipper.dart';
+import 'inverted_clipper.dart';
 
 
 

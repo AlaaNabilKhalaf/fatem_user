@@ -39,7 +39,7 @@ Future<Object> signInWithGoogle() async {
         avatarPathF: value.user!.photoURL
       );
 
-        print(value.user!.displayName);
+        //print(value.user!.displayName);
       //emit(GoogleAuthSuccess());
     }),
   };

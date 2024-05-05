@@ -52,7 +52,7 @@ class BackgroundPage extends StatelessWidget
                   right: 29.w,
                   child: GestureDetector(
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=> const AboutView()));
+                      Navigator.push(context, MaterialPageRoute(settings: const RouteSettings(name: "AboutView"), builder: (context)=> const AboutView()));
                     },
                     child: SvgImage(
                         imagePath: AssetsData.logoEnglish,

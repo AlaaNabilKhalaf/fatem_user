@@ -43,7 +43,7 @@ class _BottomNavigationViewState extends State<BottomNavigationView> {
           sigmaX: 2,
         ),
         child: Container(
-          margin: EdgeInsets.only(top: 1.5.h, right: 1.w,left: 1.w),
+          margin: EdgeInsets.only(top: 4.h),//, right: 0.5.w,left: 0.5.w),
           height: 62.h,
           width: 360.w,
           decoration: BoxDecoration(

@@ -1,7 +1,6 @@
 import 'package:fatem_users/Core/utils/app_logger.dart';
 import 'package:fatem_users/Core/widgets/background_page.dart';
 import 'package:fatem_users/Features/Home/Presentation/Widgets/home_widgets.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../Core/constance.dart';

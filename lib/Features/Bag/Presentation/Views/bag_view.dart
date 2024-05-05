@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../Core/constance.dart';
-import '../../../../Core/widgets/Blurred_Clipped_Button.dart';
+import '../../../../Core/widgets/blurred_clipped_button.dart';
 import '../../../../Core/widgets/background_page.dart';
 import '../../../Home/Presentation/Views/bottom_navigation_view.dart';
 import '../../../Profile/Presentation/Views/profile_view.dart';

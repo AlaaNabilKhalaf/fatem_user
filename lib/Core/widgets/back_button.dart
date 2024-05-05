@@ -17,7 +17,11 @@ class MyBackButton extends StatelessWidget {
         ),
         onPressed: () {
           Navigator.pop(context);
-          currentPageIndex.removeFirst();
+          //log(ModalRoute.of(context)!.settings.name.toString());
+          if(currentPageIndex.isNotEmpty && ModalRoute.of(context)?.settings.name != "AboutView")
+          {
+            currentPageIndex.removeFirst();
+          }
         },),
     );
   }
