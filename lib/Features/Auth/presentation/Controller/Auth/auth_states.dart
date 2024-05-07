@@ -1,4 +1,7 @@
 abstract class AuthStates {}
+
+
+
 class AuthInitialState extends AuthStates {}
 
 class GoogleAuthLoading extends AuthStates {}

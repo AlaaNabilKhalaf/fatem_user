@@ -239,6 +239,26 @@ class S {
       args: [],
     );
   }
+
+  /// `FAVORITE`
+  String get favorite {
+    return Intl.message(
+      'FAVORITE',
+      name: 'favorite',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `MAKE YOUR OWN WISH LIST`
+  String get emptyFavoritePage {
+    return Intl.message(
+      'MAKE YOUR OWN WISH LIST',
+      name: 'emptyFavoritePage',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

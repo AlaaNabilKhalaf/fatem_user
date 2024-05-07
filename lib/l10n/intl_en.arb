@@ -17,5 +17,7 @@
   "body" : "BODY",
   "bestSelling" : "BEST SELLING",
   "deodorant" : "DEODORANT",
-  "there" : "THERE"
+  "there" : "THERE",
+  "favorite" : "FAVORITE",
+  "emptyFavoritePage" : "MAKE YOUR OWN WISH LIST"
 }

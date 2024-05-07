@@ -32,8 +32,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "body": MessageLookupByLibrary.simpleMessage("الجسم"),
         "currentLanguage": MessageLookupByLibrary.simpleMessage("العربية"),
         "deodorant": MessageLookupByLibrary.simpleMessage("مزيل للعرق"),
+        "emptyFavoritePage":
+            MessageLookupByLibrary.simpleMessage("اصنع قائمة العناصر المفضـلة"),
         "facebookLogin":
             MessageLookupByLibrary.simpleMessage("تسجيل الدخول بفيسبوك"),
+        "favorite": MessageLookupByLibrary.simpleMessage("القائمــة المفضـلة"),
         "googleLogin":
             MessageLookupByLibrary.simpleMessage("تسجيل الدخول بجوجل"),
         "hair": MessageLookupByLibrary.simpleMessage("الشعر"),

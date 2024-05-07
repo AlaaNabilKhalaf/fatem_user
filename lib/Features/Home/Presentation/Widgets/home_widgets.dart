@@ -1,8 +1,10 @@
 import 'package:fatem_users/Core/utils/assets_data.dart';
+import 'package:fatem_users/Core/utils/product_model.dart';
 import 'package:fatem_users/Core/widgets/image_svg.dart';
 import 'package:fatem_users/Features/Auth/presentation/Controller/Auth/auth_cubit.dart';
 import 'package:fatem_users/Features/Auth/presentation/Controller/Auth/auth_states.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:fatem_users/Features/Home/Presentation/Controller/Cubits/Favorites/favorites_cubit.dart';
+import 'package:fatem_users/Features/Home/Presentation/Controller/Cubits/Favorites/favorites_states.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -187,69 +189,67 @@ class BlurredRectangle extends StatelessWidget {
 }
 
 
-
 class CardsGrid extends StatelessWidget {
   const CardsGrid({super.key});
 
   final itemsCount = 8;
 
   @override
-  Widget build(BuildContext context) {
-    return GridView.builder
-        (
-        clipBehavior: Clip.antiAlias,
-        physics: const BouncingScrollPhysics(),
-        padding: EdgeInsets.only(left: 16.w, right: 16.w, bottom: 65.h),
-        itemCount: itemsCount,
-        scrollDirection: Axis.vertical,
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          mainAxisSpacing: 16.h,
-          crossAxisSpacing: 16.w,
-          mainAxisExtent: 184.h,
-        ),
-        itemBuilder: (BuildContext context, int index)
+  Widget build(BuildContext context)
+  {
+    return BlocBuilder<FavoritesCubit,FavoritesStates>(
+        builder: (context, state)
         {
-          return _ItemCard();
-        },
-      );
+          final cubit = BlocProvider.of<FavoritesCubit>(context);
+          return Expanded(
+            child: GridView.builder(
+              clipBehavior: Clip.antiAlias,
+              physics: const BouncingScrollPhysics(),
+              padding: EdgeInsets.only(left: 16.w, right: 16.w, bottom: 65.h),
+              itemCount: tempProduct?.length,
+              scrollDirection: Axis.vertical,
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                mainAxisSpacing: 16.h,
+                crossAxisSpacing: 16.w,
+                mainAxisExtent: 184.h,
+              ),
+              itemBuilder: (BuildContext context, int index)
+              {
+                return ItemCard(productModel: tempProduct![index], cubit: cubit, index: index);
+              },
+            ),
+          );
+        }
+    );
   }
 }
 
 
-class _ItemCard extends StatefulWidget {
+class ItemCard extends StatelessWidget
+{
+
+  const ItemCard({super.key,
+    required this.productModel,
+    required this.cubit,
+    required this.index,
+  });
+
+  final ProductModel productModel;
+  final FavoritesCubit cubit;
+  final int index;
 
   @override
-  State<_ItemCard> createState() => _ItemCardState();
-}
-
-
-class _ItemCardState extends State<_ItemCard> {
-
-  SvgImage? image;
-  SvgImage emptyHeart = SvgImage(imagePath: AssetsData.emptyHeart, width: 18.w, height: 18.h,);
-  SvgImage filledHeart = SvgImage(imagePath: AssetsData.heart, width: 18.w, height: 18.h,);
-  bool liked = false;
-
-  @override
-  void initState() {
-    super.initState();
-    image = emptyHeart;
-  }
-
-  
-  @override
-  Widget build(BuildContext context) {
-    final s = S.of(context);
-
+  Widget build(BuildContext context)
+  {
     return Stack(
       children: [
         Container(
           height: 184.h,
           width: 156.w,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.all(Radius.circular(8.r)),
-            color: itemCardColor.withOpacity(0.3)
+              borderRadius: BorderRadius.all(Radius.circular(8.r)),
+              color: itemCardColor.withOpacity(0.3)
           ),
         ),
 
@@ -267,48 +267,48 @@ class _ItemCardState extends State<_ItemCard> {
                 color: imageBGCardColor
             ),
             child: Padding(
-                padding: EdgeInsets.all(4.65.r),
-                child: Image.asset(AssetsData.itemTemp, fit: BoxFit.fill,)),
+                padding: EdgeInsets.symmetric(vertical: 4.65.h, horizontal: 4.w),
+                child: Container(
+                      width: 116.w,
+                      height: 104.69.h,
+                      decoration: BoxDecoration(
+                      borderRadius: BorderRadius.all(Radius.circular(3.r)),
+                      image: const DecorationImage(image: AssetImage(AssetsData.itemTemp), fit: BoxFit.fill)
+                  ),
+                )
+            ),
           ),
         ),
 
         Positioned(
-            right: isArabic()? 16.w : null,
-            left: isArabic()? null : 16.w,
-            top: 125.h,
-            child: RegularText(
+          right: isArabic() ? 16.w : null,
+          left: isArabic() ? null : 16.w,
+          top: 125.h,
+          width: 124.w,
+          child: RegularText(
+              textAlign: TextAlign.start,
               fontSizeAr: 13.sp,
-              text: s.deodorant,fontSizeEn: 13.sp, textColor: Colors.black, fontFamilyAr: arRegular, fontFamilyEn: enRegular),
+              text: productModel.name!/*s.deodorant*/,
+              fontSizeEn: 13.sp,
+              textColor: Colors.black,
+              fontFamilyAr: arRegular,
+              fontFamilyEn: enRegular),
         ),
 
         Positioned(
             top: 141.h,
-            right: isArabic()? 121.w : 16.w,
-            left:  isArabic()? 16.w : 121.w,
+            right: isArabic() ? 121.w : 16.w,
+            left: isArabic() ? 16.w : 121.w,
             child: GestureDetector(
                 onTap: ()
                 {
-                  setState(() {
-                    switch(liked)
-                    {
-                      case true:
-                        image = emptyHeart;
-                        liked = false;
-                        break;
-                      case false:
-                        image = filledHeart;
-                        liked = true;
-                        break;
-                    }
-                  }
-                  );
+                  cubit.favoriteAddOrRemove(productModel, index);
                 },
-                child: image
+                child: cubit.favoritesIndex.contains(index)?
+                SvgImage(imagePath: AssetsData.heart, width: 17.w, height: 17.h,) : SvgImage(imagePath: AssetsData.emptyHeart, width: 17.w, height: 17.h,),
             )
         )
       ],
     );
   }
 }
-
-

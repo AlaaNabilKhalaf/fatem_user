@@ -68,7 +68,8 @@ class _AccountState extends State<Account> {
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context)
+  {
     return BlocBuilder<AuthCubit,AuthStates>(
       builder: (context, states){
         final cubit = BlocProvider.of<AuthCubit>(context);

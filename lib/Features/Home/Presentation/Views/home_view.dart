@@ -63,9 +63,7 @@ class HomeView extends StatelessWidget
 
             SizedBox(height: 16.h),
 
-            const Expanded(
-                child: CardsGrid()
-            ),
+            const CardsGrid(),
           ],
         )
     );

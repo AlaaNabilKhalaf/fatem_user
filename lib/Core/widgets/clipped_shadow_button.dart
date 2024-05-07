@@ -11,11 +11,11 @@ class ClippedShadowButton extends StatelessWidget {
   const ClippedShadowButton({
     super.key,
     required this.boxShadow,
-    required this.height,
-    required this.width,
     required this.shadowRadius,
     required this.cutRadius,
     required this.heightPercentage,
+    this.height,
+    this.width,
     this.child,
     this.shadowHeight,
     this.shouldClip
@@ -27,8 +27,8 @@ class ClippedShadowButton extends StatelessWidget {
   final double shadowRadius; //25.w,
   final double cutRadius; //18.w,
   final double heightPercentage; //0.97,
-  final double width;  //294.w
-  final double height; //65.h
+  final double? width;  //294.w
+  final double? height; //65.h
   final bool? shouldClip; //true
   final List<BoxShadow> boxShadow;
   final Widget? child;

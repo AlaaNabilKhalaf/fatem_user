@@ -17,18 +17,19 @@ class BlurredClippedButton extends StatelessWidget {
   final double? shadowThickness;
   final double shadowRadius;
   final double cutRadius;
-  final double shadowHeight;
-  final double shadowWidth;
+  final double? shadowHeight;
+  final double? shadowWidth;
   final double shadowHeightPercentage;
   final bool? shouldClip;
 
   //Button
+  final BoxConstraints? boxConstraints;
   final List<Color> buttonColors;
   final double buttonClipRadius;
   final double sigmaX;
   final double sigmaY;
-  final double buttonHeight;
-  final double buttonWidth;
+  final double? buttonHeight;
+  final double? buttonWidth;
   final double buttonRadius;
 
 
@@ -47,23 +48,24 @@ class BlurredClippedButton extends StatelessWidget {
     required this.shadow,
     required this.shadowRadius,
     required this.cutRadius,
-    required this.shadowHeight,
-    required this.shadowWidth,
     required this.shadowHeightPercentage,
     required this.buttonColors,
     required this.buttonClipRadius,
     required this.sigmaX,
     required this.sigmaY,
-    required this.buttonHeight,
-    required this.buttonWidth,
     required this.buttonRadius,
+    this.shadowHeight,
+    this.shadowWidth,
+    this.buttonWidth,
+    this.buttonHeight,
     this.shouldClip,
     this.shadowThickness,
     this.hasBorder,
     this.borderWidth,
     this.borderStrokeAlign,
     this.borderStyle,
-    this.borderColor
+    this.borderColor,
+    this.boxConstraints,
   });
 
   @override
@@ -88,6 +90,7 @@ class BlurredClippedButton extends StatelessWidget {
                 sigmaY: sigmaY,
               ),
               child: GradButton(
+                boxConstraints: boxConstraints,
                 width: buttonWidth,
                 height: buttonHeight,
                 buttonColors: buttonColors,

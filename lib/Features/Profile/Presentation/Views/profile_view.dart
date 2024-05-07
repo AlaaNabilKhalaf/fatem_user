@@ -36,8 +36,8 @@ class ProfileGradButton extends StatelessWidget {
         shadow: shadow,
         shadowThickness: 3.h,
         shadowRadius: 25.w,
-        cutRadius: 18.w,
-        shadowHeight: 68.h,
+        cutRadius: 21.w,        //18
+        shadowHeight: 64.h,     //68
         shadowWidth: 294.w,
         shadowHeightPercentage: 0.97,
         shouldClip: true,

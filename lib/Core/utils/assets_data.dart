@@ -43,4 +43,9 @@ class AssetsData{
 
   // BAG VIEW
   static const String emptyBag = "assets/images/bag_view/bag_empty.png";
+
+
+  // FAVORITE VIEW
+  static const String favorite = "assets/images/favorite_view/favorite.png";
+
 }

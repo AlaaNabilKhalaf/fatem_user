@@ -1,6 +1,7 @@
 import 'dart:ui';
 import 'package:fatem_users/Core/constance.dart';
 import 'package:fatem_users/Features/Bag/Presentation/Views/bag_view.dart';
+import 'package:fatem_users/Features/Favorites/Presentation/Views/favorites_view.dart';
 import 'package:fatem_users/Features/Home/Presentation/Views/home_view.dart';
 import 'package:fatem_users/Features/Profile/Presentation/Views/profile_view.dart';
 import 'package:flutter/material.dart';
@@ -20,7 +21,7 @@ class BottomNavigationView extends StatefulWidget {
 class _BottomNavigationViewState extends State<BottomNavigationView> {
 
 
-  List<Widget?> pages = [const ProfileView(), null, const BagView(), const HomeView()];
+  List<Widget?> pages = [const ProfileView(), FavoritesView(), const BagView(), const HomeView()];
 
   void navigateToPage(int index)
   {

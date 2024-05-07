@@ -63,8 +63,8 @@ class BackgroundPage extends StatelessWidget
 
 
               Positioned(
-                top: topPosition,
-                left: leftPosition,
+                top: topPosition ?? 39.h,
+                left: leftPosition?? 0.w,
 
                 child: topLeftWidget?? const MyBackButton(),
               ),
