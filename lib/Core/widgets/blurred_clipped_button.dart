@@ -40,7 +40,6 @@ class BlurredClippedButton extends StatelessWidget {
   final Color? borderColor;
 
 
-
   const BlurredClippedButton({
     super.key,
     required this.passedWidget,
@@ -70,8 +69,8 @@ class BlurredClippedButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return ClippedShadowButton(
+
         boxShadow: shadow,
         shadowHeight: shadowThickness,
         height: shadowHeight,

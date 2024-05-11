@@ -77,7 +77,7 @@ class ProfileView extends StatelessWidget
       canPop: false,
       child: Scaffold(
         extendBody: true,
-        bottomNavigationBar: const BottomNavigationView(),
+        bottomNavigationBar: BottomNavigationView(),
         body: Container(
           width: double.infinity,
           height: double.infinity,

@@ -7,7 +7,7 @@ class AssetsData{
 
 
   // HOME VIEW
-  static const String itemTemp = "assets/images/home_view/Item_Temp.png";
+  static const String itemTemp = "assets/images/home_view/Item_Temp2.png";
   static const String emptyHeart = "assets/images/home_view/empty_heart.svg";
   static const String heart = "assets/images/home_view/heart.svg";
 

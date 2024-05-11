@@ -11,6 +11,7 @@ import 'Core/constance.dart';
 import 'Core/utils/product_model.dart';
 import 'Features/Auth/presentation/Controller/Auth/auth_cubit.dart';
 import 'Features/Auth/presentation/Controller/AuthLocal/auth_cache_network.dart';
+import 'Features/Home/Presentation/Controller/Cubits/BottomNavBar/bottom_nav_cubit.dart';
 import 'Features/Profile/Controller/Cubits/Languages/language_cubit.dart';
 import 'firebase_options.dart';
 import 'package:intl/intl.dart';
@@ -56,6 +57,7 @@ Future<void> main() async {
     BlocProvider<AuthCubit>(create: (context) => AuthCubit()),
     BlocProvider<LangCubit>(create: (context) => LangCubit()),
     BlocProvider<FavoritesCubit>(create: (context) => FavoritesCubit()),
+    BlocProvider<BottomNavCubit>(create: (context) => BottomNavCubit()),
   ], child: const FatemUser()));
 }
 

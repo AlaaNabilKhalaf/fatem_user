@@ -132,7 +132,7 @@ class FavoritesListViewItem extends StatelessWidget
 
   @override
   Widget build(BuildContext context) {
-    final s = S.of(context);
+    //final s = S.of(context);
     return Row(
       children:
       [

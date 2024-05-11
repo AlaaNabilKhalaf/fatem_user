@@ -22,7 +22,7 @@ class BagView extends StatelessWidget
   @override
   Widget build(BuildContext context) {
     return BackgroundPage(
-      bottomNavigationBar: const BottomNavigationView(),
+      bottomNavigationBar: BottomNavigationView(),
       topPosition: 39.h,
       leftPosition: 0.w,
       bodyWidget: Column(

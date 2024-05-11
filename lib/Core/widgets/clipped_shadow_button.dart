@@ -18,7 +18,7 @@ class ClippedShadowButton extends StatelessWidget {
     this.width,
     this.child,
     this.shadowHeight,
-    this.shouldClip
+    this.shouldClip,
   });
 
 

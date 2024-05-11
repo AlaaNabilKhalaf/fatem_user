@@ -273,7 +273,8 @@ class ItemCard extends StatelessWidget
                       height: 104.69.h,
                       decoration: BoxDecoration(
                       borderRadius: BorderRadius.all(Radius.circular(3.r)),
-                      image: const DecorationImage(image: AssetImage(AssetsData.itemTemp), fit: BoxFit.fill)
+                      image: const DecorationImage(image: AssetImage(AssetsData.itemTemp), fit: BoxFit.contain,
+                      )
                   ),
                 )
             ),

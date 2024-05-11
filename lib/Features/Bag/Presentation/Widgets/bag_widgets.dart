@@ -46,7 +46,14 @@ class BagEmpty extends StatelessWidget
         SizedBox(height: 12.h),
         RegularText(
             fontSizeAr: 23.sp,
-            text: s.noPreviousOrders, fontSizeEn: 15.sp, textColor: Colors.black, fontFamilyAr: arRegular, fontFamilyEn: enLight)
+            text: s.noPreviousOrders,
+            fontSizeEn: 15.sp,
+            textColor: Colors.black,
+            fontFamilyAr: arRegular,
+            fontFamilyEn: enLight,
+            maxLine: 3,
+            textOverflow: TextOverflow.visible,
+        )
       ],
     );
   }

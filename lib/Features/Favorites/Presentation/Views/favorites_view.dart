@@ -11,9 +11,7 @@ import '../../../../Core/widgets/background_page.dart';
 
 class FavoritesView extends StatelessWidget
 {
-  FavoritesView({super.key});
-
-  final _key1 = GlobalKey();
+  const FavoritesView({super.key});
 
   @override
   Widget build(BuildContext context)
@@ -34,8 +32,8 @@ class FavoritesView extends StatelessWidget
           SizedBox(height: 23.h),
 
           BlurredClippedButton(
-            key: _key1,
             passedWidget: const FavoriteList(),
+            key: key,
             onTap: (){
               //log(_key1.currentContext!.size!.height.toString());
             },
