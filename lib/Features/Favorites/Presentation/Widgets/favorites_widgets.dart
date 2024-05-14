@@ -1,7 +1,7 @@
-import 'package:fatem_users/Core/utils/product_model.dart';
 import 'package:fatem_users/Core/widgets/image_svg.dart';
 import 'package:fatem_users/Features/Home/Presentation/Controller/Cubits/Favorites/favorites_cubit.dart';
 import 'package:fatem_users/Features/Home/Presentation/Controller/Cubits/Favorites/favorites_states.dart';
+import 'package:fatem_users/Features/Products/data/models/product_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -163,7 +163,7 @@ class FavoritesListViewItem extends StatelessWidget
           child: RegularText(
             fontSizeAr: 20.sp,
             textAlign: TextAlign.start,
-            text: productModel.name!,fontSizeEn: 16.sp, textColor: Colors.black, fontFamilyAr: arLight, fontFamilyEn: enRegular, letterSpacing: 2,),
+            text: productModel.title,fontSizeEn: 16.sp, textColor: Colors.black, fontFamilyAr: arLight, fontFamilyEn: enRegular, letterSpacing: 2,),
         ),
 
         const Spacer(),

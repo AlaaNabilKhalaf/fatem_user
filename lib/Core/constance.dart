@@ -1,5 +1,5 @@
 import 'dart:collection';
-import 'package:fatem_users/Core/utils/product_model.dart';
+import 'package:fatem_users/Features/Products/data/models/product_model.dart';
 import 'package:flutter/material.dart';
 
 // Cache Data

@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:fatem_users/Core/constance.dart';
-import '../../../../../../Core/utils/product_model.dart';
+import '../../../../../Products/data/models/product_model.dart';
 import 'favorites_states.dart';
 
 

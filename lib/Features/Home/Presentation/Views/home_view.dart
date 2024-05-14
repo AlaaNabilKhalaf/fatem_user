@@ -8,65 +8,50 @@ import '../../../../Core/widgets/texts.dart';
 import '../../../../generated/l10n.dart';
 import 'bottom_navigation_view.dart';
 
-
-
-
-class HomeView extends StatelessWidget
-{
+class HomeView extends StatelessWidget {
   const HomeView({super.key});
 
-
-
   @override
-  Widget build(BuildContext context)
-  {
+  Widget build(BuildContext context) {
     final s = S.of(context);
-    return BackgroundPage
-      (
+    return BackgroundPage(
         topPosition: 34.h,
         leftPosition: 24.w,
         bottomNavigationBar: BottomNavigationView(),
-
         topLeftWidget: SizedBox(
-          width: 167.w,
-          height: 70.h,
-          child: RegularText(
-            textDirection: TextDirection.ltr,
-            fontSizeAr: 17.sp,
-            text: "BEGIN YOUR BEAUTY JOURNEY",
-            fontSizeEn: 17.sp,
-            textColor: Colors.black,
-            fontFamilyAr: enExtraLight,
-            fontFamilyEn: enExtraLight,
-            textAlign: TextAlign.start,
-            textOverflow: TextOverflow.visible,
-            letterSpacing: 2,
-          )
-        ),
-
-
+            width: 167.w,
+            height: 70.h,
+            child: RegularText(
+              textDirection: TextDirection.ltr,
+              fontSizeAr: 17.sp,
+              text: "BEGIN YOUR BEAUTY JOURNEY",
+              fontSizeEn: 17.sp,
+              textColor: Colors.black,
+              fontFamilyAr: enExtraLight,
+              fontFamilyEn: enExtraLight,
+              textAlign: TextAlign.start,
+              textOverflow: TextOverflow.visible,
+              letterSpacing: 2,
+            )),
         bodyWidget: Column(
           children: [
-            SizedBox(height: isArabic()? 138.h : 156.h),
-
+            SizedBox(height: isArabic() ? 138.h : 156.h),
             const WelcomeMessage(),
-
             SizedBox(height: 17.h),
-
             const BlurredRectangle(),
-
             SizedBox(height: 30.h),
-
             RegularText(
-                fontSizeAr: 35.sp,
-                text: s.bestSelling, fontSizeEn: 26.sp, textColor: Colors.black, fontFamilyAr: arBold, fontFamilyEn: ade, letterSpacing: 6,),
-
+              fontSizeAr: 35.sp,
+              text: s.bestSelling,
+              fontSizeEn: 26.sp,
+              textColor: Colors.black,
+              fontFamilyAr: arBold,
+              fontFamilyEn: ade,
+              letterSpacing: 6,
+            ),
             SizedBox(height: 16.h),
-
             const CardsGrid(),
           ],
-        )
-    );
+        ));
   }
-
 }

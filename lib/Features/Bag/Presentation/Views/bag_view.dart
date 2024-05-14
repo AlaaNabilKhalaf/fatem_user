@@ -7,16 +7,7 @@ import '../../../Home/Presentation/Views/bottom_navigation_view.dart';
 import '../../../Profile/Presentation/Views/profile_view.dart';
 import '../Widgets/bag_widgets.dart';
 
-
-
-
-
-
-
-
-
-class BagView extends StatelessWidget
-{
+class BagView extends StatelessWidget {
   const BagView({super.key});
 
   @override
@@ -28,17 +19,13 @@ class BagView extends StatelessWidget
       bodyWidget: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-
-          ProfileGradButton(
-              passedWidget: const Bag(),
-              onTap: () {}
-          ),
+          ProfileGradButton(passedWidget: const Bag(), onTap: () {}),
 
           SizedBox(height: 25.h),
 
           BlurredClippedButton(
             passedWidget: const BagEmpty(),
-            onTap: (){},
+            onTap: () {},
             shadow: shadow,
             shadowRadius: 25.w,
             cutRadius: 22.w,

@@ -1,4 +1,6 @@
+import 'package:fatem_users/Features/Categories/data/models/categories_enum.dart';
 import 'package:fatem_users/Features/Home/Presentation/Controller/Cubits/Favorites/favorites_cubit.dart';
+import 'package:fatem_users/Features/Products/data/models/product_model.dart';
 import 'package:fatem_users/Features/Profile/Controller/Cubits/Languages/languages_states.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -8,18 +10,15 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'Core/bloc_observer/bloc_observer.dart';
 import 'Core/constance.dart';
-import 'Core/utils/product_model.dart';
 import 'Features/Auth/presentation/Controller/Auth/auth_cubit.dart';
 import 'Features/Auth/presentation/Controller/AuthLocal/auth_cache_network.dart';
 import 'Features/Home/Presentation/Controller/Cubits/BottomNavBar/bottom_nav_cubit.dart';
+import 'Features/Home/Presentation/Views/home_view.dart';
 import 'Features/Profile/Controller/Cubits/Languages/language_cubit.dart';
 import 'firebase_options.dart';
 import 'package:intl/intl.dart';
 import 'Features/Splash/presentation/views/splash_view.dart';
 import 'generated/l10n.dart';
-
-
-
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -30,7 +29,7 @@ Future<void> main() async {
   );
 
   token = CacheNetwork.getCacheData(key: "token");
-  name =  CacheNetwork.getCacheData(key: "name");
+  name = CacheNetwork.getCacheData(key: "name");
   email = CacheNetwork.getCacheData(key: "email");
   phone = CacheNetwork.getCacheData(key: "phoneNumber");
   cachedAvatar = CacheNetwork.getCacheData(key: "avatarPath");
@@ -41,16 +40,15 @@ Future<void> main() async {
   currentPageIndex.addFirst(3);
 
   //Initialize tempList
-  tempProduct =
-  [
-    ProductModel(name: "Kareem"),
-    ProductModel(name: "Alaa"),
-    ProductModel(name: "Momen"),
-    ProductModel(name: "Pew Pew Pew Ahmed Mohsen"),
-    ProductModel(name: "Yousef Maraba"),
-    ProductModel(name: "Bal7a Chan"),
-    ProductModel(name: "Adel Shakaal"),
-    ProductModel(name: "Egypt is Not Masr"),
+  tempProduct = [
+    ProductModel(title: "Kareem", category: CategoriesEnum.body, img: '', desc: '',),
+    ProductModel(title: "Alaa", category: CategoriesEnum.body, img: '', desc: '',),
+    ProductModel(title: "Momen", category: CategoriesEnum.body, img: '', desc: '',),
+    ProductModel(title: "Pew Pew Pew Ahmed Mohsen", category: CategoriesEnum.body, img: '', desc: '',),
+    ProductModel(title: "Yousef Maraba", category: CategoriesEnum.body, img: '', desc: '',),
+    ProductModel(title: "Bal7a Chan", category: CategoriesEnum.body, img: '', desc: '',),
+    ProductModel(title: "Adel Shakaal", category: CategoriesEnum.body, img: '', desc: '',),
+    ProductModel(title: "Egypt is Not Masr", category: CategoriesEnum.body, img: '', desc: '',),
   ];
 
   runApp(MultiBlocProvider(providers: [
@@ -98,7 +96,7 @@ class FatemUser extends StatelessWidget {
             supportedLocales: S.delegate.supportedLocales,
             debugShowCheckedModeBanner: false,
             themeMode: ThemeMode.system,
-            home: const SplashView(),
+            home: const HomeView(),
           );
         },
       );
