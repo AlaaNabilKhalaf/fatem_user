@@ -19,5 +19,8 @@
   "deodorant" : "DEODORANT",
   "there" : "THERE",
   "favorite" : "FAVORITE",
-  "emptyFavoritePage" : "MAKE YOUR OWN WISH LIST"
+  "emptyFavoritePage" : "MAKE YOUR OWN WISH LIST",
+  "addToBag" : "Add To The Bag",
+  "benefits" : "Benefits:",
+  "tipsForUse": "Tips For Usage:"
 }

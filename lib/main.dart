@@ -1,4 +1,3 @@
-import 'package:fatem_users/Features/Home/Presentation/Controller/Cubits/Favorites/favorites_cubit.dart';
 import 'package:fatem_users/Features/Profile/Controller/Cubits/Languages/languages_states.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -8,10 +7,12 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'Core/bloc_observer/bloc_observer.dart';
 import 'Core/constance.dart';
+import 'Core/utils/assets_data.dart';
 import 'Core/utils/product_model.dart';
 import 'Features/Auth/presentation/Controller/Auth/auth_cubit.dart';
 import 'Features/Auth/presentation/Controller/AuthLocal/auth_cache_network.dart';
 import 'Features/Home/Presentation/Controller/Cubits/BottomNavBar/bottom_nav_cubit.dart';
+import 'Features/Home/Presentation/Controller/Cubits/Products/products_cubit.dart';
 import 'Features/Profile/Controller/Cubits/Languages/language_cubit.dart';
 import 'firebase_options.dart';
 import 'package:intl/intl.dart';
@@ -43,20 +44,20 @@ Future<void> main() async {
   //Initialize tempList
   tempProduct =
   [
-    ProductModel(name: "Kareem"),
-    ProductModel(name: "Alaa"),
-    ProductModel(name: "Momen"),
-    ProductModel(name: "Pew Pew Pew Ahmed Mohsen"),
-    ProductModel(name: "Yousef Maraba"),
-    ProductModel(name: "Bal7a Chan"),
-    ProductModel(name: "Adel Shakaal"),
-    ProductModel(name: "Egypt is Not Masr"),
+    ProductModel(nameArabic: "مزيل عرق",nameEnglish: "Deodorant",image: AssetsData.deodorant),
+    ProductModel(nameArabic: "حمض الهيالورونيك",nameEnglish: "Hyaluronic Acid",image: AssetsData.hyaluronicAcid),
+    ProductModel(nameArabic: "مرطب شفائف",nameEnglish: "Lip Balm",image: AssetsData.lipBalm),
+    ProductModel(nameArabic: "مرطب",nameEnglish: "Moisturizer",image: AssetsData.moisturizer),
+    ProductModel(nameArabic: "شامبو خالي من الكبريت",nameEnglish: "Shampoo Free Sulfate",image: AssetsData.shampooFreeSulfate),
+    ProductModel(nameArabic: "صابون",nameEnglish: "Soap",image: AssetsData.soap),
+    ProductModel(nameArabic: "منظف شفائف",nameEnglish: "Toner",image: AssetsData.toner),
+    ProductModel(nameArabic: "كريم تفتيح",nameEnglish: "Whitening Cream",image: AssetsData.whiteningCream),
   ];
 
   runApp(MultiBlocProvider(providers: [
     BlocProvider<AuthCubit>(create: (context) => AuthCubit()),
     BlocProvider<LangCubit>(create: (context) => LangCubit()),
-    BlocProvider<FavoritesCubit>(create: (context) => FavoritesCubit()),
+    BlocProvider<ProductsCubit>(create: (context) => ProductsCubit()),
     BlocProvider<BottomNavCubit>(create: (context) => BottomNavCubit()),
   ], child: const FatemUser()));
 }

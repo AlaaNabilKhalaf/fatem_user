@@ -18,7 +18,7 @@ class PreviousOrdersView extends StatelessWidget
   Widget build(BuildContext context)
   {
     return BackgroundPage(
-      bottomNavigationBar: BottomNavigationView(),
+      bottomNavigationBar: const BottomNavigationView(),
       topPosition: 39.h,
       leftPosition: 0.w,
       bodyWidget: Column(

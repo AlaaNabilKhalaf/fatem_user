@@ -18,6 +18,7 @@ class FavoritesView extends StatelessWidget
   {
     return BackgroundPage(
       bottomNavigationBar: const BottomNavigationView(),
+      topLeftWidget: const SizedBox(),
       bodyWidget: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [

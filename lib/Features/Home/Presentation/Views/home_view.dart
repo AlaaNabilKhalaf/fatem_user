@@ -25,7 +25,7 @@ class HomeView extends StatelessWidget
       (
         topPosition: 34.h,
         leftPosition: 24.w,
-        bottomNavigationBar: BottomNavigationView(),
+        bottomNavigationBar: const BottomNavigationView(),
 
         topLeftWidget: SizedBox(
           width: 167.w,

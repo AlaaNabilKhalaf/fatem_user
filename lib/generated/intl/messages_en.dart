@@ -24,9 +24,11 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "about": MessageLookupByLibrary.simpleMessage(
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry."),
+        "addToBag": MessageLookupByLibrary.simpleMessage("Add To The Bag"),
         "bag": MessageLookupByLibrary.simpleMessage("BAG"),
         "bagEmpty":
             MessageLookupByLibrary.simpleMessage("YOUR BAG IS STILL EMPTY"),
+        "benefits": MessageLookupByLibrary.simpleMessage("Benefits:"),
         "bestSelling": MessageLookupByLibrary.simpleMessage("BEST SELLING"),
         "body": MessageLookupByLibrary.simpleMessage("BODY"),
         "currentLanguage": MessageLookupByLibrary.simpleMessage("English"),
@@ -50,6 +52,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "profileText": MessageLookupByLibrary.simpleMessage("PROFILE"),
         "skin": MessageLookupByLibrary.simpleMessage("SKIN"),
         "there": MessageLookupByLibrary.simpleMessage("THERE"),
+        "tipsForUse": MessageLookupByLibrary.simpleMessage("Tips For Usage:"),
         "welcome": MessageLookupByLibrary.simpleMessage("WELCOME")
       };
 }

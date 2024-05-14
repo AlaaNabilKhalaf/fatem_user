@@ -3,8 +3,6 @@ import 'package:fatem_users/Core/utils/product_model.dart';
 import 'package:fatem_users/Core/widgets/image_svg.dart';
 import 'package:fatem_users/Features/Auth/presentation/Controller/Auth/auth_cubit.dart';
 import 'package:fatem_users/Features/Auth/presentation/Controller/Auth/auth_states.dart';
-import 'package:fatem_users/Features/Home/Presentation/Controller/Cubits/Favorites/favorites_cubit.dart';
-import 'package:fatem_users/Features/Home/Presentation/Controller/Cubits/Favorites/favorites_states.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -12,6 +10,9 @@ import '../../../../Core/constance.dart';
 import '../../../../Core/utils/app_logger.dart';
 import '../../../../Core/widgets/texts.dart';
 import '../../../../generated/l10n.dart';
+import '../../../ItemPage/Presentation/Views/item_page_view.dart';
+import '../Controller/Cubits/Products/products_cubit.dart';
+import '../Controller/Cubits/Products/products_states.dart';
 
 
 
@@ -197,10 +198,10 @@ class CardsGrid extends StatelessWidget {
   @override
   Widget build(BuildContext context)
   {
-    return BlocBuilder<FavoritesCubit,FavoritesStates>(
+    return BlocBuilder<ProductsCubit,ProductsStates>(
         builder: (context, state)
         {
-          final cubit = BlocProvider.of<FavoritesCubit>(context);
+          final cubit = BlocProvider.of<ProductsCubit>(context);
           return Expanded(
             child: GridView.builder(
               clipBehavior: Clip.antiAlias,
@@ -236,7 +237,7 @@ class ItemCard extends StatelessWidget
   });
 
   final ProductModel productModel;
-  final FavoritesCubit cubit;
+  final ProductsCubit cubit;
   final int index;
 
   @override
@@ -259,24 +260,29 @@ class ItemCard extends StatelessWidget
           left: 16.w,
           right: 16.w,
           bottom: 62.h,
-          child: Container(
-            height: 114.h,
-            width: 124.w,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(6.r)),
-                color: imageBGCardColor
-            ),
-            child: Padding(
-                padding: EdgeInsets.symmetric(vertical: 4.65.h, horizontal: 4.w),
-                child: Container(
-                      width: 116.w,
-                      height: 104.69.h,
-                      decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(Radius.circular(3.r)),
-                      image: const DecorationImage(image: AssetImage(AssetsData.itemTemp), fit: BoxFit.contain,
-                      )
-                  ),
-                )
+          child: GestureDetector(
+            onTap: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context) =>  ItemPageView(productModel: productModel)));
+            },
+            child: Container(
+              height: 114.h,
+              width: 124.w,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(6.r)),
+                  color: imageBGCardColor
+              ),
+              child: Padding(
+                  padding: EdgeInsets.symmetric(vertical: 4.65.h, horizontal: 4.w),
+                  child: Container(
+                        width: 116.w,
+                        height: 104.69.h,
+                        decoration: BoxDecoration(
+                        borderRadius: BorderRadius.all(Radius.circular(3.r)),
+                        image: DecorationImage(image: AssetImage(productModel.image?? AssetsData.itemTemp), fit: BoxFit.fill,
+                        )
+                    ),
+                  )
+              ),
             ),
           ),
         ),
@@ -289,7 +295,7 @@ class ItemCard extends StatelessWidget
           child: RegularText(
               textAlign: TextAlign.start,
               fontSizeAr: 13.sp,
-              text: productModel.name!/*s.deodorant*/,
+              text: isArabic()? productModel.nameArabic! : productModel.nameEnglish!/*s.deodorant*/,
               fontSizeEn: 13.sp,
               textColor: Colors.black,
               fontFamilyAr: arRegular,
