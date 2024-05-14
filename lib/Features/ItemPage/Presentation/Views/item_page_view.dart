@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../Core/constance.dart';
 import '../../../../Core/utils/app_logger.dart';
-import '../../../../Core/utils/product_model.dart';
+import '../../../Products/data/models/product_model.dart';
 
 
 

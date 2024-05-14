@@ -1,4 +1,3 @@
-import 'package:fatem_users/Core/utils/product_model.dart';
 import 'package:fatem_users/Features/Home/Presentation/Controller/Cubits/Products/products_cubit.dart';
 import 'package:fatem_users/Features/Home/Presentation/Controller/Cubits/Products/products_states.dart';
 import 'package:flutter/material.dart';
@@ -9,6 +8,7 @@ import '../../../../Core/utils/app_logger.dart';
 import '../../../../Core/utils/assets_data.dart';
 import '../../../../Core/widgets/texts.dart';
 import '../../../../generated/l10n.dart';
+import '../../../Products/data/models/product_model.dart';
 
 
 
@@ -42,7 +42,7 @@ class ItemDescription extends StatelessWidget {
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.all(Radius.circular(12.r)),
                   border: Border.all(color: imageBGCardColor),
-                  image:  DecorationImage(image: AssetImage(productModel.image?? AssetsData.itemTemp), fit: BoxFit.fill,
+                  image:  DecorationImage(image: AssetImage(productModel.img?? AssetsData.itemTemp), fit: BoxFit.fill,
                 ),
               ),
             ),
@@ -54,13 +54,13 @@ class ItemDescription extends StatelessWidget {
                   textAlign: TextAlign.start,
                   text: isArabic()? productModel.nameArabic! : productModel.nameEnglish!, fontSizeEn: 13.sp, textColor: Colors.black, fontFamilyAr: arRegular, fontFamilyEn: enRegular),
             ),
-            SizedBox(
-              width: 125.w,
-              child: RegularText(
-                  fontSizeAr: 10.sp,
-                  textAlign: TextAlign.start,
-                  text: isArabic()? productModel.ingredientsArabic??"فاااضي" : productModel.ingredientsEnglish??"Empty", fontSizeEn: 6.5.sp, textColor: Colors.black, fontFamilyAr: arRegular, fontFamilyEn: enRegular, maxLine: 6,),
-            )
+            // SizedBox(
+            //   width: 125.w,
+            //   child: RegularText(
+            //       fontSizeAr: 10.sp,
+            //       textAlign: TextAlign.start,
+            //       text: isArabic()? productModel.ingredientsArabic??"فاااضي" : productModel.ingredientsEnglish??"Empty", fontSizeEn: 6.5.sp, textColor: Colors.black, fontFamilyAr: arRegular, fontFamilyEn: enRegular, maxLine: 6,),
+            // )
           ],
         ),
         SizedBox(width: 21.w,),

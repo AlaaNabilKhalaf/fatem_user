@@ -3,8 +3,6 @@ import 'package:fatem_users/Core/widgets/image_svg.dart';
 import 'package:fatem_users/Features/Auth/presentation/Controller/Auth/auth_cubit.dart';
 import 'package:fatem_users/Features/Auth/presentation/Controller/Auth/auth_states.dart';
 import 'package:fatem_users/Features/Categories/data/models/category_model.dart';
-import 'package:fatem_users/Features/Home/Presentation/Controller/Cubits/Favorites/favorites_cubit.dart';
-import 'package:fatem_users/Features/Home/Presentation/Controller/Cubits/Favorites/favorites_states.dart';
 import 'package:fatem_users/Features/Products/presentation/views/products_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -13,11 +11,11 @@ import '../../../../Core/constance.dart';
 import '../../../../Core/utils/app_logger.dart';
 import '../../../../Core/widgets/texts.dart';
 import '../../../../generated/l10n.dart';
+import '../../../Categories/data/models/categories_enum.dart';
 import '../../../ItemPage/Presentation/Views/item_page_view.dart';
+import '../../../Products/data/models/product_model.dart';
 import '../Controller/Cubits/Products/products_cubit.dart';
 import '../Controller/Cubits/Products/products_states.dart';
-
-
 
 class WelcomeMessage extends StatefulWidget {
   const WelcomeMessage({super.key});
@@ -94,8 +92,20 @@ class ListItems extends StatelessWidget {
         physics: const BouncingScrollPhysics(),
         itemExtent: 127.w,
         itemBuilder: (BuildContext context, int index) {
-          return ListViewItem(
-            categoryModel: categories[index],
+          return GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => ProductsView(
+                    categoriesEnum: categories[index].categoriesEnum,
+                  ),
+                ),
+              );
+            },
+            child: ListViewItem(
+              categoryModel: categories[index],
+            ),
           );
         },
       ),
@@ -110,32 +120,20 @@ class ListViewItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final s = S.of(context);
     return Padding(
       padding: EdgeInsets.only(left: 7.w, right: 7.w),
       child: Column(
-        children: <Widget>[
-          GestureDetector(
-            onTap: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (context) => ProductsView(
-                    categoriesEnum: categoryModel.categoriesEnum,
-                  ),
+        children: [
+          Container(
+            height: 127.h,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.all(
+                  Radius.circular(5.r),
                 ),
-              );
-            },
-            child: Container(
-              height: 127.h,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(5.r),
-                  ),
-                  image: const DecorationImage(
-                      image: AssetImage(AssetsData.itemTemp),
-                      fit: BoxFit.fitHeight,
-                      isAntiAlias: true)),
-            ),
+                image: const DecorationImage(
+                    image: AssetImage(AssetsData.itemTemp),
+                    fit: BoxFit.fitHeight,
+                    isAntiAlias: true)),
           ),
           RegularText(
             fontSizeAr: 27.sp,
@@ -206,33 +204,30 @@ class CardsGrid extends StatelessWidget {
   final itemsCount = 8;
 
   @override
-  Widget build(BuildContext context)
-  {
-    return BlocBuilder<ProductsCubit,ProductsStates>(
-        builder: (context, state)
-        {
-          final cubit = BlocProvider.of<ProductsCubit>(context);
-          return Expanded(
-            child: GridView.builder(
-              clipBehavior: Clip.antiAlias,
-              physics: const BouncingScrollPhysics(),
-              padding: EdgeInsets.only(left: 16.w, right: 16.w, bottom: 65.h),
-              itemCount: tempProduct?.length,
-              scrollDirection: Axis.vertical,
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                mainAxisSpacing: 16.h,
-                crossAxisSpacing: 16.w,
-                mainAxisExtent: 184.h,
-              ),
-              itemBuilder: (BuildContext context, int index)
-              {
-                return ItemCard(productModel: tempProduct![index], cubit: cubit, index: index);
-              },
-            ),
-          );
-        }
-    );
+  Widget build(BuildContext context) {
+    return BlocBuilder<ProductsCubit, ProductsStates>(
+        builder: (context, state) {
+      final cubit = BlocProvider.of<ProductsCubit>(context);
+      return Expanded(
+        child: GridView.builder(
+          clipBehavior: Clip.antiAlias,
+          physics: const BouncingScrollPhysics(),
+          padding: EdgeInsets.only(left: 16.w, right: 16.w, bottom: 65.h),
+          itemCount: tempProduct?.length,
+          scrollDirection: Axis.vertical,
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            mainAxisSpacing: 16.h,
+            crossAxisSpacing: 16.w,
+            mainAxisExtent: 184.h,
+          ),
+          itemBuilder: (BuildContext context, int index) {
+            return ItemCard(
+                productModel: tempProduct![index], cubit: cubit, index: index);
+          },
+        ),
+      );
+    });
   }
 }
 
@@ -267,28 +262,33 @@ class ItemCard extends StatelessWidget {
           right: 16.w,
           bottom: 62.h,
           child: GestureDetector(
-            onTap: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context) =>  ItemPageView(productModel: productModel)));
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) =>
+                          ItemPageView(productModel: productModel)));
             },
             child: Container(
               height: 114.h,
               width: 124.w,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.all(Radius.circular(6.r)),
-                  color: imageBGCardColor
-              ),
+                  color: imageBGCardColor),
               child: Padding(
-                  padding: EdgeInsets.symmetric(vertical: 4.65.h, horizontal: 4.w),
+                  padding:
+                      EdgeInsets.symmetric(vertical: 4.65.h, horizontal: 4.w),
                   child: Container(
-                        width: 116.w,
-                        height: 104.69.h,
-                        decoration: BoxDecoration(
+                    width: 116.w,
+                    height: 104.69.h,
+                    decoration: BoxDecoration(
                         borderRadius: BorderRadius.all(Radius.circular(3.r)),
-                        image: DecorationImage(image: AssetImage(productModel.image?? AssetsData.itemTemp), fit: BoxFit.fill,
-                        )
-                    ),
-                  )
-              ),
+                        image: DecorationImage(
+                          image: AssetImage(
+                              productModel.img ?? AssetsData.itemTemp),
+                          fit: BoxFit.fill,
+                        )),
+                  )),
             ),
           ),
         ),
@@ -301,7 +301,9 @@ class ItemCard extends StatelessWidget {
           child: RegularText(
               textAlign: TextAlign.start,
               fontSizeAr: 13.sp,
-              text: isArabic()? productModel.nameArabic! : productModel.nameEnglish!/*s.deodorant*/,
+              text: isArabic()
+                  ? productModel.nameArabic!
+                  : productModel.nameEnglish! /*s.deodorant*/,
               fontSizeEn: 13.sp,
               textColor: Colors.black,
               fontFamilyAr: arRegular,

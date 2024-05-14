@@ -1,7 +1,7 @@
 import 'package:fatem_users/Core/widgets/texts.dart';
 import 'package:fatem_users/Features/Categories/data/models/categories_enum.dart';
-import 'package:fatem_users/Features/Home/Presentation/Controller/Cubits/Favorites/favorites_cubit.dart';
-import 'package:fatem_users/Features/Home/Presentation/Controller/Cubits/Favorites/favorites_states.dart';
+import 'package:fatem_users/Features/Home/Presentation/Controller/Cubits/Products/products_cubit.dart';
+import 'package:fatem_users/Features/Home/Presentation/Controller/Cubits/Products/products_states.dart';
 import 'package:fatem_users/Features/Products/data/models/product_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -25,18 +25,19 @@ class ProductsView extends StatefulWidget {
 
 class _ProductsViewState extends State<ProductsView> {
   late List<ProductModel> products = [];
-  @override
-  void initState() {
-    products = allProduct
-        .where((element) => element.category.name == widget.categoriesEnum.name)
-        .toList();
-    setState(() {});
-    log('products ${products.length}');
-    super.initState();
-  }
+  // @override
+  // void initState() {
+
+  //   log('products ${products.length}');
+  //   super.initState();
+  // }
 
   @override
   Widget build(BuildContext context) {
+    products = allProduct
+        .where((element) => element.category == widget.categoriesEnum)
+        .toList();
+    setState(() {});
     return Scaffold(
       body: Container(
         width: double.infinity,
@@ -71,7 +72,7 @@ class _ProductsViewState extends State<ProductsView> {
             GridView.builder(
               padding: EdgeInsets.only(top: 150),
               itemBuilder: (context, index) {
-                return BlocBuilder<FavoritesCubit, FavoritesStates>(
+                return BlocBuilder<ProductsCubit, ProductsStates>(
                     builder: (context, cubit) {
                   return Stack(
                     children: [
@@ -122,7 +123,7 @@ class _ProductsViewState extends State<ProductsView> {
                         child: RegularText(
                             textAlign: TextAlign.start,
                             fontSizeAr: 13.sp,
-                            text: products[index].title,
+                            text: products[index].nameEnglish ?? '',
                             fontSizeEn: 13.sp,
                             textColor: Colors.black,
                             fontFamilyAr: arRegular,
@@ -136,11 +137,11 @@ class _ProductsViewState extends State<ProductsView> {
                           child: GestureDetector(
                             onTap: () {
                               context
-                                  .read<FavoritesCubit>()
+                                  .read<ProductsCubit>()
                                   .favoriteAddOrRemove(products[index], index);
                             },
                             child: context
-                                    .read<FavoritesCubit>()
+                                    .read<ProductsCubit>()
                                     .favoritesIndex
                                     .contains(index)
                                 ? SvgImage(

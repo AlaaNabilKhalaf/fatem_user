@@ -1,6 +1,4 @@
 import 'package:fatem_users/Core/widgets/image_svg.dart';
-import 'package:fatem_users/Features/Home/Presentation/Controller/Cubits/Favorites/favorites_cubit.dart';
-import 'package:fatem_users/Features/Home/Presentation/Controller/Cubits/Favorites/favorites_states.dart';
 import 'package:fatem_users/Features/Products/data/models/product_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -153,7 +151,7 @@ class FavoritesListViewItem extends StatelessWidget
                 height: 46.68.h,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.all(Radius.circular(5.r)),
-                  image: DecorationImage(image: AssetImage(productModel.image?? AssetsData.itemTemp), fit: BoxFit.fill)
+                  image: DecorationImage(image: AssetImage(productModel.img?? AssetsData.itemTemp), fit: BoxFit.fill)
                 ),
             ),
           ),

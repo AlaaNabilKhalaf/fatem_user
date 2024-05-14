@@ -4,11 +4,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../Core/constance.dart';
 import '../../../../Core/utils/app_logger.dart';
-import '../../../../Core/utils/product_model.dart';
 import '../../../../Core/widgets/texts.dart';
 import '../../../../generated/l10n.dart';
 import '../../../Home/Presentation/Controller/Cubits/Products/products_cubit.dart';
 import '../../../Home/Presentation/Controller/Cubits/Products/products_states.dart';
+import '../../../Products/data/models/product_model.dart';
 
 
 
@@ -117,7 +117,7 @@ class _BagListViewItem extends StatelessWidget
               height: 46.68.h,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.all(Radius.circular(5.r)),
-                  image: DecorationImage(image: AssetImage(productModel.image?? AssetsData.itemTemp), fit: BoxFit.fill)
+                  image: DecorationImage(image: AssetImage(productModel.img?? AssetsData.itemTemp), fit: BoxFit.fill)
               ),
             ),
           ),

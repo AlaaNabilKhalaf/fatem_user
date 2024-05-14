@@ -5,7 +5,8 @@ class ProductModel {
   int? id;
 
   final CategoriesEnum category;
-  final String title;
+   String? nameArabic;
+  String? nameEnglish;
   final String desc;
   final String img;
   int? price;
@@ -15,7 +16,8 @@ class ProductModel {
     this.price,
     this.discount,
     required this.category,
-    required this.title,
+     this.nameArabic,
+    this.nameEnglish,
     required this.desc,
     required this.img,
   });
@@ -24,7 +26,7 @@ class ProductModel {
 List<ProductModel> allProduct = [
   ProductModel(
     category: CategoriesEnum.hair,
-    title: 'Hair Balm',
+    nameEnglish: 'Hair Balm',
     desc: '''Vitamin - E
 
 Indications Protect from Heat Split ends. Hair breakage Damadged and Exhausted Hair
@@ -35,13 +37,13 @@ For Healthy and Shiny Hair''',
   ),
   ProductModel(
     category: CategoriesEnum.face,
-    title: 'Lip Scrub',
+    nameEnglish: 'Lip Scrub',
     desc: '''VREACH IN VIT-E, SHEA BUTTER ALMOND OIL''',
     img: Assets.assetsImagesProductsLibscrub,
   ),
   ProductModel(
     category: CategoriesEnum.face,
-    title: 'TONER',
+    nameEnglish: 'TONER',
     desc: '''Niacinamide, Tea Tree oil
 
 Ph Balance
@@ -61,7 +63,7 @@ Alcohol Free Fragrance and Paraben Free
   ),
   ProductModel(
     category: CategoriesEnum.face,
-    title: 'Lib Balm',
+    nameEnglish: 'Lib Balm',
     desc: '''Healing Your Libs
 Rich in 
 Panthenol , Shea Butter, JoJoba oil , Vit-E''',
@@ -69,7 +71,7 @@ Panthenol , Shea Butter, JoJoba oil , Vit-E''',
   ),
   ProductModel(
     category: CategoriesEnum.face,
-    title: 'Sunscreen',
+    nameEnglish: 'Sunscreen',
     desc: '''High protection, Blue light protection
 
 Arti aging Ami oxidant Non comedogenic Fragrance, Paraben, Oil free
@@ -81,7 +83,7 @@ For ALL SKIN''',
   ),
   ProductModel(
     category: CategoriesEnum.hair,
-    title: 'ROSEJOBA',
+    nameEnglish: 'ROSEJOBA',
     desc: '''Hair oil
 Moisturizing Treatment 
 
@@ -96,14 +98,14 @@ Caster Oil and sweet Almond
   ),
   ProductModel(
     category: CategoriesEnum.hair,
-    title: 'Anti Dandruff Formula',
+    nameEnglish: 'Anti Dandruff Formula',
     desc:
         '''Riched with Salicylic Acid For Treatment and clarifying Dandruff''',
     img: Assets.assetsImagesProductsAntidandruffformula,
   ),
   ProductModel(
     category: CategoriesEnum.hair,
-    title: 'SHAMPO0',
+    nameEnglish: 'SHAMPO0',
     desc: '''Anti Dandruff
 
 Riched with Zink pyrithron Alcohol and Paraben Free
@@ -113,7 +115,7 @@ For Treatment, Clarifying Dandruff''',
   ),
   ProductModel(
     category: CategoriesEnum.hair,
-    title: 'SHAMPOO sulfate Free',
+    nameEnglish: 'SHAMPOO sulfate Free',
     desc:
         '''Riched with Caffeine Aloe vera extract Tance, Alcohol and Paraben Free
 
@@ -122,7 +124,7 @@ For Hair Treatment, Reducing Hair lose Moisturising''',
   ),
   ProductModel(
     category: CategoriesEnum.face,
-    title: 'MOISTURISER',
+    nameEnglish: 'MOISTURISER',
     desc: '''Some ingredients
 -yogurt protein
 -Vitamin b5
@@ -133,7 +135,7 @@ Suitable for sensitive skin''',
   ),
   ProductModel(
     category: CategoriesEnum.face,
-    title: 'WHITENING CREAM',
+    nameEnglish: 'WHITENING CREAM',
     desc: '''For sensetive areas
 Delay hair growth
 Enriched with Alpha Arbutin, Vit C''',
