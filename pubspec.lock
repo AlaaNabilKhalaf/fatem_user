@@ -6,7 +6,11 @@ packages:
     description:
       name: _flutterfire_internals
       sha256: "2350805d7afefb0efe7acd325cb19d3ae8ba4039b906eade3807ffb69938a01f"
+<<<<<<< HEAD
       url: "https://pub.flutter-io.cn"
+=======
+      url: "https://pub.dev"
+>>>>>>> bf00c69e4a832ce97dd381ad98f235c0f725f624
     source: hosted
     version: "1.3.33"
   archive:
@@ -134,7 +138,11 @@ packages:
     description:
       name: firebase_auth
       sha256: f0a75f61992d036e4c46ad0e9febd364d98aa2c092690a5475cb1421a8243cfe
+<<<<<<< HEAD
       url: "https://pub.flutter-io.cn"
+=======
+      url: "https://pub.dev"
+>>>>>>> bf00c69e4a832ce97dd381ad98f235c0f725f624
     source: hosted
     version: "4.19.5"
   firebase_auth_platform_interface:
@@ -142,7 +150,11 @@ packages:
     description:
       name: firebase_auth_platform_interface
       sha256: feb77258404309ffc7761c78e1c0ad2ed5e4fdc378e035619e2cc13be4397b62
+<<<<<<< HEAD
       url: "https://pub.flutter-io.cn"
+=======
+      url: "https://pub.dev"
+>>>>>>> bf00c69e4a832ce97dd381ad98f235c0f725f624
     source: hosted
     version: "7.2.6"
   firebase_auth_web:
@@ -150,7 +162,11 @@ packages:
     description:
       name: firebase_auth_web
       sha256: "6d527f357da2bf93a67a42b423aa92943104a0c290d1d72ad9a42c779d501cd2"
+<<<<<<< HEAD
       url: "https://pub.flutter-io.cn"
+=======
+      url: "https://pub.dev"
+>>>>>>> bf00c69e4a832ce97dd381ad98f235c0f725f624
     source: hosted
     version: "5.11.5"
   firebase_core:
@@ -158,7 +174,11 @@ packages:
     description:
       name: firebase_core
       sha256: "372d94ced114b9c40cb85e18c50ac94a7e998c8eec630c50d7aec047847d27bf"
+<<<<<<< HEAD
       url: "https://pub.flutter-io.cn"
+=======
+      url: "https://pub.dev"
+>>>>>>> bf00c69e4a832ce97dd381ad98f235c0f725f624
     source: hosted
     version: "2.31.0"
   firebase_core_platform_interface:
@@ -174,7 +194,11 @@ packages:
     description:
       name: firebase_core_web
       sha256: "43d9e951ac52b87ae9cc38ecdcca1e8fa7b52a1dd26a96085ba41ce5108db8e9"
+<<<<<<< HEAD
       url: "https://pub.flutter-io.cn"
+=======
+      url: "https://pub.dev"
+>>>>>>> bf00c69e4a832ce97dd381ad98f235c0f725f624
     source: hosted
     version: "2.17.0"
   firebase_storage:
@@ -182,7 +206,11 @@ packages:
     description:
       name: firebase_storage
       sha256: da76ca9c11d795c4bae1bd13b31d54bb9eb9ccbee7eb5f6b86b8294370e9d488
+<<<<<<< HEAD
       url: "https://pub.flutter-io.cn"
+=======
+      url: "https://pub.dev"
+>>>>>>> bf00c69e4a832ce97dd381ad98f235c0f725f624
     source: hosted
     version: "11.7.5"
   firebase_storage_platform_interface:
@@ -190,7 +218,11 @@ packages:
     description:
       name: firebase_storage_platform_interface
       sha256: be17bfa9110a6429b40dd3760c755034079fd734aa1dd2476d5638ab780cc508
+<<<<<<< HEAD
       url: "https://pub.flutter-io.cn"
+=======
+      url: "https://pub.dev"
+>>>>>>> bf00c69e4a832ce97dd381ad98f235c0f725f624
     source: hosted
     version: "5.1.20"
   firebase_storage_web:
@@ -198,7 +230,11 @@ packages:
     description:
       name: firebase_storage_web
       sha256: "5219c20c0768a8e2ffedf0a116b7bc80ab32fcc6e2cbd50cbde14f8c4575c3f4"
+<<<<<<< HEAD
       url: "https://pub.flutter-io.cn"
+=======
+      url: "https://pub.dev"
+>>>>>>> bf00c69e4a832ce97dd381ad98f235c0f725f624
     source: hosted
     version: "3.9.5"
   flutter:
@@ -522,7 +558,11 @@ packages:
     description:
       name: shared_preferences_foundation
       sha256: "0a8a893bf4fd1152f93fec03a415d11c27c74454d96e2318a7ac38dd18683ab7"
+<<<<<<< HEAD
       url: "https://pub.flutter-io.cn"
+=======
+      url: "https://pub.dev"
+>>>>>>> bf00c69e4a832ce97dd381ad98f235c0f725f624
     source: hosted
     version: "2.4.0"
   shared_preferences_linux:

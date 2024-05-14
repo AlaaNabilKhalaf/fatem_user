@@ -77,7 +77,7 @@ class ProfileView extends StatelessWidget
       canPop: false,
       child: Scaffold(
         extendBody: true,
-        bottomNavigationBar: BottomNavigationView(),
+        bottomNavigationBar: const BottomNavigationView(),
         body: Container(
           width: double.infinity,
           height: double.infinity,
@@ -105,11 +105,11 @@ class ProfileView extends StatelessWidget
                 ),
 
 
-                Positioned(
-                    top: 39.h,
-                    left: 0.w,
-                    child: const MyBackButton(),
-                ),
+                // Positioned(
+                //     top: 39.h,
+                //     left: 0.w,
+                //     child: const MyBackButton(),
+                // ),
 
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,

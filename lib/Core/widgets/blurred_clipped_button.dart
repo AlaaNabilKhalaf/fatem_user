@@ -13,13 +13,13 @@ class BlurredClippedButton extends StatelessWidget {
   final Function onTap;
 
   //Shadow
-  final List<BoxShadow> shadow;
+  final List<BoxShadow>? shadow;
   final double? shadowThickness;
-  final double shadowRadius;
-  final double cutRadius;
+  final double? shadowRadius;
+  final double? cutRadius;
   final double? shadowHeight;
   final double? shadowWidth;
-  final double shadowHeightPercentage;
+  final double? shadowHeightPercentage;
   final bool? shouldClip;
 
   //Button
@@ -34,6 +34,7 @@ class BlurredClippedButton extends StatelessWidget {
 
 
   final bool? hasBorder;
+  final bool? withShadow;
   final double? borderWidth;
   final double? borderStrokeAlign;
   final BorderStyle? borderStyle;
@@ -44,15 +45,16 @@ class BlurredClippedButton extends StatelessWidget {
     super.key,
     required this.passedWidget,
     required this.onTap,
-    required this.shadow,
-    required this.shadowRadius,
-    required this.cutRadius,
-    required this.shadowHeightPercentage,
     required this.buttonColors,
     required this.buttonClipRadius,
     required this.sigmaX,
     required this.sigmaY,
     required this.buttonRadius,
+    this.withShadow,
+    this.shadow,
+    this.shadowRadius,
+    this.cutRadius,
+    this.shadowHeightPercentage,
     this.shadowHeight,
     this.shadowWidth,
     this.buttonWidth,
@@ -69,18 +71,44 @@ class BlurredClippedButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ClippedShadowButton(
 
-        boxShadow: shadow,
-        shadowHeight: shadowThickness,
-        height: shadowHeight,
-        width: shadowWidth,
-        shadowRadius: shadowRadius,
-        cutRadius: cutRadius,
-        heightPercentage: shadowHeightPercentage,
-        shouldClip: shouldClip,
+    if(withShadow == true || withShadow == null) {
+        return ClippedShadowButton(
 
-        child: ClipRRect(
+          boxShadow: shadow?? [const BoxShadow()],
+          shadowHeight: shadowThickness,
+          height: shadowHeight,
+          width: shadowWidth,
+          shadowRadius: shadowRadius ?? 0,
+          cutRadius: cutRadius?? 0,
+          heightPercentage: shadowHeightPercentage?? 0,
+          shouldClip: shouldClip,
+
+          child: ClipRRect(
+              borderRadius: BorderRadius.circular(buttonClipRadius),
+              clipBehavior: Clip.antiAlias,
+              child: BackdropFilter(
+                filter: ImageFilter.blur(
+                  sigmaX: sigmaX,
+                  sigmaY: sigmaY,
+                ),
+                child: GradButton(
+                  boxConstraints: boxConstraints,
+                  width: buttonWidth,
+                  height: buttonHeight,
+                  buttonColors: buttonColors,
+                  borderRadius: buttonRadius,
+                  onTap: onTap,
+                  text: passedWidget,
+                  border: withBorder()
+                ),
+              )
+          )
+      );
+    }
+    else
+      {
+        return ClipRRect(
             borderRadius: BorderRadius.circular(buttonClipRadius),
             clipBehavior: Clip.antiAlias,
             child: BackdropFilter(
@@ -89,18 +117,18 @@ class BlurredClippedButton extends StatelessWidget {
                 sigmaY: sigmaY,
               ),
               child: GradButton(
-                boxConstraints: boxConstraints,
-                width: buttonWidth,
-                height: buttonHeight,
-                buttonColors: buttonColors,
-                borderRadius: buttonRadius,
-                onTap: onTap,
-                text: passedWidget,
-                border: withBorder()
+                  boxConstraints: boxConstraints,
+                  width: buttonWidth,
+                  height: buttonHeight,
+                  buttonColors: buttonColors,
+                  borderRadius: buttonRadius,
+                  onTap: onTap,
+                  text: passedWidget,
+                  border: withBorder()
               ),
             )
-        )
-    );
+        );
+      }
   }
 
   Border? withBorder()

@@ -6,9 +6,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../Core/constance.dart';
+import '../../../../Core/utils/app_logger.dart';
 import '../../../../Core/utils/assets_data.dart';
 import '../../../../Core/widgets/texts.dart';
 import '../../../../generated/l10n.dart';
+import '../../../Home/Presentation/Controller/Cubits/Products/products_cubit.dart';
+import '../../../Home/Presentation/Controller/Cubits/Products/products_states.dart';
 
 
 
@@ -73,9 +76,9 @@ class FavoriteList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<FavoritesCubit, FavoritesStates>(
+    return BlocBuilder<ProductsCubit, ProductsStates>(
       builder: (context, states) {
-        final cubit = BlocProvider.of<FavoritesCubit>(context);
+        final cubit = BlocProvider.of<ProductsCubit>(context);
 
         if (cubit.favoritesList.isEmpty) {
           return const EmptyFavoritesPage();
@@ -91,7 +94,7 @@ class FavoriteList extends StatelessWidget {
                   padding: EdgeInsets.zero,
                   shrinkWrap: true,
                   itemCount: cubit.favoritesList.length,
-                  itemExtent: 63.5.h,
+                  itemExtent: 64.h,
                   clipBehavior: Clip.antiAlias,
                   scrollDirection: Axis.vertical,
                   physics: const BouncingScrollPhysics(),
@@ -128,7 +131,7 @@ class FavoritesListViewItem extends StatelessWidget
 
   final int index;
   final ProductModel productModel;
-  final FavoritesCubit cubit;
+  final ProductsCubit cubit;
 
   @override
   Widget build(BuildContext context) {
@@ -150,7 +153,7 @@ class FavoritesListViewItem extends StatelessWidget
                 height: 46.68.h,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.all(Radius.circular(5.r)),
-                  image: const DecorationImage(image: AssetImage(AssetsData.itemTemp), fit: BoxFit.fill)
+                  image: DecorationImage(image: AssetImage(productModel.image?? AssetsData.itemTemp), fit: BoxFit.fill)
                 ),
             ),
           ),
@@ -163,7 +166,8 @@ class FavoritesListViewItem extends StatelessWidget
           child: RegularText(
             fontSizeAr: 20.sp,
             textAlign: TextAlign.start,
-            text: productModel.title,fontSizeEn: 16.sp, textColor: Colors.black, fontFamilyAr: arLight, fontFamilyEn: enRegular, letterSpacing: 2,),
+            text: isArabic()? productModel.nameArabic! : productModel.nameEnglish!,
+            fontSizeEn: 16.sp, textColor: Colors.black, fontFamilyAr: arLight, fontFamilyEn: enRegular, letterSpacing: 2,),
         ),
 
         const Spacer(),

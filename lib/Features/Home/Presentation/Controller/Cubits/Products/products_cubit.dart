@@ -6,13 +6,20 @@ import 'favorites_states.dart';
 
 
 
-class FavoritesCubit extends Cubit<FavoritesStates>
+class ProductsCubit extends Cubit<ProductsStates>
 {
-  FavoritesCubit() : super(FavoritesInitialState());
+  ProductsCubit() : super(ProductsInitialState());
 
   List<ProductModel> favoritesList = [];
+  List<ProductModel> bagList = [];
   Set<int> favoritesIndex = <int>{};
-  
+
+
+  void bagAddOrRemove(ProductModel product)
+  {
+    bagList.add(product);
+  }
+
 
   void favoriteAddOrRemove(ProductModel product, int index)
   {

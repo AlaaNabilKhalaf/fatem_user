@@ -3,7 +3,7 @@ import "package:intl/intl.dart";
 
    log(message){
 if(!kReleaseMode) {
-  print(message);
+  log(message);
 }
   }
 

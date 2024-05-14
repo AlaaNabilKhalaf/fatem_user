@@ -80,11 +80,48 @@ class BottomNavigationView extends StatelessWidget
               builder: (context) => _pages[cubit.currentIndex]!));
         }
       },
-      child: SizedBox(
-        height: bottomNavBarIconSize[index][1].h,
-        width: bottomNavBarIconSize[index][0].w,
-        child: SvgImage(imagePath: AssetsData.bottomNavIcons[index], color: cubit.currentIndex == index? Colors.red : null,),
+      child: Container(
+        decoration: const BoxDecoration(),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            SizedBox(
+              height: bottomNavBarIconSize[index][1].h,
+              width: bottomNavBarIconSize[index][0].w,
+              child: SvgImage(imagePath: AssetsData.bottomNavIcons[index], color: cubit.currentIndex == index? Colors.red : null,),
+            ),
+            //index == cubit.currentIndex ? selectedIndicator() : const SizedBox(),
+          ],
+        ),
       ),
     );
   }
+
+
+  Widget selectedIndicator() {
+    return AnimatedContainer(
+      duration: const Duration(milliseconds: 250),
+      width: 40.w,
+      height: 3.h,
+      margin: EdgeInsets.only(top: 4.h),
+      decoration: BoxDecoration(
+          color: Colors.red,
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(3.r),
+            topRight: Radius.circular(3.r),
+          )),
+    );
+  }
+
+  Widget unselectedIndicator() {
+    return AnimatedContainer(
+      duration: const Duration(milliseconds: 250),
+      width: 40.w,
+      height: 0.h,
+      margin: EdgeInsets.only(top: 7.h),
+      color: Colors.transparent,
+    );
+  }
+
+
 }

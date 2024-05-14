@@ -24,9 +24,11 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "about": MessageLookupByLibrary.simpleMessage(
             "يحكي الموسم الأول قصة البطل .حيث انه مجرد عالم اثار استخرج ترسا من قلعة مهجورة في بافاريا وهذا الدرع به حجر في وسطه عليه صورة ديك ثم تاتي عصابة اليد السوداء لتاخذ منه الحجر لكنه يرفض ويقاتلهم ثم يكتشف جاكي وعمه وابنة اخته ان هذا الحجر هو رمز الديك وبه قوة خارقة تسمح للشخص بالطيران . كما انه حجر واحد من 12 حجر منتشرة في العالم لكل حجر قوة خاصة هي : الديك والثور والافعى والارنب والتنين والخروف والحصان والكلب والخنزير والقرد والنمر والجرذ"),
+        "addToBag": MessageLookupByLibrary.simpleMessage("اضافة إلى الحقيبة"),
         "bag": MessageLookupByLibrary.simpleMessage("الحقيبة"),
         "bagEmpty":
             MessageLookupByLibrary.simpleMessage("ما زالت الحقيبة فارغة"),
+        "benefits": MessageLookupByLibrary.simpleMessage("فوائــده:"),
         "bestSelling":
             MessageLookupByLibrary.simpleMessage("الأفضــل مبـــيعاً"),
         "body": MessageLookupByLibrary.simpleMessage("الجسم"),
@@ -51,6 +53,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "profileText": MessageLookupByLibrary.simpleMessage("الملف الشخصي"),
         "skin": MessageLookupByLibrary.simpleMessage("الـبشــرة"),
         "there": MessageLookupByLibrary.simpleMessage("بكــم"),
+        "tipsForUse":
+            MessageLookupByLibrary.simpleMessage("نصائح عند الاستخدام:"),
         "welcome": MessageLookupByLibrary.simpleMessage("أهلا وسهلاً")
       };
 }

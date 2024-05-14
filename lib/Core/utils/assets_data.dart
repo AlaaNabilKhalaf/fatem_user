@@ -43,9 +43,22 @@ class AssetsData{
 
   // BAG VIEW
   static const String emptyBag = "assets/images/bag_view/bag_empty.png";
+  static const String bagArrowArabic = "assets/images/bag_view/bagArrowArabic.png";
+  static const String bagArrowEnglish = "assets/images/bag_view/bagArrowEnglish.png";
 
 
   // FAVORITE VIEW
   static const String favorite = "assets/images/favorite_view/favorite.png";
+
+
+  // PRODUCTS IMAGES
+  static const String deodorant = "assets/images/products_images/deodorant.png";
+  static const String hyaluronicAcid = "assets/images/products_images/hyaluronic_acid.png";
+  static const String lipBalm = "assets/images/products_images/lib_Balm.png";
+  static const String moisturizer = "assets/images/products_images/moisturizer.png";
+  static const String shampooFreeSulfate = "assets/images/products_images/shampoo_free_sulfate.png";
+  static const String soap = "assets/images/products_images/soap.png";
+  static const String toner = "assets/images/products_images/toner.png";
+  static const String whiteningCream = "assets/images/products_images/whitening_cream.png";
 
 }
