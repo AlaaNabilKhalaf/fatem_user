@@ -9,11 +9,11 @@ class ProductModel {
   String? nameEnglish;
   final String desc;
   final String img;
-  int? price;
+  int price;
   int? discount;
   ProductModel({
     this.id,
-    this.price,
+    this.price=10,
     this.discount,
     required this.category,
      this.nameArabic,
