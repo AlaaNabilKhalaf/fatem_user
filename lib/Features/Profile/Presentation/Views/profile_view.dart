@@ -1,5 +1,4 @@
 import 'package:fatem_users/Core/widgets/blurred_clipped_button.dart';
-import 'package:fatem_users/Core/widgets/back_button.dart';
 import 'package:fatem_users/Core/widgets/image_svg.dart';
 import 'package:fatem_users/Features/About/presentation/views/about_view.dart';
 import 'package:fatem_users/Features/Auth/presentation/Views/login_view.dart';

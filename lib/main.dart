@@ -1,3 +1,4 @@
+import 'package:fatem_users/Features/Category/Data/category_enum.dart';
 import 'package:fatem_users/Features/Profile/Controller/Cubits/Languages/languages_states.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -44,14 +45,15 @@ Future<void> main() async {
   //Initialize tempList
   tempProduct =
   [
-    ProductModel(nameArabic: "مزيل عرق",nameEnglish: "Deodorant",image: AssetsData.deodorant),
-    ProductModel(nameArabic: "حمض الهيالورونيك",nameEnglish: "Hyaluronic Acid",image: AssetsData.hyaluronicAcid),
-    ProductModel(nameArabic: "مرطب شفائف",nameEnglish: "Lip Balm",image: AssetsData.lipBalm),
-    ProductModel(nameArabic: "مرطب",nameEnglish: "Moisturizer",image: AssetsData.moisturizer),
-    ProductModel(nameArabic: "شامبو خالي من الكبريت",nameEnglish: "Shampoo Free Sulfate",image: AssetsData.shampooFreeSulfate),
-    ProductModel(nameArabic: "صابون",nameEnglish: "Soap",image: AssetsData.soap),
-    ProductModel(nameArabic: "منظف شفائف",nameEnglish: "Toner",image: AssetsData.toner),
-    ProductModel(nameArabic: "كريم تفتيح",nameEnglish: "Whitening Cream",image: AssetsData.whiteningCream),
+    ProductModel(nameArabic: "مزيل عرق",nameEnglish: "Deodorant",image: AssetsData.deodorant, category: CategoriesEnum.body),
+    ProductModel(nameArabic: "حمض الهيالورونيك",nameEnglish: "Hyaluronic Acid",image: AssetsData.hyaluronicAcid, category: CategoriesEnum.face),
+    ProductModel(nameArabic: "مرطب شفائف",nameEnglish: "Lip Balm",image: AssetsData.lipBalm,category: CategoriesEnum.face),
+    ProductModel(nameArabic: "مرطب",nameEnglish: "Moisturizer",image: AssetsData.moisturizer,category: CategoriesEnum.face),
+    ProductModel(nameArabic: "شامبو خالي من الكبريت",nameEnglish: "Shampoo Free Sulfate",image: AssetsData.shampooFreeSulfate,category: CategoriesEnum.hair),
+    ProductModel(nameArabic: "صابون",nameEnglish: "Soap",image: AssetsData.soap,category: CategoriesEnum.body),
+    ProductModel(nameArabic: "منظف بشرة",nameEnglish: "Toner",image: AssetsData.toner, category: CategoriesEnum.face),
+    ProductModel(nameArabic: "كريم تفتيح",nameEnglish: "Whitening Cream",image: AssetsData.whiteningCream,category: CategoriesEnum.body),
+
   ];
 
   runApp(MultiBlocProvider(providers: [

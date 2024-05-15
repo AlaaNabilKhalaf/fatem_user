@@ -210,6 +210,16 @@ class S {
     );
   }
 
+  /// `FACE`
+  String get face {
+    return Intl.message(
+      'FACE',
+      name: 'face',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `BEST SELLING`
   String get bestSelling {
     return Intl.message(

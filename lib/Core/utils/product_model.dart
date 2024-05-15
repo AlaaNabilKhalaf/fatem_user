@@ -1,6 +1,9 @@
+import '../../Features/Category/Data/category_enum.dart';
+
 class ProductModel
 {
   int? id;
+  CategoriesEnum? category;
   String? nameArabic;
   String? nameEnglish;
   String? image;
@@ -16,6 +19,7 @@ class ProductModel
 
   ProductModel({
     this.id,
+    this.category,
     this.nameArabic,
     this.nameEnglish,
     this.ingredientsArabic,
@@ -24,4 +28,6 @@ class ProductModel
     this.price,
     this.discount,
   });
+
+
 }

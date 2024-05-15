@@ -31,17 +31,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "benefits": MessageLookupByLibrary.simpleMessage("فوائــده:"),
         "bestSelling":
             MessageLookupByLibrary.simpleMessage("الأفضــل مبـــيعاً"),
-        "body": MessageLookupByLibrary.simpleMessage("الجسم"),
+        "body": MessageLookupByLibrary.simpleMessage("الجســم"),
         "currentLanguage": MessageLookupByLibrary.simpleMessage("العربية"),
         "deodorant": MessageLookupByLibrary.simpleMessage("مزيل للعرق"),
         "emptyFavoritePage":
             MessageLookupByLibrary.simpleMessage("اصنع قائمة العناصر المفضـلة"),
+        "face": MessageLookupByLibrary.simpleMessage("الوجـه"),
         "facebookLogin":
             MessageLookupByLibrary.simpleMessage("تسجيل الدخول بفيسبوك"),
         "favorite": MessageLookupByLibrary.simpleMessage("القائمــة المفضـلة"),
         "googleLogin":
             MessageLookupByLibrary.simpleMessage("تسجيل الدخول بجوجل"),
-        "hair": MessageLookupByLibrary.simpleMessage("الشعر"),
+        "hair": MessageLookupByLibrary.simpleMessage("الشعــر"),
         "languagesText": MessageLookupByLibrary.simpleMessage("اللغة"),
         "logOut": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
         "loginSlogan":

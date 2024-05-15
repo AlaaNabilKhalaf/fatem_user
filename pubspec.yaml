@@ -120,6 +120,19 @@ flutter:
     #        - asset: fonts/LexendGiga-Thin.ttf
     #        - asset: fonts/LexendGiga-ExtraBold.ttf
     #        - asset: fonts/LexendGiga-Bold.ttf
+
+    - family: LexendGigaBold
+      fonts:
+        - asset: fonts/LexendGiga-Bold.ttf
+
+    - family: LexendGigaSemiBold
+      fonts:
+        - asset: fonts/LexendGiga-SemiBold.ttf
+
+    - family: LexendGigaMedium
+      fonts:
+        - asset: fonts/LexendGiga-Medium.ttf
+
     - family: StcRegular
       fonts:
         - asset: fonts/STC-Regular.ttf

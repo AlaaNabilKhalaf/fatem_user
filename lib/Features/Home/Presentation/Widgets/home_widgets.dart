@@ -3,6 +3,8 @@ import 'package:fatem_users/Core/utils/product_model.dart';
 import 'package:fatem_users/Core/widgets/image_svg.dart';
 import 'package:fatem_users/Features/Auth/presentation/Controller/Auth/auth_cubit.dart';
 import 'package:fatem_users/Features/Auth/presentation/Controller/Auth/auth_states.dart';
+import 'package:fatem_users/Features/Category/Data/category_enum.dart';
+import 'package:fatem_users/Features/Category/Presentation/Views/category_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -72,8 +74,6 @@ class ListItems extends StatelessWidget
 {
   const ListItems({super.key});
 
-  final itemsNumber = 5;
-
   @override
   Widget build(BuildContext context)
   {
@@ -83,7 +83,7 @@ class ListItems extends StatelessWidget
       child: ListView.builder(
           shrinkWrap: true,
           padding: EdgeInsets.only(left: 114.w, right: 119.w),
-          itemCount: itemsNumber,
+          itemCount: CategoriesEnum.values.length,
           scrollDirection: Axis.horizontal,
           physics: const BouncingScrollPhysics(),
           itemExtent: 127.w,
@@ -106,11 +106,11 @@ class ListViewItem extends StatelessWidget
   });
 
   final int index;
-
-
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
+    final List<String> label = [s.face,s.body,s.hair,s.skin];
+
     return Padding(
       padding: EdgeInsets.only(left: 7.w, right: 7.w),
       child: Column(
@@ -118,7 +118,10 @@ class ListViewItem extends StatelessWidget
         [
           GestureDetector(
             onTap: (){
-              log(index.toString());
+              Navigator.push(context, MaterialPageRoute(
+                  builder: (context) =>  CategoryView(categoryName: label[index],
+                    categoriesEnum: CategoriesEnum.values[index])
+              ));
             },
             child: Container(
               height: 127.h,
@@ -131,7 +134,8 @@ class ListViewItem extends StatelessWidget
 
           RegularText(
             fontSizeAr: 27.sp,
-            text: s.skin,fontSizeEn: 22.sp, textColor: Colors.black, fontFamilyAr: arLight, fontFamilyEn: enRegular, letterSpacing: 9,),
+            text: label[index],
+            fontSizeEn: 22.sp, textColor: Colors.black, fontFamilyAr: arLight, fontFamilyEn: enRegular, letterSpacing: 9,),
         ],
       ),
     );
@@ -148,28 +152,6 @@ class BlurredRectangle extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        // Container(
-        //   decoration: BoxDecoration(
-        //       gradient: LinearGradient(colors: listGradColor,
-        //           stops: const [0,0.5,1])
-        //   ),
-        //   child: SizedBox
-        //     (
-        //     width: double.infinity,
-        //     height: 171.h,
-        //   ),
-        // ),
-
-        // ClipRect(
-        //     clipBehavior: Clip.antiAlias,
-        //     child: BackdropFilter(
-        //     filter: ImageFilter.blur(
-        //     sigmaY: 6,
-        //     sigmaX: 6,
-        //   ),
-        //       child: const ListItems()
-        //  )
-        // ),
         const ListItems(),
 
         IgnorePointer(
@@ -192,8 +174,6 @@ class BlurredRectangle extends StatelessWidget {
 
 class CardsGrid extends StatelessWidget {
   const CardsGrid({super.key});
-
-  final itemsCount = 8;
 
   @override
   Widget build(BuildContext context)

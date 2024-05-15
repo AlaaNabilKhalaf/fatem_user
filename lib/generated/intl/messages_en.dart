@@ -35,6 +35,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "deodorant": MessageLookupByLibrary.simpleMessage("DEODORANT"),
         "emptyFavoritePage":
             MessageLookupByLibrary.simpleMessage("MAKE YOUR OWN WISH LIST"),
+        "face": MessageLookupByLibrary.simpleMessage("FACE"),
         "facebookLogin":
             MessageLookupByLibrary.simpleMessage("LOGIN WITH FACEBOOK"),
         "favorite": MessageLookupByLibrary.simpleMessage("FAVORITE"),
