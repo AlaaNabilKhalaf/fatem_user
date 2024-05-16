@@ -189,7 +189,11 @@ class LogOut extends StatelessWidget{
       children: [
         RegularText(
             fontSizeAr: 17.sp,
-            text: s.logOut, fontSizeEn: 17.sp, textColor: Colors.black, fontFamilyAr: arLight, fontFamilyEn: enLight),
+            text: s.logOut, fontSizeEn: 17.sp, textColor:
+        token == null || token == "" ?
+            Colors.grey :
+
+        Colors.black, fontFamilyAr: arLight, fontFamilyEn: enLight),
       ],
     );
   }

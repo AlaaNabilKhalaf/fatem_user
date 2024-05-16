@@ -15,9 +15,19 @@ class ProductsCubit extends Cubit<ProductsStates>
   Set<int> favoritesIndex = <int>{};
 
 
-  void bagAddOrRemove(ProductModel product)
+  void bagAdd(ProductModel product)
   {
     bagList.add(product);
+    emit(ProductAdded());
+  }
+
+  void bagRemove(ProductModel productModel)
+  {
+    if(bagList.contains(productModel))
+    {
+        bagList.remove(productModel);
+        emit(ProductRemoved());
+    }
   }
 
 

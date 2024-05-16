@@ -11,6 +11,8 @@ import '../../../../Core/utils/assets_data.dart';
 import '../../../../Core/widgets/texts.dart';
 import '../../../../Core/widgets/custom_button.dart';
 import '../../../../generated/l10n.dart';
+import '../../../Bag/Presentation/Views/checkout_view.dart';
+import '../../../Home/Presentation/Controller/Cubits/Products/products_cubit.dart';
 import '../Widgets/login_text_rows.dart';
 
 class LoginView extends StatelessWidget {
@@ -22,6 +24,7 @@ class LoginView extends StatelessWidget {
     return BlocConsumer<AuthCubit, AuthStates>(
       builder: (context,state){
         final cubit = BlocProvider.of<AuthCubit>(context);
+        final bagCubit = BlocProvider.of<ProductsCubit>(context);
         return Scaffold(
           body: Container(
             width: double.infinity,height: double.infinity,
@@ -62,12 +65,11 @@ class LoginView extends StatelessWidget {
                     buttonColor: buttonColor,
                     onTap: () {
                       cubit.signInWithGoogle().then((value) => {
-                        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> const HomeView()))
+                        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>
+                      bagCubit.bagList.isEmpty ?
+                          const HomeView() :
+                        const CheckoutView()))
                       }) ;
-                      if(currentPageIndex.isEmpty)
-                      {
-                        currentPageIndex.addFirst(3);
-                      }
                     },
                     text: const GoogleButton(),
                   ),

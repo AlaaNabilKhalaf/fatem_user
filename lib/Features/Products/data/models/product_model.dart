@@ -8,7 +8,7 @@ class ProductModel {
    String? nameArabic;
   String? nameEnglish;
   final String desc;
-  final String img;
+  final String? img;
   int price;
   int? discount;
   ProductModel({
@@ -19,7 +19,7 @@ class ProductModel {
      this.nameArabic,
     this.nameEnglish,
     required this.desc,
-    required this.img,
+    this.img,
   });
 }
 

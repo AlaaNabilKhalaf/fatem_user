@@ -1,5 +1,4 @@
 import 'package:fatem_users/Core/widgets/blurred_clipped_button.dart';
-import 'package:fatem_users/Core/widgets/back_button.dart';
 import 'package:fatem_users/Core/widgets/image_svg.dart';
 import 'package:fatem_users/Features/About/presentation/views/about_view.dart';
 import 'package:fatem_users/Features/Auth/presentation/Views/login_view.dart';
@@ -11,6 +10,7 @@ import 'package:google_sign_in/google_sign_in.dart';
 import '../../../../Core/constance.dart';
 import '../../../../Core/utils/assets_data.dart';
 import '../../../Auth/presentation/Controller/AuthLocal/auth_cache_network.dart';
+import '../../../Home/Presentation/Controller/Cubits/Products/products_cubit.dart';
 import '../../../Home/Presentation/Views/bottom_navigation_view.dart';
 import '../../../PreviousOrders/Presentation/Views/previous_orders_view.dart';
 import '../Widgets/profile_rows.dart';
@@ -161,7 +161,7 @@ class ProfileView extends StatelessWidget
                     GestureDetector(
                       onTap: (){
 
-
+                      context.read<ProductsCubit>().bagList.clear();
                      {   GoogleSignIn google = GoogleSignIn();
                      google.disconnect().then((value) => {
                        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> const LoginView()))

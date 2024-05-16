@@ -10,6 +10,7 @@ import '../../../../Core/widgets/texts.dart';
 import '../../../../generated/l10n.dart';
 import '../../../Home/Presentation/Controller/Cubits/Products/products_cubit.dart';
 import '../../../Home/Presentation/Controller/Cubits/Products/products_states.dart';
+import '../../../ItemPage/Presentation/Views/item_page_view.dart';
 
 
 
@@ -85,7 +86,10 @@ class FavoriteList extends StatelessWidget {
           return Align(
             alignment: Alignment.topCenter,
             child: Padding(
-              padding: EdgeInsets.only(left: 15.w, right: 15.w, /*top: 15.h*/),
+              padding: EdgeInsets.only(left: 15.w, right: 15.w,
+                  top: 25.h,
+                  bottom: 10.h
+                /*top: 15.h*/),
               child: SizedBox(
                 width: 259.w,
                 child: ListView.builder(
@@ -98,15 +102,22 @@ class FavoriteList extends StatelessWidget {
                   physics: const BouncingScrollPhysics(),
                   itemBuilder: (BuildContext context, int index) {
                     //return FavoritesListViewItem(index: index);
-                    return Column(mainAxisSize: MainAxisSize.min, children: [
-                      FavoritesListViewItem(productModel: cubit.favoritesList[index], index: index, cubit: cubit,),
-                      index == cubit.favoritesList.length - 1
-                          ? const SizedBox()
-                          : Divider(
-                              color: dividerColor,
-                              thickness: 1.h,
-                            ),
-                    ]);
+                    return GestureDetector(
+                      onTap: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=> ItemPageView(
+                          productModel: cubit.bagList[index],
+                        )));
+                      },
+                      child: Column(mainAxisSize: MainAxisSize.min, children: [
+                        FavoritesListViewItem(productModel: cubit.favoritesList[index], index: index, cubit: cubit,),
+                        index == cubit.favoritesList.length - 1
+                            ? const SizedBox()
+                            : Divider(
+                                color: dividerColor,
+                                thickness: 1.h,
+                              ),
+                      ]),
+                    );
                   },
                 ),
               ),

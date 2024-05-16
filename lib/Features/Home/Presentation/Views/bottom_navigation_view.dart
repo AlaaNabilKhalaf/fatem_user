@@ -88,7 +88,7 @@ class BottomNavigationView extends StatelessWidget
             SizedBox(
               height: bottomNavBarIconSize[index][1].h,
               width: bottomNavBarIconSize[index][0].w,
-              child: SvgImage(imagePath: AssetsData.bottomNavIcons[index], color: cubit.currentIndex == index? Colors.red : null,),
+              child: SvgImage(imagePath: AssetsData.bottomNavIcons[index], color: cubit.currentIndex == index? bottomNaviBarBorderColor : null,),
             ),
             //index == cubit.currentIndex ? selectedIndicator() : const SizedBox(),
           ],

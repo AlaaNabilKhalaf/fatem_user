@@ -2,7 +2,8 @@
   "googleLogin" : "LOGIN WITH GOOGLE",
   "facebookLogin" : "LOGIN WITH FACEBOOK",
   "loginSlogan" : "WHERE BEAUTY MEETS THE UNIVERSE!",
-  "about" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+  "about" :
+  " Welcome to our app! We care about your beauty and skincare health. In our products, we combine the latest technologies with the finest natural ingredients to deliver the best in skincare. Explore our diverse range of products, aimed at achieving healthy, radiant skin for every customer. We take pride in the quality of our products and always strive to meet your needs and exceed your expectations. Discover the difference our products can make and join our family today!",
   "profileText" : "PROFILE",
   "previousOrdersText" : "PREVIOUS ORDERS",
   "languagesText" : "LANGUAGE",
@@ -22,5 +23,21 @@
   "emptyFavoritePage" : "MAKE YOUR OWN WISH LIST",
   "addToBag" : "Add To The Bag",
   "benefits" : "Benefits:",
-  "tipsForUse": "Tips For Usage:"
+  "tipsForUse": "Tips For Usage:",
+  "face" : " FACE",
+
+  "totalPrice": "Total Price: ",
+
+  "fullName" : "Full Name",
+  "order" : "Place Order",
+  "phone" : "Phone",
+  "otherPhone" : "Other Phone",
+  "address" : "Address",
+  "notes" : "Notes",
+  "orderIsSent": "Order Is Sent",
+  "confirm" : "Confirm",
+  "added" : "ADDED"
+
+
+
 }

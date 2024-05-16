@@ -3,9 +3,7 @@ import 'package:fatem_users/Features/Categories/data/models/categories_enum.dart
 import 'package:fatem_users/Features/Home/Presentation/Controller/Cubits/Products/products_cubit.dart';
 import 'package:fatem_users/Features/Home/Presentation/Controller/Cubits/Products/products_states.dart';
 import 'package:fatem_users/Features/Products/data/models/product_model.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -72,7 +70,7 @@ class _ProductsViewState extends State<ProductsView> {
               child: const MyBackButton(),
             ),
             GridView.builder(
-              padding: EdgeInsets.only(top: 150),
+              padding: const EdgeInsets.only(top: 150),
               itemBuilder: (context, index) {
                 return BlocBuilder<ProductsCubit, ProductsStates>(
                     builder: (context, cubit) {
@@ -118,7 +116,7 @@ class _ProductsViewState extends State<ProductsView> {
                                       borderRadius: BorderRadius.all(
                                           Radius.circular(3.r)),
                                       image: DecorationImage(
-                                        image: AssetImage(products[index].img),
+                                        image: AssetImage(products[index].img!),
                                         fit: BoxFit.contain,
                                       )),
                                 )),
@@ -171,7 +169,7 @@ class _ProductsViewState extends State<ProductsView> {
                   );
                 });
               },
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 mainAxisSpacing: 20,
                 crossAxisSpacing: 15,

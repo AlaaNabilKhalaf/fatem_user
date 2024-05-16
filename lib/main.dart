@@ -16,9 +16,9 @@ import 'Features/Auth/presentation/Controller/AuthLocal/auth_cache_network.dart'
 import 'Features/Home/Presentation/Controller/Cubits/BottomNavBar/bottom_nav_cubit.dart';
 import 'Features/Home/Presentation/Views/home_view.dart';
 import 'Features/Profile/Controller/Cubits/Languages/language_cubit.dart';
+import 'constants/assets.dart';
 import 'firebase_options.dart';
 import 'package:intl/intl.dart';
-import 'Features/Splash/presentation/views/splash_view.dart';
 import 'generated/l10n.dart';
 
 Future<void> main() async {
@@ -44,13 +44,21 @@ Future<void> main() async {
   tempProduct =
   [
     ProductModel(nameArabic: "مزيل عرق",nameEnglish: "Deodorant",img: AssetsData.deodorant, category: CategoriesEnum.body, desc: ''),
-    ProductModel(nameArabic: "حمض الهيالورونيك",nameEnglish: "Hyaluronic Acid",img: AssetsData.hyaluronicAcid, category: CategoriesEnum.body, desc: ''),
-    ProductModel(nameArabic: "مرطب شفائف",nameEnglish: "Lip Balm",img: AssetsData.lipBalm, category: CategoriesEnum.body, desc: ''),
-    ProductModel(nameArabic: "مرطب",nameEnglish: "Moisturizer",img: AssetsData.moisturizer, category: CategoriesEnum.body, desc: ''),
-    ProductModel(nameArabic: "شامبو خالي من الكبريت",nameEnglish: "Shampoo Free Sulfate",img: AssetsData.shampooFreeSulfate, category: CategoriesEnum.body, desc: ''),
+    ProductModel(nameArabic: "حمض الهيالورونيك",nameEnglish: "Hyaluronic Acid",img: AssetsData.hyaluronicAcid, category: CategoriesEnum.face, desc: ''),
+    ProductModel(nameArabic: "مرطب شفائف",nameEnglish: "Lip Balm",img: AssetsData.lipBalm, category: CategoriesEnum.face, desc: ''),
+    ProductModel(nameArabic: "مرطب",nameEnglish: "Moisturizer",img: AssetsData.moisturizer, category: CategoriesEnum.face, desc: ''),
+    ProductModel(nameArabic: "شامبو خالي من الكبريت",nameEnglish: "Shampoo Free Sulfate",img: AssetsData.shampooFreeSulfate, category: CategoriesEnum.hair, desc: ''),
     ProductModel(nameArabic: "صابون",nameEnglish: "Soap",img: AssetsData.soap, category: CategoriesEnum.body, desc: ''),
-    ProductModel(nameArabic: "منظف شفائف",nameEnglish: "Toner",img: AssetsData.toner, category: CategoriesEnum.body, desc: ''),
-    ProductModel(nameArabic: "كريم تفتيح",nameEnglish: "Whitening Cream",img: AssetsData.whiteningCream, category: CategoriesEnum.body, desc: ''),
+    ProductModel(nameArabic: "منظف بشرة",nameEnglish: "Toner",img: AssetsData.toner, category: CategoriesEnum.face, desc: ''),
+    ProductModel(nameArabic: "كريم شعر",nameEnglish: "Hair Balm",img: Assets.assetsImagesProductsHairBalm, category: CategoriesEnum.hair, desc: ''),
+    ProductModel(nameArabic: "مقشر شفائف",nameEnglish: "Lip Scrub",img: Assets.assetsImagesProductsLibscrub, category: CategoriesEnum.face, desc: ''),
+    ProductModel(nameArabic: "روزجوبا",nameEnglish: "Rosejoba",img: Assets.assetsImagesProductsRosejoba, category: CategoriesEnum.hair, desc: ''),
+    ProductModel(nameArabic: "شامبو قشرة",nameEnglish: "Shampoo Dandruff",img: Assets.assetsImagesProductsShampooantidandruff, category: CategoriesEnum.hair, desc: ''),
+    ProductModel(nameArabic: "واقي شمس",nameEnglish: "Sun Screen",img: Assets.assetsImagesProductsSunScreen, category: CategoriesEnum.face, desc: ''),
+    ProductModel(nameArabic: "مضاد للقشرة",nameEnglish: "Anti Dandruff",img: Assets.assetsImagesProductsAntidandruffformula, category: CategoriesEnum.hair, desc: ''),
+    ProductModel(nameArabic: "جلد الوزة",nameEnglish: "Chicken Skin",img: Assets.assetsImagesProductsChickenskin, category: CategoriesEnum.body, desc: ''),
+    ProductModel(nameArabic: "مزيل عرق رجالي",nameEnglish: "Female Deodorant",img: Assets.assetsImagesProductsDeodorantF, category: CategoriesEnum.body, desc: ''),
+    ProductModel(nameArabic: "مزيل عرق نسائي",nameEnglish: "Male Deodorant",img: Assets.assetsImagesProductsDeodorantM, category: CategoriesEnum.body, desc: ''),
   ];
 
   runApp(MultiBlocProvider(providers: [

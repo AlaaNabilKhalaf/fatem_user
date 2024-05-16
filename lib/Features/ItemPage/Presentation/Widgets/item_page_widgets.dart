@@ -115,7 +115,16 @@ class AddToBag extends StatelessWidget
           final cubit = BlocProvider.of<ProductsCubit>(context);
           return GestureDetector(
             onTap: (){
-              cubit.bagAddOrRemove(productModel);
+              ScaffoldMessenger.of(context).clearSnackBars();
+              ScaffoldMessenger.of(context).showSnackBar( SnackBar(
+                duration: const Duration(microseconds: 200),
+                  backgroundColor: gradColor[0],
+                  content:
+              RegularText(text: s.added, fontSizeEn: 22, textColor: Colors.black, fontFamilyAr: arRegular, fontFamilyEn: enRegular, fontSizeAr: 22)
+
+              ));
+              cubit.bagAdd(productModel);
+
             },
             child: Container(
               alignment: Alignment.center,

@@ -1,7 +1,6 @@
 import 'package:fatem_users/Core/utils/assets_data.dart';
 import 'package:fatem_users/Features/Auth/presentation/Views/login_view.dart';
 import 'package:fatem_users/Features/Bag/Presentation/Views/checkout_view.dart';
-import 'package:fatem_users/Features/ItemPage/Presentation/Views/item_page_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -13,8 +12,8 @@ import '../../../Home/Presentation/Controller/Cubits/Products/products_cubit.dar
 import '../../../Home/Presentation/Controller/Cubits/Products/products_states.dart';
 import '../../../Products/data/models/product_model.dart';
 
-class Bag extends StatelessWidget {
-  const Bag({super.key});
+class Pay extends StatelessWidget {
+  const Pay({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +24,7 @@ class Bag extends StatelessWidget {
       children: [
         RegularText(
             fontSizeAr: 31.sp,
-            text: s.bag,
+            text: s.order,
             fontSizeEn: 31.sp,
             textColor: Colors.black,
             fontFamilyAr: arRegular,
@@ -51,10 +50,10 @@ class BagList extends StatelessWidget {
             alignment: Alignment.topCenter,
             child: Padding(
               padding: EdgeInsets.only(
-                left: 15.w,
-                right: 15.w,
-                top: 25.h,
-                bottom: 10.h
+                  left: 15.w,
+                  right: 15.w,
+                  top: 25.h,
+                  bottom: 10.h
                 /*top: 15.h*/
               ),
               child: Column(
@@ -75,24 +74,17 @@ class BagList extends StatelessWidget {
                             return Column(
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
-                                  GestureDetector(
-                                    onTap: (){
-                                       Navigator.push(context, MaterialPageRoute(builder: (context)=> ItemPageView(
-                                         productModel: cubit.bagList[index],
-                                       )));
-                                    },
-                                    child: _BagListViewItem(
-                                      productModel: cubit.bagList[index],
-                                      index: index,
-                                      cubit: cubit,
-                                    ),
+                                  _BagListViewItem(
+                                    productModel: cubit.bagList[index],
+                                    index: index,
+                                    cubit: cubit,
                                   ),
                                   index == cubit.bagList.length - 1
                                       ? const SizedBox()
                                       : Divider(
-                                          color: dividerColor,
-                                          thickness: 1.h,
-                                        ),
+                                    color: dividerColor,
+                                    thickness: 1.h,
+                                  ),
                                 ]);
                           },
                         ),
@@ -100,15 +92,16 @@ class BagList extends StatelessWidget {
                     ),
                   ),
                   // Spacer(),
-                 RegularText(text:
-                 '${lang.totalPrice} ${cubit.bagList.map((e) => e.price).toList().reduce((value, element) => (value + element).toInt())}'
+                  RegularText(text:
+                  '${lang.totalPrice} ${cubit.bagList.map((e) => e.price).toList().reduce((value, element) => (value + element).toInt())}'
 
-                     , fontSizeEn: 20, textColor: Colors.black, fontFamilyAr: arRegular, fontFamilyEn: enRegular, fontSizeAr: 20),
+                      , fontSizeEn: 20, textColor: Colors.black, fontFamilyAr: arRegular, fontFamilyEn: enRegular, fontSizeAr: 20),
                   GestureDetector(
                     onTap: () {
-                      print(token);
-                      Navigator.push(context, MaterialPageRoute(
-                          builder: (context) => token == null || token == "" ? const LoginView() : const CheckoutView() ,
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => token == null || token != "" ? const LoginView() : const CheckoutView() ,
                         ),
                       );
                     },
@@ -117,7 +110,7 @@ class BagList extends StatelessWidget {
                       alignment: Alignment.center,
                       margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 60),
                       padding:
-                          const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+                      const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
                       decoration: BoxDecoration(
                         color: const Color(0xffFFFCEE),
                         borderRadius: BorderRadius.circular(20),
@@ -145,10 +138,10 @@ class BagList extends StatelessWidget {
 class _BagListViewItem extends StatelessWidget {
   const _BagListViewItem(
       {
-      //super.key,
-      required this.cubit,
-      required this.index,
-      required this.productModel});
+        //super.key,
+        required this.cubit,
+        required this.index,
+        required this.productModel});
 
   final int index;
   final ProductModel productModel;
@@ -175,7 +168,7 @@ class _BagListViewItem extends StatelessWidget {
                   borderRadius: BorderRadius.all(Radius.circular(5.r)),
                   image: DecorationImage(
                       image:
-                          AssetImage(productModel.img ?? AssetsData.itemTemp),
+                      AssetImage(productModel.img ?? AssetsData.itemTemp),
                       fit: BoxFit.fill)),
             ),
           ),
@@ -199,18 +192,19 @@ class _BagListViewItem extends StatelessWidget {
         const Spacer(),
         GestureDetector(
           onTap: () {
-            cubit.bagRemove(productModel);
+            log("Clicked");
           },
-         child: Container(
-           alignment: Alignment.center,
-           height: 25.h,
-           width: 25.w,
-           decoration: const BoxDecoration(
-             color: buttonColor,
-             shape: BoxShape.circle
-           ),
-           child: const Icon(Icons.do_disturb_alt , color: Colors.white,),
-         ),
+          child: SizedBox(
+            height: 22.h,
+            width: 22.w,
+            child: Image.asset(
+                isArabic()
+                    ? AssetsData.bagArrowArabic
+                    : AssetsData.bagArrowEnglish,
+                width: 22.w,
+                height: 22.h,
+                fit: BoxFit.fill),
+          ),
         ),
       ],
     );

@@ -80,10 +80,10 @@ class S {
     );
   }
 
-  /// `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.`
+  /// ` Welcome to our app! We care about your beauty and skincare health. In our products, we combine the latest technologies with the finest natural ingredients to deliver the best in skincare. Explore our diverse range of products, aimed at achieving healthy, radiant skin for every customer. We take pride in the quality of our products and always strive to meet your needs and exceed your expectations. Discover the difference our products can make and join our family today!`
   String get about {
     return Intl.message(
-      'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+      ' Welcome to our app! We care about your beauty and skincare health. In our products, we combine the latest technologies with the finest natural ingredients to deliver the best in skincare. Explore our diverse range of products, aimed at achieving healthy, radiant skin for every customer. We take pride in the quality of our products and always strive to meet your needs and exceed your expectations. Discover the difference our products can make and join our family today!',
       name: 'about',
       desc: '',
       args: [],
@@ -285,6 +285,116 @@ class S {
     return Intl.message(
       'Tips For Usage:',
       name: 'tipsForUse',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// ` FACE`
+  String get face {
+    return Intl.message(
+      ' FACE',
+      name: 'face',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Total Price: `
+  String get totalPrice {
+    return Intl.message(
+      'Total Price: ',
+      name: 'totalPrice',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Full Name`
+  String get fullName {
+    return Intl.message(
+      'Full Name',
+      name: 'fullName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Place Order`
+  String get order {
+    return Intl.message(
+      'Place Order',
+      name: 'order',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone`
+  String get phone {
+    return Intl.message(
+      'Phone',
+      name: 'phone',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Other Phone`
+  String get otherPhone {
+    return Intl.message(
+      'Other Phone',
+      name: 'otherPhone',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Address`
+  String get address {
+    return Intl.message(
+      'Address',
+      name: 'address',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Notes`
+  String get notes {
+    return Intl.message(
+      'Notes',
+      name: 'notes',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Order Is Sent`
+  String get orderIsSent {
+    return Intl.message(
+      'Order Is Sent',
+      name: 'orderIsSent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirm`
+  String get confirm {
+    return Intl.message(
+      'Confirm',
+      name: 'confirm',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ADDED`
+  String get added {
+    return Intl.message(
+      'ADDED',
+      name: 'added',
       desc: '',
       args: [],
     );

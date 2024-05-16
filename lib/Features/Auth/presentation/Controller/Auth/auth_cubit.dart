@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:fatem_users/Core/constance.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import '../../../Data/Models/user_model.dart';
@@ -63,7 +64,7 @@ class AuthCubit extends Cubit <AuthStates> {
             getDisplayName(value.user!.displayName);
             getEmail(value.user!.email);
             getAvatar(value.user!.photoURL);
-
+            token = value.user!.uid;
             CacheNetwork.insertStrings(
             key: "token", value: value.user!.uid);
             UserModel.cacheData(

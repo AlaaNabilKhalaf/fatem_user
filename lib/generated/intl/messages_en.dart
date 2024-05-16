@@ -23,21 +23,26 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "about": MessageLookupByLibrary.simpleMessage(
-            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry."),
+            " Welcome to our app! We care about your beauty and skincare health. In our products, we combine the latest technologies with the finest natural ingredients to deliver the best in skincare. Explore our diverse range of products, aimed at achieving healthy, radiant skin for every customer. We take pride in the quality of our products and always strive to meet your needs and exceed your expectations. Discover the difference our products can make and join our family today!"),
         "addToBag": MessageLookupByLibrary.simpleMessage("Add To The Bag"),
+        "added": MessageLookupByLibrary.simpleMessage("ADDED"),
+        "address": MessageLookupByLibrary.simpleMessage("Address"),
         "bag": MessageLookupByLibrary.simpleMessage("BAG"),
         "bagEmpty":
             MessageLookupByLibrary.simpleMessage("YOUR BAG IS STILL EMPTY"),
         "benefits": MessageLookupByLibrary.simpleMessage("Benefits:"),
         "bestSelling": MessageLookupByLibrary.simpleMessage("BEST SELLING"),
         "body": MessageLookupByLibrary.simpleMessage("BODY"),
+        "confirm": MessageLookupByLibrary.simpleMessage("Confirm"),
         "currentLanguage": MessageLookupByLibrary.simpleMessage("English"),
         "deodorant": MessageLookupByLibrary.simpleMessage("DEODORANT"),
         "emptyFavoritePage":
             MessageLookupByLibrary.simpleMessage("MAKE YOUR OWN WISH LIST"),
+        "face": MessageLookupByLibrary.simpleMessage(" FACE"),
         "facebookLogin":
             MessageLookupByLibrary.simpleMessage("LOGIN WITH FACEBOOK"),
         "favorite": MessageLookupByLibrary.simpleMessage("FAVORITE"),
+        "fullName": MessageLookupByLibrary.simpleMessage("Full Name"),
         "googleLogin":
             MessageLookupByLibrary.simpleMessage("LOGIN WITH GOOGLE"),
         "hair": MessageLookupByLibrary.simpleMessage("HAIR"),
@@ -47,12 +52,18 @@ class MessageLookup extends MessageLookupByLibrary {
             "WHERE BEAUTY MEETS THE UNIVERSE!"),
         "noPreviousOrders":
             MessageLookupByLibrary.simpleMessage("NO PREVIOUS ORDERS"),
+        "notes": MessageLookupByLibrary.simpleMessage("Notes"),
+        "order": MessageLookupByLibrary.simpleMessage("Place Order"),
+        "orderIsSent": MessageLookupByLibrary.simpleMessage("Order Is Sent"),
+        "otherPhone": MessageLookupByLibrary.simpleMessage("Other Phone"),
+        "phone": MessageLookupByLibrary.simpleMessage("Phone"),
         "previousOrdersText":
             MessageLookupByLibrary.simpleMessage("PREVIOUS ORDERS"),
         "profileText": MessageLookupByLibrary.simpleMessage("PROFILE"),
         "skin": MessageLookupByLibrary.simpleMessage("SKIN"),
         "there": MessageLookupByLibrary.simpleMessage("THERE"),
         "tipsForUse": MessageLookupByLibrary.simpleMessage("Tips For Usage:"),
+        "totalPrice": MessageLookupByLibrary.simpleMessage("Total Price: "),
         "welcome": MessageLookupByLibrary.simpleMessage("WELCOME")
       };
 }

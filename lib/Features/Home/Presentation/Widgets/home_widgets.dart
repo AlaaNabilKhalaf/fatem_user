@@ -2,8 +2,7 @@ import 'package:fatem_users/Core/utils/assets_data.dart';
 import 'package:fatem_users/Core/widgets/image_svg.dart';
 import 'package:fatem_users/Features/Auth/presentation/Controller/Auth/auth_cubit.dart';
 import 'package:fatem_users/Features/Auth/presentation/Controller/Auth/auth_states.dart';
-import 'package:fatem_users/Features/Categories/data/models/category_model.dart';
-import 'package:fatem_users/Features/Products/presentation/views/products_view.dart';
+import 'package:fatem_users/Features/Categories/Directory/Views/category_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -73,21 +72,24 @@ class _WelcomeMessageState extends State<WelcomeMessage> {
 }
 
 class ListItems extends StatelessWidget {
-  static final List<CategoryModel> categories = [
-    CategoryModel(categoriesEnum: CategoriesEnum.body, title: 'جسم'),
-    CategoryModel(categoriesEnum: CategoriesEnum.hair, title: 'شعر'),
-    CategoryModel(categoriesEnum: CategoriesEnum.face, title: 'وجه'),
-  ];
+
   const ListItems({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final lang =S.of(context);
+    final List<String> listOfLang =[
+      lang.face,
+      lang.body,
+      lang.hair
+    ];
+
     return SizedBox(
       height: 171.h,
       child: ListView.builder(
         shrinkWrap: true,
         padding: EdgeInsets.only(left: 114.w, right: 119.w),
-        itemCount: categories.length,
+        itemCount: CategoriesEnum.values.length,
         scrollDirection: Axis.horizontal,
         physics: const BouncingScrollPhysics(),
         itemExtent: 127.w,
@@ -97,14 +99,14 @@ class ListItems extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (_) => ProductsView(
-                    categoriesEnum: categories[index].categoriesEnum,
+                  builder: (_) => CategoryView(
+                    categoryName: listOfLang[index], categoriesEnum: CategoriesEnum.values[index],
                   ),
                 ),
               );
             },
             child: ListViewItem(
-              categoryModel: categories[index],
+              label: listOfLang[index],
             ),
           );
         },
@@ -114,9 +116,10 @@ class ListItems extends StatelessWidget {
 }
 
 class ListViewItem extends StatelessWidget {
-  const ListViewItem({super.key, required this.categoryModel});
+  const ListViewItem({super.key, required this.label});
 
-  final CategoryModel categoryModel;
+  final String label;
+
 
   @override
   Widget build(BuildContext context) {
@@ -137,7 +140,7 @@ class ListViewItem extends StatelessWidget {
           ),
           RegularText(
             fontSizeAr: 27.sp,
-            text: categoryModel.title,
+            text: label,
             fontSizeEn: 22.sp,
             textColor: Colors.black,
             fontFamilyAr: arLight,
@@ -157,28 +160,6 @@ class BlurredRectangle extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        // Container(
-        //   decoration: BoxDecoration(
-        //       gradient: LinearGradient(colors: listGradColor,
-        //           stops: const [0,0.5,1])
-        //   ),
-        //   child: SizedBox
-        //     (
-        //     width: double.infinity,
-        //     height: 171.h,
-        //   ),
-        // ),
-
-        // ClipRect(
-        //     clipBehavior: Clip.antiAlias,
-        //     child: BackdropFilter(
-        //     filter: ImageFilter.blur(
-        //     sigmaY: 6,
-        //     sigmaX: 6,
-        //   ),
-        //       child: const ListItems()
-        //  )
-        // ),
         const ListItems(),
 
         IgnorePointer(
